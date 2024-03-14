@@ -1,0 +1,5 @@
+//Jangan dibuat melebihi 950 karakter 
+const unban2 = `Saya adalah pengguna WhatsApp yang telah menggunakan aplikasi ini selama lebih dari 3 tahun. Selama periode tersebut, saya telah mematuhi peraturan yang berlaku, terutama terkait dengan pengiriman konten yang melanggar seperti video porno atau kekerasan.Namun, sayangnya, akun WhatsApp saya tiba-tiba diblokir secara permanen. Saya diminta untuk mendaftar menggunakan nomor telepon baru, padahal saya telah menggunakan aplikasi WhatsApp sejak tahun 2020.
+Saya merasa sangat kecewa dengan pemblokiran ini karena saya harus membeli atau mengganti nomor baru. Masalahnya adalah, saya tidak memiliki cukup uang untuk membelinya dikarenakan krisis ekonomi, besok adalah hari pertama saya kerja diluar kota.
+Saya harap anda dapat memastikan bahwa akun WhatsApp saya tidak melanggar peraturan apa pun yang berujung pada pemblokiran permanen. Saya sangat berharap dapat menggunakan kembali akun WhatsApp saya yang telah diblokir untuk menghubungi keluarga dan istri saya yang sedang hamil `
+exports.unban2 = unban2
