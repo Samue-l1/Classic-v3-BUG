@@ -74,13 +74,13 @@ loadDatabase()
 //=================================================//
 async function connectToWhatsApp() {
 const { state, saveCreds } = await useMultiFileAuthState(global.sessionName)
-const zetsubo = makeWASocket({
+const classic = makeWASocket({
 logger: pino({ level: 'silent' }),
 printQRInTerminal: true,
 browser: ['Zetsubo V1','Safari','1.0.0'],
 auth: state})
 //=================================================//
-zetsubo.decodeJid = (jid) => {
+classic.decodeJid = (jid) => {
 if (!jid) return jid
 if (/:\d+@/gi.test(jid)) {
 let decode = jidDecode(jid) || {}
@@ -88,58 +88,58 @@ return decode.user && decode.server && decode.user + '@' + decode.server || jid
 } else return jid
 }
 //=================================================//
-zetsubo.ev.on('messages.upsert', async chatUpdate => {
+classic.ev.on('messages.upsert', async chatUpdate => {
 try {
 mek = chatUpdate.messages[0]
 if (!mek.message) return
 mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
 if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-if (!zetsubo.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+if (! classic.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
 if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-m = smsg(zetsubo, mek, store)
-require("./zetsubo")(zetsubo, m, chatUpdate, store)
+m = smsg(classic, mek, store)
+require("./classic")(classic, m, chatUpdate, store)
 } catch (err) {
 console.log(err)
 }
 })
 //=================================================//
-zetsubo.ev.on('group-participants.update', async (anu) => {
+classic.ev.on('group-participants.update', async (anu) => {
 if (!wlcm.includes(anu.id)) return
 console.log(anu)
 try {
-let metadata = await zetsubo.groupMetadata(anu.id)
+let metadata = await classic.groupMetadata(anu.id)
 let participants = anu.participants
 for (let num of participants) {
 // Get Profile Picture User
 try {
-ppuser = await zetsubo.profilePictureUrl(num, 'image')
+ppuser = await classic.profilePictureUrl(num, 'image')
 } catch {
 ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
 }
 
 // Get Profile Picture Group
 try {
-ppgroup = await zetsubo.profilePictureUrl(anu.id, 'image')
+ppgroup = await classic.profilePictureUrl(anu.id, 'image')
 } catch {
 ppgroup = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
 }
 
 if (anu.action == 'add') {
-zetsubo.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Haii Kak *@${num.split("@")[0]}* Selamat Datang Di Group *${metadata.subject}* 👋
+classic.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Haii Kak *@${num.split("@")[0]}* Selamat Datang Di Group *${metadata.subject}* 👋
  ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
 Terima Kasih Sudah Bergabung Jangan Lupa Baca Deskripsi Yah
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
 Creator : https://wa.me/258869103969`})
 } else if (anu.action == 'remove') {
-zetsubo.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Karena Untuk Setiap Ucapan Selamat Datang Akan Selalu Diakhiri Dengan Ucapan Selamat Tinggal 👋
+classic.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Karena Untuk Setiap Ucapan Selamat Datang Akan Selalu Diakhiri Dengan Ucapan Selamat Tinggal 👋
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
 Selamat Tinggal *@${num.split("@")[0]}* Di Group *${metadata.subject}*
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
 Creator : https://wa.me/258869103969`})
 } else if (anu.action == 'promote') {
-zetsubo.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `@${num.split('@')[0]} Ciee Jadi Admin Di Group ${metadata.subject} ${metadata.desc}`  })
+classic.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `@${num.split('@')[0]} Ciee Jadi Admin Di Group ${metadata.subject} ${metadata.desc}`  })
 } else if (anu.action == 'demote') {
-zetsubo.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `@${num.split('@')[0]} Ciee Di Hapus Jadi Admin Di Group ${metadata.subject} ${metadata.desc}`})
+classic.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `@${num.split('@')[0]} Ciee Di Hapus Jadi Admin Di Group ${metadata.subject} ${metadata.desc}`})
   }
 }
 } catch (err) {
@@ -147,44 +147,44 @@ console.log(err)
 }
 })
 //=================================================//
-zetsubo.ev.on('contacts.update', update => {
+classic.ev.on('contacts.update', update => {
 for (let contact of update) {
-let id = zetsubo.decodeJid(contact.id)
+let id = classic.decodeJid(contact.id)
 if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }}})
 //=================================================//
-zetsubo.getName = (jid, withoutContact  = false) => {
-id = zetsubo.decodeJid(jid)
+classic.getName = (jid, withoutContact  = false) => {
+id = classic.decodeJid(jid)
 withoutContact = zetsubo.withoutContact || withoutContact 
 let v
 if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
 v = store.contacts[id] || {}
-if (!(v.name || v.subject)) v = zetsubo.groupMetadata(id) || {}
+if (!(v.name || v.subject)) v = classic.groupMetadata(id) || {}
 resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
 })
 else v = id === '0@s.whatsapp.net' ? {
 id,
 name: 'WhatsApp'
-} : id === zetsubo.decodeJid(zetsubo.user.id) ?
-zetsubo.user :
+} : id === classic.decodeJid(classic.user.id) ?
+classic.user :
 (store.contacts[id] || {})
 return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')}
 //=================================================//
-zetsubo.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+classic.sendContact = async (jid, kon, quoted = '', opts = {}) => {
 let list = []
 for (let i of kon) {
 list.push({
-displayName: await zetsubo.getName(i + '@s.whatsapp.net'),
-vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await zetsubo.getName(i + '@s.whatsapp.net')}\nFN:${await zetsubo.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:samuelcircute@gmail.com\nitem2.X-ABLabel:Email\nitem3.https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`})}
+displayName: await classic.getName(i + '@s.whatsapp.net'),
+vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await classic.getName(i + '@s.whatsapp.net')}\nFN:${await classic.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:samuelcircute@gmail.com\nitem2.X-ABLabel:Email\nitem3.https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`})}
 //=================================================//
-zetsubo.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })}
+classic.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })}
 //=================================================//
 //Kalau Mau Self Lu Buat Jadi false
-zetsubo.public = true
+classic.public = true
 //=================================================//
 //=================================================//
-zetsubo.ev.on('creds.update', saveCreds)
+classic.ev.on('creds.update', saveCreds)
  //=================================================//
- zetsubo.downloadMediaMessage = async (message) => {
+ classic.downloadMediaMessage = async (message) => {
 let mime = (message.msg || message).mimetype || ''
 let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
 const stream = await downloadContentFromMessage(message, messageType)
@@ -193,35 +193,35 @@ for await(const chunk of stream) {
 buffer = Buffer.concat([buffer, chunk])}
 return buffer} 
  //=================================================//
- zetsubo.sendImage = async (jid, path, caption = '', quoted = '', options) => {
+ classic.sendImage = async (jid, path, caption = '', quoted = '', options) => {
 let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-return await zetsubo.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })}
+return await classic.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })}
 //=================================================//
-zetsubo.sendText = (jid, text, quoted = '', options) => zetsubo.sendMessage(jid, { text: text, ...options }, { quoted })
+classic.sendText = (jid, text, quoted = '', options) => classic.sendMessage(jid, { text: text, ...options }, { quoted })
 //=================================================//
-zetsubo.sendTextWithMentions = async (jid, text, quoted, options = {}) => zetsubo.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
+classic.sendTextWithMentions = async (jid, text, quoted, options = {}) => classic.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
  //=================================================//
-zetsubo.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+classic.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
 let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 let buffer
 if (options && (options.packname || options.author)) {
 buffer = await writeExifImg(buff, options)
 } else {
 buffer = await imageToWebp(buff)}
-await zetsubo.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+await classic.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
 return buffer}
  //=================================================//
-zetsubo.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+classic.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
 let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 let buffer
 if (options && (options.packname || options.author)) {
 buffer = await writeExifVid(buff, options)
 } else {
 buffer = await videoToWebp(buff)}
-await zetsubo.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+await classic.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
 return buffer}
  //=================================================//
- zetsubo.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
+ classic.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
 let quoted = message.msg ? message.msg : message
 let mime = (message.msg || message).mimetype || ''
 let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
@@ -235,7 +235,7 @@ trueFileName = attachExtension ? (filename + '.' + type.ext) : filename
 await fs.writeFileSync(trueFileName, buffer)
 return trueFileName}
 //=================================================
- zetsubo.cMod = (jid, copy, text = '', sender = zetsubo.user.id, options = {}) => {
+ classic.cMod = (jid, copy, text = '', sender = classic.user.id, options = {}) => {
 //let copy = message.toJSON()
 let mtype = Object.keys(copy.message)[0]
 let isEphemeral = mtype === 'ephemeralMessage'
@@ -254,10 +254,10 @@ else if (copy.key.participant) sender = copy.key.participant = sender || copy.ke
 if (copy.key.remoteJid.includes('@s.whatsapp.net')) sender = sender || copy.key.remoteJid
 else if (copy.key.remoteJid.includes('@broadcast')) sender = sender || copy.key.remoteJid
 copy.key.remoteJid = jid
-copy.key.fromMe = sender === zetsubo.user.id
+copy.key.fromMe = sender === classic.user.id
 return proto.WebMessageInfo.fromObject(copy)}
-zetsubo.sendFile = async(jid, PATH, fileName, quoted = {}, options = {}) => {
-let types = await zetsubo.getFile(PATH, true)
+classic.sendFile = async(jid, PATH, fileName, quoted = {}, options = {}) => {
+let types = await classic.getFile(PATH, true)
 let { filename, size, ext, mime, data } = types
 let type = '', mimetype = mime, pathFile = filename
 if (options.asDocument) type = 'document'
@@ -272,12 +272,12 @@ else if (/image/.test(mime)) type = 'image'
 else if (/video/.test(mime)) type = 'video'
 else if (/audio/.test(mime)) type = 'audio'
 else type = 'document'
-await zetsubo.sendMessage(jid, { [type]: { url: pathFile }, mimetype, fileName, ...options }, { quoted, ...options })
+await classic.sendMessage(jid, { [type]: { url: pathFile }, mimetype, fileName, ...options }, { quoted, ...options })
 return fs.promises.unlink(pathFile)}
-zetsubo.parseMention = async(text) => {
+classic.parseMention = async(text) => {
 return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')}
 //=================================================//
-zetsubo.copyNForward = async (jid, message, forceForward = false, options = {}) => {
+classic.copyNForward = async (jid, message, forceForward = false, options = {}) => {
 let vtype
 if (options.readViewOnce) {
 message.message = message.message && message.message.ephemeralMessage && message.message.ephemeralMessage.message ? message.message.ephemeralMessage.message : (message.message || undefined)
@@ -301,10 +301,10 @@ const waMessage = await generateWAMessageFromContent(jid, content, options ? {
 contextInfo: {
 ...content[ctype].contextInfo,
 ...options.contextInfo}} : {})} : {})
-await zetsubo.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
+await classic.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
 return waMessage}
 //=================================================//
-zetsubo.getFile = async (PATH, save) => {
+classic.getFile = async (PATH, save) => {
 let res
 let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
 //if (!Buffer.isBuffer(data)) throw new TypeError('Result is not a buffer')
@@ -322,8 +322,8 @@ filename,
 data
 }
 }
-zetsubo.serializeM = (m) => smsg(zetsubo, m, store)
-zetsubo.ev.on("connection.update", async (update) => {
+classic.serializeM = (m) => smsg(classic, m, store)
+classic.ev.on("connection.update", async (update) => {
 const { connection, lastDisconnect } = update;
 if (connection === "close") {
   let reason = new Boom(lastDisconnect?.error)?.output.statusCode;
@@ -353,11 +353,11 @@ console.log(`Unknown DisconnectReason: ${reason}|${connection}`);
 connectToWhatsApp();
   }
 }else if (connection === "open") {
-  zetsubo.sendMessage('258869103969' + "@s.whatsapp.net", { text: `⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺ 𝐇𝐀𝐒 𝐁𝐄𝐄𝐍 𝐋𝐈𝐍𝐊𝐄𝐃 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐀𝐂𝐂𝐎𝐔𝐍𝐓\n\n 𝐂𝐎𝐔𝐑𝐓𝐄𝐒𝐘 𝐎𝐅 ༺֎ᚏ༈࿉𝐀𝐍𝐎𝐍𝐘𝐌𝐎𝐔𝐒⧉ᚙ֎⸙༻ \n\n #𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐘 𝐂𝐑𝐀𝐒𝐇\n #𝐔𝐍𝐋𝐈𝐃𝐄𝐋𝐀𝐘\n #𝐒𝐏𝐀𝐌 𝐁𝐋𝐎𝐂𝐊\n #𝐔𝐋𝐓𝐈𝐌𝐀𝐓𝐄 𝐁𝐔𝐆𝐒\n #𝐀𝐋𝐋 𝐈𝐍 𝐎𝐍𝐄\n\n ࿉𝐌𝐈𝐒𝐒𝐈𝐎𝐍 𝐃𝐄𝐒𝐓𝐑𝐎𝐘᪣` });
+  classic.sendMessage('258869103969' + "@s.whatsapp.net", { text: `⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺ 𝐇𝐀𝐒 𝐁𝐄𝐄𝐍 𝐋𝐈𝐍𝐊𝐄𝐃 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐀𝐂𝐂𝐎𝐔𝐍𝐓\n\n 𝐂𝐎𝐔𝐑𝐓𝐄𝐒𝐘 𝐎𝐅 ༺֎ᚏ༈࿉𝐀𝐍𝐎𝐍𝐘𝐌𝐎𝐔𝐒⧉ᚙ֎⸙༻ \n\n #𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐘 𝐂𝐑𝐀𝐒𝐇\n #𝐔𝐍𝐋𝐈𝐃𝐄𝐋𝐀𝐘\n #𝐒𝐏𝐀𝐌 𝐁𝐋𝐎𝐂𝐊\n #𝐔𝐋𝐓𝐈𝐌𝐀𝐓𝐄 𝐁𝐔𝐆𝐒\n #𝐀𝐋𝐋 𝐈𝐍 𝐎𝐍𝐄\n\n ࿉𝐌𝐈𝐒𝐒𝐈𝐎𝐍 𝐃𝐄𝐒𝐓𝐑𝐎𝐘᪣` });
 }
 // console.log('Connected...', update)
 });
-return zetsubo
+return classic
 }
 connectToWhatsApp()
 let file = require.resolve(__filename)
