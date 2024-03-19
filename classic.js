@@ -8262,7 +8262,7 @@ case 'ytmp4': case 'youtubemp4':
 //=================================================
 case 'play': {
   if (!text) {
-    reply('𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐬𝐞𝐚𝐫𝐜𝐡 𝐭𝐞𝐫𝐦!\n𝐄.𝐠: 𝙿𝚕𝚊𝚢 𝚂𝚑𝚞𝚜𝚑𝚊 𝙽𝚢𝚊𝚟𝚞 𝚋𝚢 𝙲𝚑𝚛𝚒𝚜𝚝𝚒𝚗𝚊 𝚂𝚞𝚜𝚑𝚘')
+    reply('𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐬𝐞𝐚𝐫𝐜𝐡 𝐭𝐞𝐫𝐦!\n𝐄.𝐠: 𝚙𝚕𝚊𝚢 𝚑𝚎𝚊𝚍𝚕𝚒𝚐𝚑𝚝𝚜 𝚋𝚢 𝚊𝚕𝚊𝚗 𝚠𝚊𝚕𝚔𝚎𝚛')
     return;
   }
   try {
@@ -8402,40 +8402,11 @@ await fs.unlinkSync(encmedia)
 }
 break
 //=================================================// 
-case 'ping': case 'botstatus': case 'statusbot': case 'p': {
-	const used = process.memoryUsage()
-                const cpus = os.cpus().map(cpu => {
-                    cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
-			        return cpu
-                })
-                const cpu = cpus.reduce((last, cpu, _, { length }) => {
-                    last.total += cpu.total
-                    last.speed += cpu.speed / length
-                    last.times.user += cpu.times.user
-                    last.times.nice += cpu.times.nice
-                    last.times.sys += cpu.times.sys
-                    last.times.idle += cpu.times.idle
-                    last.times.irq += cpu.times.irq
-                    return last
-                }, {
-                    speed: 0,
-                    total: 0,
-                    times: {
-			            user: 0,
-			            nice: 0,
-			            sys: 0,
-			            idle: 0,
-			            irq: 0
-                }
-                })
-                let timestamp = speed()
-                let latensi = speed() - timestamp
-                neww = performance.now()
-                oldd = performance.now()
-                respon = `
-🧞‍♂️ 𝐉𝐈𝐍𝐈 𝐒𝐏𝐄𝐄𝐃 *${latensi.toFixed(4)}* 𝐌/𝐒
-                `.trim()
-}
+case "ping": case "speed": { 
+
+	await loadings ()
+         m.reply (`\🧞‍♂️𝐏𝐨𝐧𝐠\n *${zetsubospeed.toFixed(4)}* *ms*`); 
+         } 
 break
 //=================================================//
 // Textprome //
