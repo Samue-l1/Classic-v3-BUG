@@ -8248,31 +8248,64 @@ case 'ytmp4': case 'youtubemp4':
 				})
 			break
 //=================================================
-case 'play':  case 'song': {
-if (!text) return replygczetsubo(`Example : ${prefix + command} anime whatsapp status`)
-const xeonplaymp3 = require('./lib/ytdl')
-let yts = require("youtube-yts")
-        let search = await yts(text)
-        let anup3k = search.videos[0]
-const pl= await xeonplaymp3.mp3(anup3k.url)
-await XeonBotInc.sendMessage(m.chat,{
-    audio: fs.readFileSync(pl.path),
-    fileName: anup3k.title + '.mp3',
-    mimetype: 'audio/mp4', ptt: true,
-    contextInfo:{
-        externalAdReply:{
-            title:anup3k.title,
-            body: botname,
-            thumbnail: await fetchBuffer(pl.meta.image),
-            sourceUrl: websitex,
-            mediaType:2,
-            mediaUrl:anup3k.url,
-        }
+case 'play': {
+  if (!text) {
+    reply('𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐬𝐞𝐚𝐫𝐜𝐡 𝐭𝐞𝐫𝐦!\n𝐄.𝐠: 𝙿𝚕𝚊𝚢 𝚂𝚑𝚞𝚜𝚑𝚊 𝙽𝚢𝚊𝚟𝚞 𝚋𝚢 𝙲𝚑𝚛𝚒𝚜𝚝𝚒𝚗𝚊 𝚂𝚞𝚜𝚑𝚘')
+    return;
+  }
+  try {
+    reply('𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐲𝐨𝐮𝐫 𝐚𝐮𝐝𝐢𝐨...')
+    const { videos } = await yts(text);
+    if (!videos || videos.length <= 0) {
+      reply(`No Matching videos found for : *${args[0]}*!!`)
+      return;
+    }
+    let urlYt = videos[0].url
+    let infoYt = await ytdl.getInfo(urlYt);
+    //30 MIN
+    if (infoYt.videoDetails.lengthSeconds >= 1800) {
+      reply(`Too big!\I'm Unable to download big files. 🤥`);
+      return;
+    }
+    const getRandonm = (ext) => {
+      return `${Math.floor(Math.random() * 10000)}${ext}`;
+    };
+    let titleYt = infoYt.videoDetails.title;
+    let randomName = getRandonm(".mp3");
+    const stream = ytdl(urlYt, {
+      filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
+    })
+      .pipe(fs.createWriteStream(`./${randomName}`));
+    console.log("Audio downloading ->", urlYt);
+    // reply("Downloading.. This may take up to 5 min!");
+    await new Promise((resolve, reject) => {
+      stream.on("error", reject);
+      stream.on("finish", resolve);
+    });
 
-    },
-},{quoted:m})
-await fs.unlinkSync(pl.path)
-	}
+    let stats = fs.statSync(`./${randomName}`);
+    let fileSizeInBytes = stats.size;
+    // Convert the file size to megabytes (optional)
+    let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+    console.log("Audio downloaded ! \n Size: " + fileSizeInMegabytes);
+    if (fileSizeInMegabytes <= 40) {
+      await zetsubo.sendMessage(
+        from, {
+          audio: fs.readFileSync(`./${randomName}`),
+          mimetype: "audio/mpeg",
+          caption: "𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐄𝐃 𝐁𝐘 𝐂𝐋𝐀𝐒𝐒𝐈𝐂 𝐁𝐎𝐓 ®2024"
+        }, {
+          quoted: fcontact
+        }
+      );
+    } else {
+      reply(`File size bigger.`);
+    }
+    fs.unlinkSync(`./${randomName}`);
+  } catch (e) {
+    reply(e.toString())
+  }
+}
 //=================================================
 case 'getvideo': {
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
