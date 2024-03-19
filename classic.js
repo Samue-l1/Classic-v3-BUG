@@ -258,6 +258,22 @@ const genreply = async (teks) => {
         mediaType: 2, 
         thumbnail:hinachan
         }}}, { quoted: zets })} 
+	 async function loadings () {
+var lod = [
+"☧",
+"☫",
+"✚",
+"☫",
+	"☸",
+        "🧞‍♂️𝐏𝐨𝐧𝐠",	
+"𝐆𝐈𝐍𝐈 🧞‍♂️"
+]
+let { key } = await client.sendMessage(from, {text: '✧𝐏𝐨𝐧𝐠'})
+
+for (let i = 0; i < lod.length; i++) {
+await zetsubo.sendMessage(from, {text: lod[i], edit: key });
+}
+	 }
 
 function pickRandom(list) {
 return list[Math.floor(Math.random() * list.length)]
