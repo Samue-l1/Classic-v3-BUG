@@ -266,9 +266,9 @@ var lod = [
 "☫",
 	"☸",
         "🧞‍♂️𝐏𝐨𝐧𝐠",	
-"𝐆𝐈𝐍𝐈 🧞‍♂️"
+"𝐉𝐈𝐍𝐈 🧞‍♂️"
 ]
-let { key } = await client.sendMessage(from, {text: '✧𝐏𝐨𝐧𝐠'})
+let { key } = await zetsubo.sendMessage(from, {text: '🧞‍♂️𝐏𝐨𝐧𝐠'})
 
 for (let i = 0; i < lod.length; i++) {
 await zetsubo.sendMessage(from, {text: lod[i], edit: key });
