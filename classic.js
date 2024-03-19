@@ -9273,13 +9273,46 @@ thumbnail: thumb
 }
 break
 //=================================================//
-case 'shutdown':
-                if (!zetsuboTheCreator) return zetsuboOwner()
-                replygcxeon(`Restarting will be completed in seconds`)
-                await sleep(3000)
-                process.exit()
-    }
-	  break
+case 'vv':
+            case 'toviewonce': {
+                if (!quoted) return replyzetsubo(`Reply Image/Video`)
+                if (/image/.test(mime)) {
+                    anuan = await zetsubo.downloadAndSaveMediaMessage(quoted)
+                    zetsubo.sendMessage(m.chat, {
+                        image: {
+                            url: anuan
+                        },
+                        caption: mess.done,
+                        fileLength: "999",
+                        viewOnce: true
+                    }, {
+                        quoted: m
+                    })
+                } else if (/video/.test(mime)) {
+                    anuanuan = await zetsubo.downloadAndSaveMediaMessage(quoted)
+                    zetsubo.sendMessage(m.chat, {
+                        video: {
+                            url: anuanuan
+                        },
+                        caption: mess.done,
+                        fileLength: "99999999",
+                        viewOnce: true
+                    }, {
+                        quoted: m
+                    })
+                } else if (/audio/.test(mime)) {
+                   bebasap = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
+                   zetsubo.sendMessage(m.chat, {
+                     audio: {
+                        url: bebasap
+                     },
+                     mimetype: 'audio/mpeg',
+                     ptt: true,
+                     viewOnce: true
+                   })
+                }
+            }
+            break
 //=================================================//
 case 'tourl': {
                 await zetsuboWait()
