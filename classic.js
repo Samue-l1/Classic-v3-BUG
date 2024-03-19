@@ -7742,7 +7742,7 @@ zetsubo.relayMessage(from, groupInvite.message, { messageId: groupInvite.key.id 
 }
 break
 //=================================================//
-case 'zetsubo': {
+case 'Classic': {
 if (!isCreator) return m.reply(`*Only Premium Members Are Allowed To Use This Command*`)
 await loading()
 joauu = fs.readFileSync('./zetszet/video/hwmods.mp4')
@@ -8227,13 +8227,25 @@ zetsubo.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption:
 }
 break
 //=================================================
-case 'ytmp3': case 'youtubemp3': {
-if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
-if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
-await loading ()
-downloadMp3(text)
-}
-break
+case 'runtime':
+                let pinga = `𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐨𝐭 𝐡𝐚𝐬 𝐛𝐞𝐞𝐧 𝐫𝐮𝐧𝐧𝐢𝐧𝐠 𝐟𝐨𝐫 ${runtime(process.uptime())}`
+                zetsubo.sendMessage(m.chat, {
+                    text: pinga,
+                    contextInfo: {
+                        externalAdReply: {
+                            showAdAttribution: true,
+                            title: botname,
+                            body: ownername,
+                            thumbnailUrl: 'zetszet/cheemspic.jpg',
+                            sourceUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
+                            mediaType: 1,
+                            renderLargerThumbnail: true
+                        }
+                    }
+                }, {
+                    quoted: m
+                })
+                break
 //=================================================
 case 'ytmp4': case 'youtubemp4':
 			if (args.length == 0) return reply(`Example: ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27`)
@@ -8391,19 +8403,39 @@ await fs.unlinkSync(encmedia)
 break
 //=================================================//
 case 'wmvideo':{
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-var teks = `${text}`
-{
- if ((quoted.msg || quoted).seconds > 11) return reply('Maksimal 10 detik!')
-if (/video/.test(mime)) {
-let media = await quoted.download()
-let encmedia = await zetsubo.sendVideoAsSticker(from, media, m, { packname: `${teks}`, author: `${botname}` })
-await fs.unlinkSync(encmedia)
-} else {
-throw `Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-9 Detik`
-}
-}
+case 'ping': case 'botstatus': case 'statusbot': case 'p': {
+	const used = process.memoryUsage()
+                const cpus = os.cpus().map(cpu => {
+                    cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
+			        return cpu
+                })
+                const cpu = cpus.reduce((last, cpu, _, { length }) => {
+                    last.total += cpu.total
+                    last.speed += cpu.speed / length
+                    last.times.user += cpu.times.user
+                    last.times.nice += cpu.times.nice
+                    last.times.sys += cpu.times.sys
+                    last.times.idle += cpu.times.idle
+                    last.times.irq += cpu.times.irq
+                    return last
+                }, {
+                    speed: 0,
+                    total: 0,
+                    times: {
+			            user: 0,
+			            nice: 0,
+			            sys: 0,
+			            idle: 0,
+			            irq: 0
+                }
+                })
+                let timestamp = speed()
+                let latensi = speed() - timestamp
+                neww = performance.now()
+                oldd = performance.now()
+                respon = `
+🧞‍♂️ 𝐉𝐈𝐍𝐈 𝐒𝐏𝐄𝐄𝐃 *${latensi.toFixed(4)}* 𝐌/𝐒
+                `.trim()
 }
 break
 //=================================================//
