@@ -9273,21 +9273,11 @@ thumbnail: thumb
 }
 break
 //=================================================//
-case 'repo': case 'repository': {
-  try {
-    const [, username, repoName] = botscript.match(/github\.com\/([^/]+)\/([^/]+)/)
-    const response = await axios.get(`https://api.github.com/repos/${username}/${repoName}`)
-    if (response.status === 200) {
-      const repoData = response.data
-      const formattedInfo = `
-${themeemoji} Repository Name: ${repoData.name}
-${themeemoji} Description: ${repoData.description}
-${themeemoji} Owner: ${repoData.owner.login}
-${themeemoji} Stars: ${repoData.stargazers_count}
-${themeemoji} Forks: ${repoData.forks_count}
-${themeemoji} URL: ${repoData.html_url}
-     
- `.trim()
+case 'shutdown':
+                if (!zetsuboTheCreator) return zetsuboOwner()
+                replygcxeon(`Restarting will be completed in seconds`)
+                await sleep(3000)
+                process.exit()
     }
 	  break
 //=================================================//
