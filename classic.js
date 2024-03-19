@@ -8401,8 +8401,7 @@ await fs.unlinkSync(encmedia)
 }
 }
 break
-//=================================================//
-case 'wmvideo':{
+//=================================================// 
 case 'ping': case 'botstatus': case 'statusbot': case 'p': {
 	const used = process.memoryUsage()
                 const cpus = os.cpus().map(cpu => {
