@@ -654,7 +654,7 @@ zetsubo.sendTextWithMentions(from, `@${roof.p2.split`@`[0]} menolak suit, suit d
 delete this.suit[roof.id]
 return !0
 }
-roof.status = 'play'
+roof.status = 'trend'
 roof.asal = from
 clearTimeout(roof.waktu)
 //delete roof[roof.id].waktu
