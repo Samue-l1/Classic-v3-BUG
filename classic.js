@@ -8421,7 +8421,7 @@ break
 case "ping": case "speed": { 
 
 	await loadings ()
-         m.reply (`\🧞‍♂️𝐏𝐨𝐧𝐠\n *${zetsubospeed.toFixed(4)}* *ms*`); 
+         m.reply (`\🧞‍♂️𝐏𝐨𝐧𝐠\n *${latensi.toFixed(4)}* *ms*`); 
          } 
 break
 //=================================================//
