@@ -9290,19 +9290,6 @@ ${themeemoji} URL: ${repoData.html_url}
  `.trim()
     }
 	  break
-//=================================================//	  
-case 'togif': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-if (!quoted) throw 'Reply Image'
-if (!/webp/.test(mime)) throw `*reply sticker with caption* *${prefix + command}*`
- let { webp2mp4File } = require('./lib/uploader')
-let media = await zetsubo.downloadAndSaveMediaMessage(quoted)
-let webpToMp4 = await webp2mp4File(media)
-await zetsubo.sendMessage(from, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, {quoted:m})
-await fs.unlinkSync(media)
-}
-break
 //=================================================//
 case 'tourl': {
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
