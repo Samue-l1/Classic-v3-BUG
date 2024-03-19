@@ -9273,7 +9273,7 @@ thumbnail: thumb
 }
 break
 //=================================================//
-case 'repo': case 'repository': {
+case 'repo': {
   try {
     const [, username, repoName] = botscript.match(/github\.com\/([^/]+)\/([^/]+)/)
     const response = await axios.get(`https://api.github.com/repos/${username}/${repoName}`)
