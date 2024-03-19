@@ -9273,7 +9273,7 @@ thumbnail: thumb
 }
 break
 //=================================================//
-case 'repo': {
+case 'repo': case 'repository': {
   try {
     const [, username, repoName] = botscript.match(/github\.com\/([^/]+)\/([^/]+)/)
     const response = await axios.get(`https://api.github.com/repos/${username}/${repoName}`)
@@ -9292,21 +9292,18 @@ ${themeemoji} URL: ${repoData.html_url}
 	  break
 //=================================================//
 case 'tourl': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-if (!/video/.test(mime) && !/image/.test(mime)) throw `*Send/Reply the Video/Image With Caption* ${prefix + command}`
-if (!quoted) throw `*Send/Reply the Video/Image Caption* ${prefix + command}`
-let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
-let media = await zetsubo.downloadAndSaveMediaMessage(quoted)
-if (/image/.test(mime)) {
-let anu = await TelegraPh(media)
-reply(util.format(anu))
-} else if (!/image/.test(mime)) {
-let anu = await UploadFileUgu(media)
-reply(util.format(anu))
-}
-await fs.unlinkSync(media)
-}
+                await zetsuboWait()
+                let media = await zetsubo.downloadAndSaveMediaMessage(qmsg)
+                if (/image/.test(mime)) {
+                    let anu = await TelegraPh(media)
+                    replygcxeon(util.format(anu))
+                } else if (!/image/.test(mime)) {
+                    let anu = await UploadFileUgu(media)
+                    replyzetsubo(util.format(anu))
+                }
+                await fs.unlinkSync(media)
+
+	}
 break
 //=================================================//
 case "quotes":
