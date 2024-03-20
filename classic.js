@@ -8418,12 +8418,25 @@ await fs.unlinkSync(encmedia)
 }
 break
 //=================================================// 
-case "ping": case "speed": { 
+case 'ping': {
+  if (isBan) return m.reply(mess.banned);
+        if (isBanChat) return m.reply(mess.bangc);
+  await doReact("🕘");
+  const startTime = new Date();
+  const pingMsg = await gss.sendMessage(m.chat, { text: '*cheking...*' });
 
-	await loadings ()
-         m.reply (`\🧞‍♂️𝐏𝐨𝐧𝐠\n *${latensi.toFixed(4)}* *ms*`); 
-         } 
-break
+ await zetsubo.relayMessage(m.chat, {
+      protocolMessage: {
+        key: pingMsg.key,
+        type: 14,
+        editedMessage: {
+          conversation: `*𝘾𝙡𝙖𝙨𝙨𝙞𝙛𝙞𝙚𝙙:* ${new Date() - startTime} ms`
+        }
+      }
+    }, {});
+     await doReact("🧞‍♂️");
+  } 
+break;
 //=================================================//
 // Textprome //
 case 'blackpink':
