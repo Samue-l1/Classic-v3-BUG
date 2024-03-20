@@ -8419,7 +8419,6 @@ await fs.unlinkSync(encmedia)
 break
 //=================================================// 
 case 'ping': {
-  await doReact("🕘");
   const startTime = new Date();
   const pingMsg = await gss.sendMessage(m.chat, { text: '*cheking...*' });
 
