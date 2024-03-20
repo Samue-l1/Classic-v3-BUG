@@ -8662,52 +8662,44 @@ sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
 }
 break
 //=================================================
-case 'sc': case 'script': {
-
-  teks = `
-  ➢𝐂𝐥𝐚𝐬𝐬𝐢𝐜-𝐕4\n\n➢𝐌𝐚𝐝𝐞 𝐛𝐲 𝐊𝐢𝐧𝐠 𝐒𝐚𝐦\n➢𝐅𝐨𝐫𝐤 𝐑𝐞𝐩𝐨 𝐭𝐡𝐫𝐨𝐮𝐠𝐡 𝐭𝐡𝐞 𝐥𝐢𝐧𝐤 𝐁𝐞𝐥𝐨𝐰\n\n➥https://github.com/Samue-l1/Classic-v3-BUG`
-  let buttons = [
-  {buttonId: `rpgmenu`, buttonText: {displayText: 'RPG'}, type: 1}
-  ]
-  let buttonMessage = {
-  image: cewegw,
-  caption: teks,
-  footer: `${botname}`,
-  buttons: buttons,
-  headerType: 4,
-  contextInfo:{externalAdReply:{
-  title:"𝐂𝐥𝐚𝐬𝐬𝐢𝐜-𝐕3",
-  body: "𝐋𝐨𝐫𝐝 𝐒𝐚𝐦", 
-  showAdAttribution: true,
-  mediaType:1,
-  mediaUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
-  sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
-  }}
-  }
-  zetsubo.sendMessage(m.chat, buttonMessage, { quoted: m })
-}
-break
+case 'git': case 'gitclone':
+reply(mess.wait)
+ let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
+ if(!args[0]) throw 'link github'
+if (!regex1.test(args[0])) throw 'link!'
+   let [, user, repo] = args[0].match(regex1) || []
+    repo = repo.replace(/.git$/, '')
+    let url = `https://api.github.com/repos/${user}/${repo}/zipball`
+    let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
+    // 'attachment; filenameq=ZidniGanz.zip'
+    reply(`𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 𝐀𝐬 𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐨𝐭 𝐢𝐬 𝐬𝐞𝐧𝐝𝐢𝐧𝐠 𝐲𝐨𝐮𝐫 𝐑𝐞𝐩𝐨.`)
+    zetsubo.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' , quoted: m,contextInfo: { externalAdReply:{
+      title:"𝐂𝐋𝐀𝐒𝐒𝐈𝐂 𝐁𝐎𝐓",
+      body:"`➢𝙰𝙻𝙻 𝙷𝙰𝙸𝙻 𝚃𝙾 𝙺𝙸𝙽𝙶 𝚂𝙰𝙼 \n➢𝙲𝙻𝙰𝚂𝚂𝙸𝙲 𝙱𝙾𝚃 2024",
+      showAdAttribution: true,
+      mediaType:2,
+      thumbnail: fs.readFileSync('.kawai/cewegw.jpg'),
+      mediaUrl:`https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk`, 
+      sourceUrl: `https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk`,
+      }}
+      })
+ 
+ break
 //=================================================
-case 'forex': case 'broker': case 'binary': case 'trading': {
-  teks = `
-  *CLASSIC-V3 FOREX TRADING*\n\n*DESCRIPTION:* _Trade with Deriv broker ( formerly called Binary ) link above. Create a Real Synthetic account  You will get to trade famous indices like Volatility 75 Index, Crash, Boom and others. -Minimum deposit as low as 2 dollars.  -You can trade even in weekends,  these indices are available to trade 24 hours a day, 365 days a year. -No noise, Trade with Deriv broker ( formerly called Binary ) link above. The best Forex broker since year 2000. Create a Real Financial or Financial STP account  for currency pairs._\n\n*GET STARTED TODAY:*\n\n*LINK:* https://track.deriv.com/_hx9O43AkP_tBMfcXPt5VjGNd7ZgqdRLk/1\n\n*LINK2:* https://record.binary.com/_Mxrjb7udl0q6tyDIijdDK2Nd7ZgqdRLk/1/\n\n*CONTACT:* https://wa.me/+258869103969 or https://wa.me/+258869103969*for help*_`
-  let buttons = [
-  {buttonId: `alive`, buttonText: {displayText: 'BACK'}, type: 1}
-  ]
-  let buttonMessage = {
-  image: sangean,
-  jpegThumbnail: sangean,
-  caption: teks,
-  footer: `${botname}`,
-  buttons: buttons,
-  thumbnail: fs.readFileSync("kawai/sangean.jpg"),
-  mediaType:1,
-  mediaUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
-  sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
-  }}
-  }
-  zetsubo.sendMessage(m.chat, buttonMessage, { quoted: m })
-}
+case 'translate': case 'terjemahan': case 'trt': {
+   tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
+   Infoo = tes.info
+   Detek = tes.translate
+   reply(`🌐Translate : ${Detek}\n`)
+   }
+   break
+  /* case 'translate': case 'terjemahan': case 'tr': {
+    tes = await fetchJson (`https://soccer.sportmonks.com/api/v2.0/livescores&api_token=y5TQaQFczQuU3awKmWEi1eD1Sy3U6WuTkNZAw2fdQEtHDRwgJpkCZVUf9DYb`)
+    Infoo = tes.info
+    Detek = tes.translate
+    reply(`🌐Translate : ${Detek}\n`)
+    }
+*/
 break
 //=================================================
 case 'cecanhijaber': {
