@@ -1,4 +1,4 @@
-/*
+k/*
 
 › Create By Haikal (HW MODS)
 › Base Ori Haikal (HW MODS)
@@ -8670,7 +8670,7 @@ case 'sc': case 'script': {
   {buttonId: `rpgmenu`, buttonText: {displayText: 'RPG'}, type: 1}
   ]
   let buttonMessage = {
-  image: dedan,
+  image: cewegw,
   caption: teks,
   footer: `${botname}`,
   buttons: buttons,
@@ -8700,11 +8700,6 @@ case 'forex': case 'broker': case 'binary': case 'trading': {
   caption: teks,
   footer: `${botname}`,
   buttons: buttons,
-  headerType: 4,
-  contextInfo:{externalAdReply:{
-  title:"SUPPORT ME",
-  body: "KING SAM", 
-  showAdAttribution: true,
   thumbnail: fs.readFileSync("kawai/sangean.jpg"),
   mediaType:1,
   mediaUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
