@@ -8709,15 +8709,35 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 }
 break
 //=================================================
-case 'cecanchina': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(`cecan china`)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
-}
-break
+case "alive":
+
+const audiovn = "./Classic.mp3";
+    const dooc = {
+        audio: {
+          url: audiovn
+        },
+        mimetype: 'audio/mp4',
+        ptt: true,
+        waveform:  [100, 0, 100, 0, 100, 0, 100],
+        fileName: "",
+
+        contextInfo: {
+          mentionedJid: [m.sender],
+          externalAdReply: {
+          title: "Hi human, Classic Bot Is Alive",
+          body: "https://github.com/Samue-l1",
+          thumbnailUrl: "https://telegra.ph/file/877fafbd012ae6f212698.jpg",
+          sourceUrl: "https://github.com/Samue-l1",
+          mediaType: 1,
+          renderLargerThumbnail: true
+          }}
+      };
+
+
+await zetsubo.sendMessage(m.chat, dooc, {quoted: m});
+
+
+break;
 //=================================================
 case 'cecanvietnam': {
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
