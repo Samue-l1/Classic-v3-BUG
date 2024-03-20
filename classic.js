@@ -8427,7 +8427,7 @@ case 'ping': {
         key: pingMsg.key,
         type: 14,
         editedMessage: {
-          conversation: `*𝘾𝙡𝙖𝙨𝙨𝙞𝙛𝙞𝙚𝙙:* *${new Date() - startTime}" 𝐌/𝐒`
+          conversation: `*𝘾𝙡𝙖𝙨𝙨𝙞𝙛𝙞𝙚𝙙 𝙎𝙥𝙚𝙚𝙙 ➟* *${new Date() - startTime}*" 𝐌/𝐒`
         }
       }
     }, {});
