@@ -8656,15 +8656,40 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 }
 break
 //=================================================
-case 'cecanindo': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(`cecan indo`)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
-}
-break
+case 'sc':
+case 'script':
+case 'scriptbot':
+  if (isBan) return m.reply(mess.banned);
+        if (isBanChat) return m.reply(mess.bangc);
+    const githubRepoUrl = 'https://api.github.com/repos/Samue-l1/Classic-v3-BUG';
+
+    fetch(githubRepoUrl)
+        .then(response => response.json())
+        .then(data => {
+            const repoInfo = {
+                stars: data.stargazers_count,
+                forks: data.forks_count,
+                lastUpdate: data.updated_at,
+                owner: data.owner.login
+            };
+
+            // Format the date
+            const releaseDate = new Date(data.created_at).toLocaleDateString('en-GB');
+            const lastUpdateDate = new Date(repoInfo.lastUpdate).toLocaleDateString('en-GB');
+
+            const uy = `*GitHub Repository:* ${data.html_url}
+⭐ *Stars:* ${repoInfo.stars}
+♈ *Forks:* ${repoInfo.forks}
+📅 *Release Date:* ${releaseDate}
+🕐 *Last Update:* ${lastUpdateDate}
+👨‍💻 *Owner:* ${repoInfo.owner}`;
+
+            zetsubo.sendPoll(m.chat, uy, ['.menu', '.ping'], {
+                quoted: m
+            });
+        })
+        .catch(error => console.error('Error fetching GitHub repository info:', error));
+    break;
 //=================================================
 case 'cecanmalaysia': {
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
