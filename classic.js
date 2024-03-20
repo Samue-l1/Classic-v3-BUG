@@ -8662,45 +8662,7 @@ sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
 }
 break
 //=================================================
-case 'git': case 'gitclone':
-reply(mess.wait)
- let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
- if(!args[0]) throw 'link github'
-if (!regex1.test(args[0])) throw 'link!'
-   let [, user, repo] = args[0].match(regex1) || []
-    repo = repo.replace(/.git$/, '')
-    let url = `https://api.github.com/repos/${user}/${repo}/zipball`
-    let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
-    // 'attachment; filenameq=ZidniGanz.zip'
-    reply(`𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 𝐀𝐬 𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐨𝐭 𝐢𝐬 𝐬𝐞𝐧𝐝𝐢𝐧𝐠 𝐲𝐨𝐮𝐫 𝐑𝐞𝐩𝐨.`)
-    zetsubo.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' , quoted: m,contextInfo: { externalAdReply:{
-      title:"𝐂𝐋𝐀𝐒𝐒𝐈𝐂 𝐁𝐎𝐓",
-      body:"`➢𝙰𝙻𝙻 𝙷𝙰𝙸𝙻 𝚃𝙾 𝙺𝙸𝙽𝙶 𝚂𝙰𝙼 \n➢𝙲𝙻𝙰𝚂𝚂𝙸𝙲 𝙱𝙾𝚃 2024",
-      showAdAttribution: true,
-      mediaType:2,
-      thumbnail: fs.readFileSync('.kawai/cewegw.jpg'),
-      mediaUrl:`https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk`, 
-      sourceUrl: `https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk`,
-      }}
-      })
- 
- break
-//=================================================
-case 'translate': case 'terjemahan': case 'trt': {
-   tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
-   Infoo = tes.info
-   Detek = tes.translate
-   reply(`🌐Translate : ${Detek}\n`)
-   }
-   break
-  /* case 'translate': case 'terjemahan': case 'tr': {
-    tes = await fetchJson (`https://soccer.sportmonks.com/api/v2.0/livescores&api_token=y5TQaQFczQuU3awKmWEi1eD1Sy3U6WuTkNZAw2fdQEtHDRwgJpkCZVUf9DYb`)
-    Infoo = tes.info
-    Detek = tes.translate
-    reply(`🌐Translate : ${Detek}\n`)
-    }
-*/
-break
+
 //=================================================
 case 'cecanhijaber': {
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
