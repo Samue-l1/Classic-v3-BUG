@@ -8252,7 +8252,7 @@ case 'runtime':
                             showAdAttribution: true,
                             title: botname,
                             body: ownername,
-                            thumbnailUrl: 'zetszet/cheemspic.jpg',
+                            thumbnailUrl: 'https://telegra.ph/file/a3b5de3c2cd44f6b3aa80.jpg',
                             sourceUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
                             mediaType: 1,
                             renderLargerThumbnail: true
