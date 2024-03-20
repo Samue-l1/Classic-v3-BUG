@@ -8673,27 +8673,63 @@ case 'alive': {
 └───────────●
 `
 const aliveer = fs.readFileSync('./Classic.mp3')
-zetsubo.sendMessage(m.chat, { audio: aliveer, mimetype: 'audio/mp4', ptt: true, quoted: mudratunha})
+sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
 }
 break
 //=================================================
-case 'cecanjepan': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(`cecan jepang`)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
+case 'sc': case 'script': {
+
+  teks = `
+  ➢𝐂𝐥𝐚𝐬𝐬𝐢𝐜-𝐕4\n\n➢𝐌𝐚𝐝𝐞 𝐛𝐲 𝐊𝐢𝐧𝐠 𝐒𝐚𝐦\n➢𝐅𝐨𝐫𝐤 𝐑𝐞𝐩𝐨 𝐭𝐡𝐫𝐨𝐮𝐠𝐡 𝐭𝐡𝐞 𝐥𝐢𝐧𝐤 𝐁𝐞𝐥𝐨𝐰\n\n➥https://github.com/Samue-l1/Classic-v3-BUG`
+  let buttons = [
+  {buttonId: `rpgmenu`, buttonText: {displayText: 'RPG'}, type: 1}
+  ]
+  let buttonMessage = {
+  image: thumb,
+  jpegThumbnail: global.thumb,
+  caption: teks,
+  footer: `${botname}`,
+  buttons: buttons,
+  headerType: 4,
+  contextInfo:{externalAdReply:{
+  title:"𝐂𝐥𝐚𝐬𝐬𝐢𝐜-𝐕3",
+  body: "𝐋𝐨𝐫𝐝 𝐒𝐚𝐦", 
+  showAdAttribution: true,
+  thumbnail: fs.readFileSync("kawai/sangean.jpg"),
+  mediaType:1,
+  mediaUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
+  sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
+  }}
+  }
+  zetsubo.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
 //=================================================
-case 'cecanmalaysia': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(`cecan malaysia`)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
+case 'forex': case 'broker': case 'binary': case 'trading': {
+  bentoforex = await getBuffer(picak+'LIVE FOREX')
+  teks = `
+  *CLASSIC-V3 FOREX TRADING*\n\n*DESCRIPTION:* _Trade with Deriv broker ( formerly called Binary ) link above. Create a Real Synthetic account  You will get to trade famous indices like Volatility 75 Index, Crash, Boom and others. -Minimum deposit as low as 2 dollars.  -You can trade even in weekends,  these indices are available to trade 24 hours a day, 365 days a year. -No noise, Trade with Deriv broker ( formerly called Binary ) link above. The best Forex broker since year 2000. Create a Real Financial or Financial STP account  for currency pairs._\n\n*GET STARTED TODAY:*\n\n*LINK:* https://track.deriv.com/_hx9O43AkP_tBMfcXPt5VjGNd7ZgqdRLk/1\n\n*LINK2:* https://record.binary.com/_Mxrjb7udl0q6tyDIijdDK2Nd7ZgqdRLk/1/\n\n*CONTACT:* https://wa.me/+258869103969 or https://wa.me/+258869103969*for help*_`
+  let buttons = [
+  {buttonId: `alive`, buttonText: {displayText: 'BACK'}, type: 1}
+  ]
+  let buttonMessage = {
+  image: sangean,
+  jpegThumbnail: sangean,
+  caption: teks,
+  footer: `${botname}`,
+  buttons: buttons,
+  headerType: 4,
+  contextInfo:{externalAdReply:{
+  title:"SUPPORT ME",
+  body: "KING SAM", 
+  showAdAttribution: true,
+  thumbnail: fs.readFileSync("kawai/sangean.jpg"),
+  mediaType:1,
+  mediaUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
+  sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
+  }}
+  }
+  ZimBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
 //=================================================
