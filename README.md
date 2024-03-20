@@ -1,8 +1,8 @@
  
 
-<h1 align="center">ꪶ𝘾𝙡𝙖𝙨𝙨𝙞𝙘 𝗕𝗼𝘁-𝗠𝗗 𝗩3ꫂ<br></h1>
+<h1 align="center">ꪶ𝘾𝙡𝙖𝙨𝙨𝙞𝙘 𝗕𝗼𝘁-𝗩3ꫂ<br></h1>
 <p align="center">
-<img src="https://telegra.ph/file/c8ea102b36d1aa13f3a9b.jpg" />
+<img src="https://telegra.ph/file/7c6bca96ed39ece86a760.jpg" />
 </p>
 
 <p align="center">
