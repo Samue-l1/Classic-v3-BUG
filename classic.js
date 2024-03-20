@@ -8724,10 +8724,10 @@ const audiovn = "./Classic.mp3";
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "Hi human, Classic Bot Is Alive",
-          body: "https://github.com/Samue-l1",
-          thumbnailUrl: "https://telegra.ph/file/877fafbd012ae6f212698.jpg",
-          sourceUrl: "https://github.com/Samue-l1",
+          title: "𝐇𝐢 𝐇𝐮𝐦𝐚𝐧,𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐨𝐭 𝐈𝐬 𝐀𝐥𝐢𝐯𝐞 𝐚𝐧𝐝 𝐊𝐢𝐜𝐤𝐢𝐧𝐠",
+          body: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk",
+          thumbnailUrl: "https://telegra.ph/file/7c6bca96ed39ece86a760.jpg",
+          sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk",
           mediaType: 1,
           renderLargerThumbnail: true
           }}
