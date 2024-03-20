@@ -8657,21 +8657,6 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 break
 //=================================================
 case 'alive': {
-`
-𝐔𝐏𝐓𝐈𝐌𝐄 : ${runtime(process.uptime())}
-
-┌───❴❏ *𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3* ❏❵╼╼
-┊➢ ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
-
-┌───❴❏ 𝐀𝐁𝐎𝐔𝐓 ⧠❵╼╼
-┊➟𝐍𝐚𝐦𝐞 :  ${pushname}
-┊➟𝐍𝐮𝐦𝐛𝐞𝐫 : wa.me/${m.sender.split('@')[0]}
-┊➟𝐃𝐞𝐯𝐢𝐜𝐞 : ${os.type()}
-┊➟𝐓𝐨𝐭𝐚𝐥 𝐔𝐬𝐞𝐫 : ${Object.keys(global.db.users).length}
-└───────────●
-└───────────●
-`
 const aliveer = fs.readFileSync('./Classic.mp3')
 sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
 }
@@ -8695,7 +8680,6 @@ case 'sc': case 'script': {
   title:"𝐂𝐥𝐚𝐬𝐬𝐢𝐜-𝐕3",
   body: "𝐋𝐨𝐫𝐝 𝐒𝐚𝐦", 
   showAdAttribution: true,
-  thumbnail: fs.readFileSync("kawai/sangean.jpg"),
   mediaType:1,
   mediaUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
   sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
@@ -8706,7 +8690,6 @@ case 'sc': case 'script': {
 break
 //=================================================
 case 'forex': case 'broker': case 'binary': case 'trading': {
-  bentoforex = await getBuffer(picak+'LIVE FOREX')
   teks = `
   *CLASSIC-V3 FOREX TRADING*\n\n*DESCRIPTION:* _Trade with Deriv broker ( formerly called Binary ) link above. Create a Real Synthetic account  You will get to trade famous indices like Volatility 75 Index, Crash, Boom and others. -Minimum deposit as low as 2 dollars.  -You can trade even in weekends,  these indices are available to trade 24 hours a day, 365 days a year. -No noise, Trade with Deriv broker ( formerly called Binary ) link above. The best Forex broker since year 2000. Create a Real Financial or Financial STP account  for currency pairs._\n\n*GET STARTED TODAY:*\n\n*LINK:* https://track.deriv.com/_hx9O43AkP_tBMfcXPt5VjGNd7ZgqdRLk/1\n\n*LINK2:* https://record.binary.com/_Mxrjb7udl0q6tyDIijdDK2Nd7ZgqdRLk/1/\n\n*CONTACT:* https://wa.me/+258869103969 or https://wa.me/+258869103969*for help*_`
   let buttons = [
