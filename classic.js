@@ -8656,13 +8656,25 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 }
 break
 //=================================================
-case 'cecanindo': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(`cecan indo`)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
+case 'alive': {
+`
+𝐔𝐏𝐓𝐈𝐌𝐄 : ${runtime(process.uptime())}
+
+┌───❴❏ *𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3* ❏❵╼╼
+┊➢ ᴡᴇʟᴄᴏᴍᴇ
+└───────────●
+
+┌───❴❏ 𝐀𝐁𝐎𝐔𝐓 ⧠❵╼╼
+┊➟𝐍𝐚𝐦𝐞 :  ${pushname}
+┊➟𝐍𝐮𝐦𝐛𝐞𝐫 : wa.me/${m.sender.split('@')[0]}
+┊➟𝐑𝐚𝐦 : ${ram9000}
+┊➟𝐃𝐞𝐯𝐢𝐜𝐞 : ${os.type()}
+┊➟𝐓𝐨𝐭𝐚𝐥 𝐔𝐬𝐞𝐫 : ${Object.keys(global.db.users).length}
+└───────────●
+└───────────●
+`
+const aliveer = fs.readFileSync('./Classic.mp3')
+zetsubo.sendMessage(m.chat, { audio: aliveer, mimetype: 'audio/mp4', ptt: true, quoted: mudratunha})
 }
 break
 //=================================================
