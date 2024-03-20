@@ -8656,11 +8656,7 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 }
 break
 //=================================================
-case 'alive': {
-const aliveer = fs.readFileSync('./Classic.mp3')
-sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
-}
-break
+ 
 //=================================================
 
 //=================================================
