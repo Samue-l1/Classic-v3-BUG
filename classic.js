@@ -8427,11 +8427,10 @@ case 'ping': {
         key: pingMsg.key,
         type: 14,
         editedMessage: {
-          conversation: `*𝘾𝙡𝙖𝙨𝙨𝙞𝙛𝙞𝙚𝙙:* ${new Date() - startTime} ms`
+          conversation: `*𝘾𝙡𝙖𝙨𝙨𝙞𝙛𝙞𝙚𝙙:* *${new Date() - startTime}" 𝐌/𝐒`
         }
       }
     }, {});
-     await doReact("🧞‍♂️");
   } 
 break;
 //=================================================//
