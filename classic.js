@@ -8670,8 +8670,7 @@ case 'sc': case 'script': {
   {buttonId: `rpgmenu`, buttonText: {displayText: 'RPG'}, type: 1}
   ]
   let buttonMessage = {
-  image: thumb,
-  jpegThumbnail: global.thumb,
+  image: dedan,
   caption: teks,
   footer: `${botname}`,
   buttons: buttons,
@@ -8712,7 +8711,7 @@ case 'forex': case 'broker': case 'binary': case 'trading': {
   sourceUrl: "https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk"
   }}
   }
-  ZimBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+  zetsubo.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
 //=================================================
