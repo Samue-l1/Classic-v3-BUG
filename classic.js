@@ -9296,8 +9296,8 @@ thumbnail: thumb
 break
 //=================================================//
 case 'restart':  
-  if (!Owner) throw `Owner Only` 
-  reply(`Restarting. . .`)  
+  if (!isCreator) throw `Owner Only` 
+  reply(`*Restarting Classic* .`)  
   await sleep(3000)  
   process.exit()  
   break;
