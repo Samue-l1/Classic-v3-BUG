@@ -8420,7 +8420,7 @@ break
 //=================================================// 
 case 'ping': {
   const startTime = new Date();
-  const pingMsg = await gss.sendMessage(m.chat, { text: '*cheking...*' });
+  const pingMsg = await zetsubo.sendMessage(m.chat, { text: '*𝑪𝒉𝒆𝒄𝒌𝒊𝒏𝒈 🧞‍♂️*' });
 
  await zetsubo.relayMessage(m.chat, {
       protocolMessage: {
