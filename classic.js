@@ -8659,8 +8659,6 @@ break
 case 'sc':
 case 'script':
 case 'scriptbot':
-  if (isBan) return m.reply(mess.banned);
-        if (isBanChat) return m.reply(mess.bangc);
     const githubRepoUrl = 'https://api.github.com/repos/Samue-l1/Classic-v3-BUG';
 
     fetch(githubRepoUrl)
