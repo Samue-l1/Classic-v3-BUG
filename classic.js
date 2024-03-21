@@ -8616,35 +8616,25 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 }
 break
 //=================================================
-case 'repo':
-
-const audiovn = "./repo.mp3";
-    const dooc = {
-        audio: {
-          url: audiovn
-        },
-        mimetype: 'audio/mp4',
-        ptt: true,
-        waveform:  [100, 0, 100, 0, 100, 0, 100],
-        fileName: "",
-
-        contextInfo: {
-          mentionedJid: [m.sender],
-          externalAdReply: {
-          title: "╭╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╮\n\n\ ➨𝐇𝐞𝐥𝐥𝐨 𝐏𝐚𝐥.\n\ ➨𝐈 𝐚𝐦 𝐂𝐥𝐚𝐬𝐬𝐢𝐜-𝐕3 𝐁𝐨𝐭\n\ ➨𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐁𝐲 𝐒𝐚𝐦\n\ ➨𝐓𝐚𝐩 𝐓𝐡𝐞 𝐈𝐜𝐨𝐧 𝐀𝐧𝐝 𝐅𝐨𝐫𝐤 𝐌𝐲 𝐑𝐞𝐩𝐨.\n\ ➨ 𝐇𝐚𝐯𝐞 𝐅𝐮𝐧 𝐖𝐢𝐭𝐡 𝐌𝐞.\n\n\ ╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╯",
-          body: "https://github.com/Samue-l1/Classic-v3-BUG",
-          thumbnailUrl: "https://telegra.ph/file/7c6bca96ed39ece86a760.jpg",
-          sourceUrl: "https://github.com/Samue-l1/Classic-v3-BUG",
-          mediaType: 1,
-          renderLargerThumbnail: true
-          }}
-      };
-
-
-await zetsubo.sendMessage(m.chat, dooc, {quoted: m});
-
-
-break;
+case 'repo': case 'repository': {
+  try {
+    const [, username, repoName] = botscript.match(/github\.com\/([^/]+)\/([^/]+)/)
+    const response = await zetsubo.get(`https://api.github.com/repos/${username}/${repoName}`)
+    if (response.status === 200) {
+      const repoData = response.data
+      const formattedInfo = `
+${themeemoji} Repository Name: ${repoData.name}
+${themeemoji} Description: ${repoData.description}
+${themeemoji} Owner: ${repoData.owner.login}
+${themeemoji} Stars: ${repoData.stargazers_count}
+${themeemoji} Forks: ${repoData.forks_count}
+${themeemoji} URL: ${repoData.html_url}
+     
+ `.trim()
+      
+  }
+}
+break
 //=================================================
 case 'cecanmalaysia': {
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
