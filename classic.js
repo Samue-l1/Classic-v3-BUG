@@ -8616,7 +8616,7 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 }
 break
 //=================================================
-case "repo" case "sc":
+case 'repo':
 
 const audiovn = "./repo.mp3";
     const dooc = {
