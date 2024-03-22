@@ -8684,7 +8684,7 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 break
 //=================================================
 case 'rentbot':
-                zetsubo(`Type ${prefix}owner and chat him`)
+                replygczetsubo(`Type ${prefix}owner and chat him`)
                 break
             case 'speedtest': {
                 zetsubo('Testing Speed...')
