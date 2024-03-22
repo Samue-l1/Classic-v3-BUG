@@ -8683,15 +8683,60 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 }
 break
 //=================================================
-case 'cecankorea': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(`cecan korea`)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
-}
-break
+case 'rentbot':
+                zetsubo(`Type ${prefix}owner and chat him`)
+                break
+            case 'speedtest': {
+                replygcxeon('Testing Speed...')
+                let cp = require('child_process')
+                let {
+                    promisify
+                } = require('util')
+                let exec = promisify(cp.exec).bind(cp)
+                let o
+                try {
+                    o = await exec('python speed.py')
+                } catch (e) {
+                    o = e
+                } finally {
+                    let {
+                        stdout,
+                        stderr
+                    } = o
+                    if (stdout.trim()) zetsubo.sendMessage(m.chat, {
+                        text: stdout,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: botname,
+                                body: ownername,
+                                thumbnailUrl: 'https://ibb.co/VVLfc0Q/cheemspic.,
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    }, {
+                        quoted: m
+                    })
+                    if (stderr.trim()) zetsubo.sendMessage(m.chat, {
+                        text: stderr,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: botname,
+                                body: ownername,
+                                thumbnailUrl: 'https://ibb.co/VVLfc0Q/cheemspic.jpg',
+                                sourceUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk,
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    }, {
+                        quoted: m
+                    })
+                }
+            }
+            break
 //=================================================
 case 'cecan': {
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
