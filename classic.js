@@ -9713,9 +9713,9 @@ await loading()
 break
 //=================================================//
 case 'play':
-    case 'stream': {
+    case 'play2': {
         if (!text) {
-            reply('Provide a search term!\nE.g: play Alan walker alone')
+            reply('𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐬𝐞𝐚𝐫𝐜𝐡 𝐭𝐞𝐫𝐦!\n𝐄.𝐠: 𝙷𝙴𝙰𝙳𝙻𝙸𝙶𝙷𝚃𝚂 𝙱𝚈 𝙰𝙻𝙰𝙽 𝚆𝙰𝙻𝙺𝙴𝚁')
             return;
         }
         try {
@@ -9730,7 +9730,7 @@ case 'play':
             let infoYt = await ytdl.getInfo(urlYt);
             //30 MIN
             if (infoYt.videoDetails.lengthSeconds >= 1800) {
-                reply(`Too big!\I'm Unable to download big files. 🤥`);
+                reply(`𝑷𝒍𝒆𝒂𝒔𝒆 𝒔𝒊𝒓\𝑰'𝒎 𝒏𝒐𝒕 𝒂𝒃𝒍𝒆 𝒕𝒐 𝒅𝒐𝒘𝒏𝒍𝒐𝒂𝒅 𝒕𝒉𝒂𝒕 𝒇𝒊𝒍𝒆. 🧞‍♂️`);
                 return;
             }
             const getRandonm = (ext) => {
@@ -9761,8 +9761,9 @@ case 'play':
                         document: fs.readFileSync(`./${randomName}`),
                         mimetype: "audio/mpeg",
                         fileName: titleYt + ".mp3",
+			caption: "➻ 𝐁𝐘 𝐂𝐋𝐀𝐒𝐒𝐈𝐂_𝐁𝐎𝐓 ❖ ",    
                     }, {
-                        quoted: m
+                        quoted: m 
                     }
                 );
             } else {
