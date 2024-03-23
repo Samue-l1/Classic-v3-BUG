@@ -9072,22 +9072,8 @@ if (typemenu === 'v1') {
                             title: xmenu_oh
                         }
                     }, {})
-                } else if (typemenu === 'v6') {
-                    zetsubo.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'USD',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
+}
+                        }
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
@@ -9104,7 +9090,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
+                                thumbnail: "",
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
