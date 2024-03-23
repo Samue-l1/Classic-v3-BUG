@@ -9780,21 +9780,34 @@ await loading()
 }
 break
 //=================================================//
-case 'pickupline': {
-try {
-    let res = await fetch(`https://api.popcat.xyz/pickuplines`)
-    if (!res.ok) {
-      throw new Error(`API request failed with status ${res.status}`)
+case 'translate':{
+  	if (!q) return replygc(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
+  	const defaultLang = 'en'
+const tld = 'cn'
+    let err = `
+ *Example:*
+
+*${prefix + command}* <id> [text]
+*${prefix + command}* en Hello World
+
+≡ *List of supported languages:* 
+https://cloud.google.com/translate/docs/languages
+`.trim()
+    let lang = args[0]
+    let text = args.slice(1).join(' ')
+    if ((args[0] || '').length !== 2) {
+        lang = defaultLang
+        text = args.join(' ')
     }
-    let json = await res.json()
-    let pickupLine = `*Here's a pickup line for you:*\n\n${json.pickupline}`
-    replygc(pickupLine)
-  } catch (error) {
-    console.error(error)
-    // Handle the error appropriately
-  }
-  }
-  break
+    if (!text && m.quoted && m.quoted.text) text = m.quoted.text
+    try {
+       let result = await translate(text, { to: lang, autoCorrect: true }).catch(_ => null) 
+       replygc(result.text)
+    } catch (e) {
+        return replygc(err)
+    } 
+    }
+    break
 //=================================================//
 case 'play':
     case 'play2': {
