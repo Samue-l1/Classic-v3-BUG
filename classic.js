@@ -9068,23 +9068,15 @@ case 'autoread':
                 }
                 break
 //=================================================//
-case "kontan":
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-KontanNews().then(async (res) => {
-teks = ""
-no = 0
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
+case 'git': case 'gitclone':
+if (!args[0]) return reply(`Where is the link?\nExample :\n${prefix}${command} https://github.com/Samue-l/Classic-v3-BUG`)
+if (!isUrl(args[0]) && !args[0].includes('github.com')) return replygcxeon(`Link invalid!!`)
+let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
+    let [, user, repo] = args[0].match(regex1) || []
+    repo = repo.replace(/.git$/, '')
+    let url = `https://api.github.com/repos/${user}/${repo}/zipball`
+    let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
+    zetsubo.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => replygcxeon(mess.error))
 break
 //=================================================//
 case "merdeka":
