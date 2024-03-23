@@ -8684,7 +8684,7 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 break
 //=================================================
 case 'rentbot':
-                replygczetsubo(`Type ${prefix}owner and chat him`)
+                reply(`Type ${prefix}owner and chat him`)
                 break
             case 'speedtest': {
                 zetsubo('Testing Speed...')
@@ -8739,15 +8739,17 @@ case 'rentbot':
             }
             break
 //=================================================
-case 'cecan': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(`cecan`)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
-}
-break
+case 'autostatusview':
+                if (!isCreator) return reply(mess.owner)
+                if (args.length < 1) return replygc(`Example ${prefix + command} on/off`)
+                if (q === 'on') {
+                    autoread_status = true
+                    reply(`Successfully changed auto status/story view to ${q}`)
+                } else if (q === 'off') {
+                    autoread_status = false
+                    reply(`Successfully changed auto status/story view to ${q}`)
+                }
+                break
 //=================================================//
 case 'art':
 case 'awoo':
