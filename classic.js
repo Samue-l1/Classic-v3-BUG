@@ -9708,16 +9708,33 @@ await loading()
 }
 break
 //=================================================//
-case 'nagahari': case 'harinaga': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
- if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
- let [tgl, bln, thn] = text.split`,`
- let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
- if (anu.status == false) return reply(anu.message)
- zetsubo.sendText(from, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-}
-break
+case 'weather':{
+if (!text) return replygc('What location?')
+            let wdata = await axios.get(
+                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
+            );
+            let textw = ""
+            textw += `*🗺️Weather of  ${text}*\n\n`
+            textw += `*Weather:-* ${wdata.data.weather[0].main}\n`
+            textw += `*Description:-* ${wdata.data.weather[0].description}\n`
+            textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`
+            textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`
+            textw += `*Pressure:-* ${wdata.data.main.pressure}\n`
+            textw += `*Humidity:-* ${wdata.data.main.humidity}\n`
+            textw += `*Humidity:-* ${wdata.data.wind.speed}\n`
+            textw += `*Latitude:-* ${wdata.data.coord.lat}\n`
+            textw += `*Longitude:-* ${wdata.data.coord.lon}\n`
+            textw += `*Country:-* ${wdata.data.sys.country}\n`
+
+           zetsubo.sendMessage(
+                m.chat, {
+                    text: textw,
+                }, {
+                    quoted: m,
+                }
+           )
+           }
+           break
 //=================================================//
 case 'arahrejeki': case 'arahrezeki': {
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
