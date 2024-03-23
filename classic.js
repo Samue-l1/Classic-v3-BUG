@@ -9023,22 +9023,116 @@ zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: te
 })
 break
 //=================================================//
-case 'sindo':
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-SindoNews().then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Link: ${i.berita_url}\n`
+case 'aimenu': {
+let xmenu_oh = `Hi ${pushname}${readmore}\n\n${aimenu(prefix, hituet)}`
+if (typemenu === 'v1') {
+                    zetsubo.sendMessage(m.chat, {
+                        image:'https://telegra.ph/file/b103691007c8ce5ee8a94.jpg',
+                        caption: xmenu_oh
+                    }, {
+                        quoted: m
+                    })
+                } else if (typemenu === 'v2') {
+                    zetsubo.sendMessage(m.chat, {
+                        text: xmenu_oh,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: botname,
+                                body: ownername,
+                                thumbnail:'https://telegra.ph/file/b103691007c8ce5ee8a94.jpg',
+                                sourceUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    }, {
+                        quoted: m
+                    })
+                }   if (typemenu === 'v3') {
+                    zetsubo.sendMessage(m.chat, {
+                        image: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
+                        caption: xmenu_oh
+                    }, {
+                        quoted: m
+                    })
+                } else if (typemenu === 'v4') {
+                    zetsubo.sendMessage(m.chat, {
+                        image: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
+                        caption: xmenu_oh,
+                        gifPlayback: true
+                    }, {
+                        quoted: m
+                    })
+                } else if (typemenu === 'v5') {
+                    zetsubo.reply(m.chat, {
+                        scheduledCallCreationMessage: {
+                            callType: "AUDIO",
+                            scheduledTimestampMs: 1200,
+                            title: xmenu_oh
+                        }
+                    }, {})
+                } else if (typemenu === 'v6') {
+                    zetsubo.relayMessage(m.chat,  {
+                       requestPaymentMessage: {
+                          currencyCodeIso4217: 'USD',
+                          amount1000: '9999999900',
+                          requestFrom: m.sender,
+                          noteMessage: {
+                             extendedTextMessage: {
+                                text: xmenu_oh,
+                                contextInfo: {
+                                   externalAdReply: {
+                                       showAdAttribution: true
+                                   }
+                                }
+                             }
+                          }
+                       }
+                    }, {})
+                } else if (typemenu === 'v7') {
+                    zetsubo.sendMessage(m.chat, {
+                        document: {
+                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
+                        },
+                        caption: xmenu_oh,
+                        mimetype: 'application/zip',
+                        fileName: ownername,
+                        fileLength: "99999999999",
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: botname,
+                                body: ownername,
+                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
+                                sourceUrl: wagc,
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    }, {
+                        quoted: m 
+                    })
+                } else if (typemenu === 'v8') {
+                	zetsubo.sendMessage(m.chat, {
+      image: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
+      gifPlayback: true,
+      caption: xmenu_oh,
+      contextInfo: {
+      externalAdReply: {
+      title: botname,
+      body: ownername,
+      thumbnailUrl: 'https://ibb.co/VVLfc0Qp/cheemspic.jpg',
+      sourceUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
+      mediaType: 1,
+      renderLargerThumbnail: true
+      }
+      }
+      }, {
+                        quoted: m
+                    })
+                    }
 }
-teks += ""
-reply(teks) 
-})
 break
 //=================================================//
 case 'tempo':
