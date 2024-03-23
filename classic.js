@@ -8956,7 +8956,6 @@ zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: te
 break
 //=================================================//
 case 'tourl': {
-                reply(zetsubo.wait)
                 let media = await zetsubo.downloadAndSaveMediaMessage(qmsg)
                 if (/image/.test(mime)) {
                     let anu = await TelegraPh(media)
