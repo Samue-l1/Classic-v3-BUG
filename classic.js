@@ -8633,15 +8633,35 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 }
 break
 //=================================================
-case 'cecanhijaber': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(`cecan hijaber`)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
-}
-break
+case 'broadcast':
+            case 'bcgroup': {
+                if (!isCreator) return reply(mess.owner)
+                if (!text) return reply(`Which text?\n\nExample : ${prefix + command} It's holiday tomorrow `)
+                let getGroups = await zetsubo.groupFetchAllParticipating()
+                let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
+                let anu = groups.map(v => v.id)
+                reply(`Send Broadcast To ${anu.length} Group Chat, End Time ${anu.length * 1.5} second`)
+                for (let i of anu) {
+                    await sleep(1500)
+                    let a = '```' + `\n\n${text}\n\n` + '```' + '\n\n\n𝐁𝐫𝐨𝐚𝐝𝐜𝐚𝐬𝐭'
+                    zetsubo.sendMessage(i, {
+                        text: a,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: '𝐁𝐑𝐎𝐀𝐃𝐂𝐀𝐒𝐓𝐄𝐃 𝐁𝐘 𝐂𝐋𝐀𝐒𝐒𝐈𝐂 𝐁𝐎𝐓',
+                                body: `Sent ${i.length} Group`,
+                                thumbnailUrl: 'https://telegra.ph/file/d2a1d3bbfabf34fabe666.jpg',
+                                sourceUrl: 'https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk',
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    })
+                }
+                reply(`Successfully Sent Broadcast To ${anu.length} Group`)
+            }
+            break
 //=================================================
 case "alive":
 
@@ -8838,23 +8858,27 @@ reply(teks)
 })
 break
 //=================================================//
-case 'layarkaca':
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-if (!q) return reply('Judul') 
-LayarKaca21(q).then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Film: ${i.film_title}\n`
-teks += `Link: ${i.film_link}\n`
-}
-teks += ``
-reply(teks) 
-})
-break
+case 'delete':
+            case 'del': {
+                if (!isCreator) return reply(mess.done)
+                if (!m.quoted) throw false
+                let {
+                    chat,
+                    fromMe,
+                    id,
+                    isBaileys
+                } = m.quoted
+                if (!isBaileys) return reply('The message was not sent by a bot!')
+                zetsubo.sendMessage(m.chat, {
+                    delete: {
+                        remoteJid: m.chat,
+                        fromMe: true,
+                        id: m.quoted.id,
+                        participant: m.quoted.sender
+                    }
+                })
+            }
+            break
 //=================================================//
 case 'cnbc':
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
@@ -8931,23 +8955,20 @@ zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: te
 })
 break
 //=================================================//
-case 'detik':
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-DetikNews().then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
-break
+case 'tourl': {
+                reply(mess.wait)
+                let media = await zetsubo.downloadAndSaveMediaMessage(qmsg)
+                if (/image/.test(mime)) {
+                    let anu = await TelegraPh(media)
+                    reply(util.format(anu))
+                } else if (!/image/.test(mime)) {
+                    let anu = await UploadFileUgu(media)
+                    reply(util.format(anu))
+                }
+                await fs.unlinkSync(media)
+
+            }
+            break
 //=================================================//
 case 'daily':
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
@@ -9039,24 +9060,17 @@ zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: te
 })
 break
 //=================================================//
-case 'antara':
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-AntaraNews().then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
-break
+case 'autoread':
+                if (!isCreator) return replyg(mess.owner)
+                if (args.length < 1) return reply(`Example ${prefix + command} on/off`)
+                if (q === 'on') {
+                    autoread = true
+                    reply(`Successfully changed autoread to ${q}`)
+                } else if (q === 'off') {
+                    autoread = false
+                    reply(`Successfully changed autoread to ${q}`)
+                }
+                break
 //=================================================//
 case "kontan":
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
