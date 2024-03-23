@@ -8821,25 +8821,13 @@ zetsubo.sendImage(from, data.url, 'Success Coy', m)
 })
 break
 //=================================================//
-case 'fajar':
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-FajarNews().then(async(res) => {
-console.log(res) 
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-reply(teks) 
-})
-break
+case 'afk': {
+                let user = global.db.data.users[m.sender]
+                user.afkTime = + new Date
+                user.afkReason = text
+                reply(`${m.pushName} *Has Gone AFK*${text ? ': ' + text : ''}`)
+            }
+            break	
 //=================================================//
 case 'cnn':
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
