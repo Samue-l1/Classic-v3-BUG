@@ -8693,15 +8693,33 @@ await zetsubo.sendMessage(m.chat, dooc, {quoted: m});
 
 break;
 //=================================================
-case 'cecanvietnam': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(`cecan vietnam`)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
-}
-break
+case 'weather':{
+if (!text) return reply('What location?')
+            let wdata = await axios.get(
+                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
+            );
+            let textw = ""
+            textw += `*🗺️Weather of  ${text}*\n\n`
+            textw += `*Weather:-* ${wdata.data.weather[0].main}\n`
+            textw += `*Description:-* ${wdata.data.weather[0].description}\n`
+            textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`
+            textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`
+            textw += `*Pressure:-* ${wdata.data.main.pressure}\n`
+            textw += `*Humidity:-* ${wdata.data.main.humidity}\n`
+            textw += `*Humidity:-* ${wdata.data.wind.speed}\n`
+            textw += `*Latitude:-* ${wdata.data.coord.lat}\n`
+            textw += `*Longitude:-* ${wdata.data.coord.lon}\n`
+            textw += `*Country:-* ${wdata.data.sys.country}\n`
+
+           zetsubo.sendMessage(
+                m.chat, {
+                    text: textw,
+                }, {
+                    quoted: m,
+                }
+           )
+           }
+           break
 //=================================================
 case 'rentbot':
                 reply(`Type ${prefix}owner and chat him`)
@@ -8886,24 +8904,61 @@ zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: te
 })
 break
 //=================================================//
-case 'tribun':
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-TribunNews().then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
-break
+case 'spotify':{
+	if (!text) return reply(`*Please enter a song name*`)
+    try {
+        const apiUrl = `https://www.guruapi.tech/api/spotifyinfo?text=${encodeURIComponent(text)}`
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            console.log('Error searching for song:', response.statusText)
+            return reply('Error searching for song')
+        }
+        const data = await response.json()
+        const coverimage = data.spty.results.thumbnail
+        const name = data.spty.results.title
+        const slink = data.spty.results.url
+        const dlapi = `https://www.guruapi.tech/api/spotifydl?text=${encodeURIComponent(text)}`
+        const audioResponse = await fetch(dlapi)
+        if (!audioResponse.ok) {
+            console.log('Error fetching audio:', audioResponse.statusText)
+            return reply('Error fetching audio')
+        }
+        const audioBuffer = await audioResponse.buffer()
+        const tempDir = os.tmpdir()
+        const audioFilePath = path.join(tempDir, 'audio.mp3')
+        try {
+            await fs.promises.writeFile(audioFilePath, audioBuffer)
+        } catch (writeError) {
+            console.error('Error writing audio file:', writeError)
+            return reply( 'Error writing audio file')
+        }
+        let doc = {
+            audio: {
+              url: audioFilePath
+            },
+            mimetype: 'audio/mpeg',
+            ptt: true,
+            waveform:  [100, 0, 100, 0, 100, 0, 100],
+            fileName: "Classic Bot",
+            contextInfo: {
+              mentionedJid: [m.sender],
+              externalAdReply: {
+                title: `PLAYING TO ${name}`,
+                body: botname,
+                thumbnailUrl: coverimage,
+                sourceUrl: websitex,
+                mediaType: 1,
+                renderLargerThumbnail: true
+              }
+            }
+        }        
+        await zetsubo.sendMessage(m.chat, doc, { quoted: m })
+    } catch (error) {
+        console.error('Error fetching Spotify data:', error)
+        return reply('*Error*')
+    }
+    }
+    break
 //=================================================//
 case 'indozone':
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
@@ -9079,33 +9134,21 @@ let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     zetsubo.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => replygcxeon(mess.error))
 break
 //=================================================//
-case "merdeka":
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-MerdekaNews().then(async (res) => {
-teks = ""
-no = 0
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Link: ${i.berita_url}\n`
+case 'happymod':{
+if (!q) return reply(`Example ${prefix+command} Sufway surfer mod`)
+await StickWait()
+let kat = await scp2.happymod(q)
+reply(util.format(kat))
 }
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
 break
 //=================================================//
-case "jalantikus":
-await loading()
-var reis = await JalanTikusMeme()
-teks = ""
-teks += "Jalan Tikus Meme\n\n"
-teks += `Source: ${reis}`
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : reis }, caption: teks }, { quoted:m })
-break
+case 'soulmate': {
+            if (!m.isGroup) return StickGroup()
+            let member = participants.map(u => u.id)
+            let me = m.sender
+            let jodoh = member[Math.floor(Math.random() * member.length)]
+zetsubo.sendMessage(m.chat,
+{ text: `👫Your Soulmate Is
 //=================================================
 case 'faktaunik':
 case 'katabijak':
@@ -9130,24 +9173,17 @@ reply(text)
 .catch(console.error)
 break
 //=================================================
-case 'alquran':
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-if (args.length < 1) return reply(`Example: ${prefix + command} 18 or ${prefix + command} 18/10 or ${prefix + command} 18/1-10`)
-axios
-.get(`https://api.lolhuman.xyz/api/quran/${args[0]}?apikey=${apikey}`)
-.then(({ data }) => {
-var ayat = data.result.ayat
-var text = `QS. ${data.result.surah} : 1-${ayat.length}\n\n`
-for (var x of ayat) {
-text += `${x.arab}\n${x.ayat}. ${x.latin}\n${x.indonesia}\n\n`
-}
-text = text.replace(/<u>/g, '_').replace(/<\/u>/g, '_')
-text = text.replace(/<strong>/g, '*').replace(/<\/strong>/g, '*')
-reply(text)
-})
-.catch(console.error)
-break
+case 'pickupline': {
+try {
+    let res = await fetch(`https://api.popcat.xyz/pickuplines`)
+    if (!res.ok) {
+      throw new Error(`API request failed with status ${res.status}`)
+    }
+    let json = await res.json()
+    let pickupLine = `*Here's a pickup line for you:*\n\n${json.pickupline}`
+    reply(pickupLine)
+  } catch (error) {
+    console.error(error)
 //=================================================
 case 'alquranaudio':
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
@@ -9474,26 +9510,120 @@ zetsubo.sendMessage(from, { video: { url: data.result.link }, mimetype: 'video/m
 	})
 	break
 //=================================================//
-case 'asupan19':
-	if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-	await loading()
-	axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=https://vt.tiktok.com/ZS83Yb7GX/`).then(({ data }) => {
-zetsubo.sendMessage(from, { video: { url: data.result.link }, mimetype: 'video/mp4', caption:`¥ Ah Sayang 🤤` })
-	})
-	break
-//=================================================//
-case "asupan20":{
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-reply('*Ah Males Sangean*')
+case 'nsfw': {
+if (!m.isGroup) return StickGroup()
+if (!isBotAdmins) return StickBotAdmin()
+if (!isAdmins && !XeonTheCreator) return StickAdmin()
+if (args[0] === "on") {
+if (AntiNsfw) return reply('Already activated')
+ntnsfw.push(from)
+fs.writeFileSync('./src/data/function/nsfw.json', JSON.stringify(ntnsfw))
+replygcxeon('Success in turning on nsfw in this group')
+var groupe = await zetsubo.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+zetsubo.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw(not safe for work) feature has been enabled in this group, which means one can access sexual graphics from the bot!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiNsfw) return reply('Already deactivated')
+let off = ntnsfw.indexOf(from)
+ntnsfw.splice(off, 1)
+fs.writeFileSync('./src/data/function/nsfw.json', JSON.stringify(ntnsfw))
+reply('Success in turning off nsfw in this group')
+} else {
+  await reply(`Please Type The Option\n\nExample: ${prefix + command} on\nExample: ${prefix + command} off\n\non to enable\noff to disable`)
+  }
 }
-break
 //=================================================//
-case "darkjoke": case "darkjokes":
-await loading()
- var ress = await Darkjokes()
-teks = "*Darkjokes*"
-zetsubo.sendMessage(m.chat, { image : { url : ress }, caption: teks }, { quoted:m })
+case 'blowjob':
+if (!m.isGroup) return StickGroup()
+	if (!AntiNsfw) return reply(mess.nsfw)
+await StickWait()
+var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/blowjob.json'))
+var xeonyresult = pickRandom(ahegaonsfw)
+XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
+break
+case 'cuckold':
+if (!m.isGroup) return StickGroup()
+	if (!AntiNsfw) return replygcxeon(mess.nsfw)
+await StickWait()
+var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/cuckold.json'))
+var xeonyresult = pickRandom(ahegaonsfw)
+XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
+break
+case 'eba':
+if (!m.isGroup) return StickGroup()
+	if (!AntiNsfw) return replygcxeon(mess.nsfw)
+await StickWait()
+var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/eba.json'))
+var xeonyresult = pickRandom(ahegaonsfw)
+XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
+break
+case 'gangbang':
+if (!m.isGroup) return StickGroup()
+	if (!AntiNsfw) return replygcxeon(mess.nsfw)
+await XeonStickWait()
+var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/gangbang.json'))
+var xeonyresult = pickRandom(ahegaonsfw)
+XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
+break
+case 'nsfwloli':
+if (!m.isGroup) return StickGroup()
+	if (!AntiNsfw) return reply(mess.nsfw)
+await XeonStickWait()
+var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/nsfwloli.json'))
+var xeonyresult = pickRandom(ahegaonsfw)
+XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
+break
+case 'pussy':
+if (!m.isGroup) return StickGroup()
+	if (!AntiNsfw) return reply(mess.nsfw)
+await XeonStickWait()
+var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/pussy.json'))
+var xeonyresult = pickRandom(ahegaonsfw)
+XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
+break
+case 'yuri':
+if (!m.isGroup) return StickGroup()
+	if (!AntiNsfw) return reply(mess.nsfw)
+await XeonStickWait()
+var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/yuri.json'))
+var xeonyresult = pickRandom(ahegaonsfw)
+XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
+break
+case 'zettai':
+	if (!AntiNsfw) return replygc(mess.nsfw)
+await XeonStickWait()
+var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/zettai.json'))
+var xeonyresult = pickRandom(ahegaonsfw)
+XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
+break
+case 'gifblowjob':
+if (!m.isGroup) return StickGroup()
+if (!AntiNsfw) return replygc(mess.nsfw)
+await StickWait()
+  let assss = await axios.get ("https://api.waifu.pics/nsfw/blowjob")
+    var bobuff = await fetchBuffer(assss.data.url)
+    var bogif = await buffergif(bobuff)
+    await XeonBotInc.sendMessage(m.chat,{video:bogif, gifPlayback:true },{quoted:m}).catch(err => {
+    })
+    break
+case 'gifhentai':
+if (!m.isGroup) return StickGroup()
+if (!AntiNsfw) return reply(mess.nsfw)
+await XeonStickWait()
+var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/gifs.json'))
+var xeonyresultx = pickRandom(ahegaonsfw)
+    await XeonBotInc.sendMessage(m.chat,{video:xeonyresultx, gifPlayback:true },{quoted:m}).catch(err => {
+    })
+    break
+//=================================================//
+case 'quotes':
+const quotexeony = await axios.get(`https://favqs.com/api/qotd`)
+        const textquotes = `*${themeemoji} Quote:* ${quotexeony.data.quote.body}\n\n*${themeemoji} Author:* ${quotexeony.data.quote.author}`
+return reply(textquotes)
 break
 //=================================================//
 case 'emojimix': { 
