@@ -9781,7 +9781,7 @@ await loading()
 break
 //=================================================//
 case 'translate':{
-  	if (!q) return replygc(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
+  	if (!q) return reply(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
   	const defaultLang = 'en'
 const tld = 'cn'
     let err = `
@@ -9802,9 +9802,9 @@ https://cloud.google.com/translate/docs/languages
     if (!text && m.quoted && m.quoted.text) text = m.quoted.text
     try {
        let result = await translate(text, { to: lang, autoCorrect: true }).catch(_ => null) 
-       replygc(result.text)
+       reply(result.text)
     } catch (e) {
-        return replygc(err)
+        return reply(err)
     } 
     }
     break
