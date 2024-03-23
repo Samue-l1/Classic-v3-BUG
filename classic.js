@@ -9780,16 +9780,21 @@ await loading()
 }
 break
 //=================================================//
-case 'keberuntungan': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
- if (!text) throw `Example : ${prefix + command} ZetsuboXygen, 7, 7, 2005`
- let [nama, tgl, bln, thn] = text.split`,`
- let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
- if (anu.status == false) return reply(anu.message)
- zetsubo.sendText(from, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}`, m)
-}
-break
+case 'pickupline': {
+try {
+    let res = await fetch(`https://api.popcat.xyz/pickuplines`)
+    if (!res.ok) {
+      throw new Error(`API request failed with status ${res.status}`)
+    }
+    let json = await res.json()
+    let pickupLine = `*Here's a pickup line for you:*\n\n${json.pickupline}`
+    replygc(pickupLine)
+  } catch (error) {
+    console.error(error)
+    // Handle the error appropriately
+  }
+  }
+  break
 //=================================================//
 case 'play':
     case 'play2': {
