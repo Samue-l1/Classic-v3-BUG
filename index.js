@@ -129,13 +129,13 @@ classic.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: 
  ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
 Terima Kasih Sudah Bergabung Jangan Lupa Baca Deskripsi Yah
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
-Creator : https://wa.me/258869103969`})
+Creator : https://wa.me/254742491666`})
 } else if (anu.action == 'remove') {
 classic.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Karena Untuk Setiap Ucapan Selamat Datang Akan Selalu Diakhiri Dengan Ucapan Selamat Tinggal 👋
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
 Selamat Tinggal *@${num.split("@")[0]}* Di Group *${metadata.subject}*
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
-Creator : https://wa.me/258869103969`})
+Creator : https://wa.me/2547424916666`})
 } else if (anu.action == 'promote') {
 classic.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `@${num.split('@')[0]} Ciee Jadi Admin Di Group ${metadata.subject} ${metadata.desc}`  })
 } else if (anu.action == 'demote') {
@@ -353,7 +353,7 @@ console.log(`Unknown DisconnectReason: ${reason}|${connection}`);
 connectToWhatsApp();
   }
 }else if (connection === "open") {
-  classic.sendMessage('27634119195' + "@s.whatsapp.net", { text: `⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺ 𝐇𝐀𝐒 𝐁𝐄𝐄𝐍 𝐋𝐈𝐍𝐊𝐄𝐃 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐀𝐂𝐂𝐎𝐔𝐍𝐓\n\n 𝐂𝐎𝐔𝐑𝐓𝐄𝐒𝐘 𝐎𝐅 ༺֎ᚏ༈࿉𝐀𝐍𝐎𝐍𝐘𝐌𝐎𝐔𝐒⧉ᚙ֎⸙༻ \n\n #𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐘 𝐂𝐑𝐀𝐒𝐇\n #𝐔𝐍𝐋𝐈𝐃𝐄𝐋𝐀𝐘\n #𝐒𝐏𝐀𝐌 𝐁𝐋𝐎𝐂𝐊\n #𝐔𝐋𝐓𝐈𝐌𝐀𝐓𝐄 𝐁𝐔𝐆𝐒\n #𝐀𝐋𝐋 𝐈𝐍 𝐎𝐍𝐄\n\n ࿉𝐌𝐈𝐒𝐒𝐈𝐎𝐍 𝐃𝐄𝐒𝐓𝐑𝐎𝐘᪣` });
+  classic.sendMessage('254742491666' + "@s.whatsapp.net", { text: `⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺ 𝐇𝐀𝐒 𝐁𝐄𝐄𝐍 𝐋𝐈𝐍𝐊𝐄𝐃 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐀𝐂𝐂𝐎𝐔𝐍𝐓\n\n 𝐂𝐎𝐔𝐑𝐓𝐄𝐒𝐘 𝐎𝐅 SAM \n\n #𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐘 𝐂𝐑𝐀𝐒𝐇\n #𝐔𝐍𝐋𝐈𝐃𝐄𝐋𝐀𝐘\n #𝐒𝐏𝐀𝐌 𝐁𝐋𝐎𝐂𝐊\n #𝐔𝐋𝐓𝐈𝐌𝐀𝐓𝐄 𝐁𝐔𝐆𝐒\n #𝐀𝐋𝐋 𝐈𝐍 𝐎𝐍𝐄\n\n ࿉𝐌𝐈𝐒𝐒𝐈𝐎𝐍 𝐃𝐄𝐒𝐓𝐑𝐎𝐘᪣` });
 }
 // console.log('Connected...', update)
 });
