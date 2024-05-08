@@ -56,8 +56,14 @@ heroku/nodejs
 https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
 https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 ```
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Samue-l1/Classic-v3-BUG/)
+*Add your Creds.json to Classic file
+* Create a new app at [Heroku](heroku.com)
+* Add Build packs
+* Connect your heroku with your github
+* Locate Classic-v3-BUG
+* Now deploy.
+* Start the Worker
+* Enjoy the Bot.
 
 ```
 ## `For Termux/Ssh/Ubuntu`
