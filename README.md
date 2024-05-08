@@ -47,7 +47,8 @@
 - FORK THE REPOSITORY [Here](https://github.com/Samue-l1/Classic-v3-BUG/fork)
 
 ## `Generate Pair Code For Session`
-[![Classic Pairing](https://pairing-3w13.onrender.com/pair)
+
+[Classic Pairing](https://pairing-3w13.onrender.com/pair)
 
 # Instalasi
 ## Heroku Buildpack
