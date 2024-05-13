@@ -48,7 +48,7 @@
 
 ## `Generate Pair Code For Session`
 
-[Classic Pairing](https://replit.com/@pesguru02/Classic-Pairing?)
+[Classic Pairing](https://classic-bot-pairing-pq82.onrender.com/)?)
 
 # Instalasi
 ## Heroku Buildpack
