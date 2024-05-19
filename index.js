@@ -252,9 +252,8 @@ return trueFileName}
       m = smsg(client, mek, store);
       require("./classic")(client, m, chatUpdate, store);
     } catch (err) {
-      console.log(err);
-    }
-  });
+      console.log(err)
+        }
 //=============================================
  classic.cMod = (jid, copy, text = '', sender = classic.user.id, options = {}) => {
 //let copy = message.toJSON()
