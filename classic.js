@@ -47,7 +47,7 @@ participant: '0@s.whatsapp.net'
 },
 message: {
 listResponseMessage: {
-title: ` ∂αɠɠεɾ - ɃØ₮ `
+title: ` ◦•●◉✿ 𝑩𝑶𝑻 𝒀𝑨 𝑺𝑨𝑴? ✿◉●•◦  `
 }
 }
 }
@@ -323,30 +323,8 @@ reply(`${err}`)
 }
 }
 
-async function loading () {
-var hawemod = [
+//Pengalih isu
 
-` `
-]
-let { key } = await zetsubo.sendMessage(from, {text: '@⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺.....'})//Pengalih isu
-
-for (let i = 0; i < hawemod.length; i++) {
-/*await delay(10)*/
-await zetsubo.sendMessage(from, {text: hawemod[i], edit: key });//PESAN LEPAS
-}
-}
-
-if (autodelete) {
-zetsubo.sendMessage(m.chat,
-{
-delete: {
-remoteJid: m.chat,
-fromMe: true,
-id: mek.key.id,
-participant: mek.key.participant
-}
-})
-}
 
 /*let reactionMessage = {
                     react: {
@@ -360,7 +338,7 @@ participant: mek.key.participant
 if (!zetsubo.public) {
 if (!m.key.fromMe) return
 }
-let rn = ['recording']
+let rn = ['typing']
 let jd = rn[Math.floor(Math.random() * rn.length)];
 if (m.message) {
 zetsubo.sendPresenceUpdate(jd, from)
@@ -8761,7 +8739,7 @@ case 'rentbot':
 //=================================================
 case 'autostatusview':
                 if (!isCreator) return reply(`Successfully changed auto status/story view`)
-                if (args.length < 1) return replygc(`Example ${prefix + command} on/off`)
+                if (args.length < 1) return reply(`Example ${prefix + command} on/off`)
                 if (q === 'on') {
                     autoread_status = true
                     reply(`Successfully changed auto status/story view to ${q}`)
