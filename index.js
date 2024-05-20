@@ -253,9 +253,8 @@ classic.ev.on("messages.upsert", async (chatUpdate) => {
       m = smsg(classic, mek, store);
       require("./classic")(classic, m, chatUpdate, store);
     } catch (err) {
-      console.log(err);
-    }
-
+      console.log(err)
+}
 //=============================================
  classic.cMod = (jid, copy, text = '', sender = classic.user.id, options = {}) => {
 //let copy = message.toJSON()
