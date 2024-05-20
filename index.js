@@ -277,26 +277,29 @@ return fs.promises.unlink(pathFile)}
 classic.parseMention = async(text) => {
 return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')}
 //=================================================//
-classic.ev.on("messages.upsert", async (chatUpdate) => {
-    //console.log(JSON.stringify(chatUpdate, undefined, 2))
-    try {
-    mek = chatUpdate.messages[0];
-      if (autoviewstatus === 'ON' && mek.key && mek.key.remoteJid === "status@broadcast") {
-
-         classic.readMessages([mek.key]);
-
-}
-      mek = chatUpdate.messages[0];
-      if (!mek.message) return;
-      mek.message = Object.keys(mek.message)[0] === "ephemeralMessage" ? mek.message.ephemeralMessage.message : mek.message;
-      if (mek.key && mek.key.remoteJid === "status@broadcast") return;
-      if (!classic.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
-      if (mek.key.id.startsWith("BAE5") && mek.key.id.length === 16) return;
-      m = smsg(classic, mek, store);
-      require("./classic")(client, m, chatUpdate, store);
-    } catch (err) {
-      console.log(err);
-    }
+    classic.ev.on('messages.upsert', async chatUpdate => {
+        //console.log(JSON.stringify(chatUpdate, undefined, 2))
+        try {
+            const mek = chatUpdate.messages[0]
+            if (!mek.message) return
+            mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
+            if (mek.key && mek.key.remoteJid === 'status@broadcast' )
+            if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+            if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
+            const m = smsg(classic, mek, store)
+            require("./classic")(classic, m, chatUpdate, store)
+        } catch (err) {
+            console.log(err)
+        }
+    })
+    
+    //autostatus view
+        classic.ev.on('messages.upsert', async chatUpdate => {
+        	if (global.autoswview){
+            mek = chatUpdate.messages[0]
+            if (mek.key && mek.key.remoteJid === 'status@broadcast') {
+            	await classic.readMessages([mek.key]) }
+            }
     })
 //=================================================//
 classic.copyNForward = async (jid, message, forceForward = false, options = {}) => {
