@@ -2896,6 +2896,7 @@ zetsreply(json.result)
 break
 //=================================================
 case 'bug?': case 'classic': case 'king': case 'oke': case 'fear': case 'virtex': case 'virteks': case 'virtext': case 'pirtek': case 'pirteks': case 'pirtex': case 'anjay':{
+if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')	
 zetsubo.sendMessage(m.chat, { text: `★彡 𝑺𝑼𝑹𝑷𝑹𝑰𝑺𝑬𝑫 𝑯𝑼𝑯?彡★`}, { quoted: qbug })
 }
 break
