@@ -4,7 +4,7 @@
 	"repository": "https://github.com/Samue-l1/Classic-v3-BUG",
 	"logo": "https://telegra.ph/file/c8ea102b36d1aa13f3a9b.jpg",
 	"keywords": ["multi-device"],
-}
+},
 "buildpacks": [
       {
         "url": "heroku/nodejs"
