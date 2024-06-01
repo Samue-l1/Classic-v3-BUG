@@ -50,6 +50,8 @@
 
 [Classic Pairing](https://replit.com/@pesguru02/Classic-Pairing)
 
+[HOW TO DEPLOY VIDEO TUTORIAL](https://youtu.be/b5gpcwPvtgk?si=Ybg9m7gyDjh9gEwn)
+
 # Instalasi
 ## Heroku Buildpack
 ```bash
