@@ -1,26 +1,28 @@
 {
-	"name": "𝐂𝐥𝐚𝐬𝐬𝐢𝐜-𝐯3",
-	"description": "𝐀 𝐝𝐞𝐚𝐝𝐥𝐲 𝐰𝐡𝐚𝐭𝐬𝐚𝐩𝐩 𝐛𝐨𝐭,Modified by Tᴀɪʀᴀ Mᴀᴋɪɴᴏ",
-	"repository": "https://github.com/Samue-l1/Classic-v3-BUG",
-	"logo": "https://telegra.ph/file/c8ea102b36d1aa13f3a9b.jpg",
-	"keywords": ["multi-device"]
-	
+  "name": "Spider-MD",
+  "description": "whatsapp md bot build with nodejs",
+  "repository": "https://github.com/Samue-l1/Classic-V4",
+  "logo": "https://telegra.ph/file/d2a1d3bbfabf34fabe666.jpg",
+  "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"]
 "env": {
-  "autoviewstatus": {
-  "description": "PUT TRUE FOR AUTO STATUS,FALSE FOR THE VICE VERSES ",
-  "required": true,
-  "value": ""
-}
-},
-"buildpacks": [
-      {
-        "url": "heroku/nodejs"
+      "autoviewstatus": {
+        "description": "Put TRUE,if you want the bot to view status ",
+        "required": true
+      },
+      "HEROKU_API_KEY": {
+        "description": "Heroku account api key, https://dashboard.heroku.com/account",
+        "required": false
+      }
     },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    },
-    {
-      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
-          }
-     ]
-}
+  "buildpacks": [
+              {
+                "url": "heroku/nodejs"
+              },
+              {
+                "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+              },
+              {
+                "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+              }
+            ]
+          }   
