@@ -45,13 +45,13 @@
 
 # Setup For Deployment 👇
 
-- FORK THE REPOSITORY [Here](https://github.com/Samue-l1/Classic-v3-BUG/fork)
+- FORK THE REPOSITORY [`Here`](https://github.com/Samue-l1/Classic-v3-BUG/fork)
 
 ## `Generate Pair Code For Session`
 
-[Classic Pairing](https://replit.com/@pesguru02/Classic-Pairing)
+[`Classic Pairing`](https://replit.com/@pesguru02/Classic-Pairing)
 
-[HOW TO DEPLOY VIDEO TUTORIAL](https://youtu.be/b5gpcwPvtgk?si=Ybg9m7gyDjh9gEwn)
+[`HOW TO DEPLOY VIDEO TUTORIAL`](https://youtu.be/b5gpcwPvtgk?si=Ybg9m7gyDjh9gEwn)
 
 # Instalasi
 ## Heroku Buildpack
