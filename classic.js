@@ -348,14 +348,14 @@ participant: mek.key.participant
 })
 }
 
-/*let reactionMessage = {
+let reactionMessage = {
                     react: {
                         text: `〽️`,
                         key: { remoteJid: m.chat, fromMe: true, id: mek.key.id }
                     }
                 }
                 await sleep(1500)
-                zetsubo.sendMessage(m.chat, reactionMessage)*/
+                zetsubo.sendMessage(m.chat, reactionMessage)
 //=================================================//
 if (!zetsubo.public) {
 if (!m.key.fromMe) return
