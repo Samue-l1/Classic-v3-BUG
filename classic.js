@@ -39,6 +39,7 @@ const hxz = require('hxz-api')
 const ytdl = require("ytdl-core")
 const { Configuration, OpenAIApi } = require('openai')
 const { exec, spawn, execSync } = require("child_process")
+//====================//
 const force = {
 key: {
 participant: `0@s.whatsapp.net`,
