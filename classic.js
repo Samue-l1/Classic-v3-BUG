@@ -348,6 +348,7 @@ participant: mek.key.participant
 }
 })
 }
+//===========================================//
 const force = {
 key: {
 participant: `0@s.whatsapp.net`,
@@ -358,7 +359,7 @@ remoteJid: "status@broadcast"
 'message': {
 "interactiveMessage": { 
 "header": {
-"hasMediaAttachment": true,
+"hasMediaAttachment": false,
 "jpegThumbnail": {
 "nativeFlowMessage": {
 "buttons": [
@@ -368,7 +369,11 @@ remoteJid: "status@broadcast"
 }
 ]
 }
-});
+}
+}
+
+
+//========================================//
 
 /*let reactionMessage = {
                     react: {
