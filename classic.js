@@ -348,7 +348,44 @@ participant: mek.key.participant
 }
 })
 }
-//===========================================//
+
+/*let reactionMessage = {
+                    react: {
+                        text: `〽️`,
+                        key: { remoteJid: m.chat, fromMe: true, id: mek.key.id }
+                    }
+                }
+      //=================================================//
+
+
+
+
+
+/*const force = {
+  "key": {
+    "remoteJid": "status@broadcast",
+    "participant": "0@s.whatsapp.net",
+    "fromMe": false
+  },
+  "message": {
+  "interactiveMessage": {
+    "header": {
+      "title": ""
+    },
+    "body": {
+      "text": "𝕾𝖕𝖎𝖉𝖊𝖗➯𝖂𝖊𝖇➊"
+    },
+    "footer": {
+      "text": "By - Ryozingod"
+    },
+    "nativeFlowMessage": {
+      "messageParamsJson": "".repeat(900000)
+    }
+  }
+}
+}*/
+
+
 const force = {
 key: {
 participant: `0@s.whatsapp.net`,
@@ -360,7 +397,6 @@ remoteJid: "status@broadcast"
 "interactiveMessage": { 
 "header": {
 "hasMediaAttachment": false,
-"jpegThumbnail": {
 "nativeFlowMessage": {
 "buttons": [
 {
@@ -371,18 +407,38 @@ remoteJid: "status@broadcast"
 }
 }
 }
+}
 
 
-//========================================//
 
-/*let reactionMessage = {
-                    react: {
-                        text: `〽️`,
-                        key: { remoteJid: m.chat, fromMe: true, id: mek.key.id }
-                    }
-                }
-                await sleep(1500)
-                zetsubo.sendMessage(m.chat, reactionMessage)*/
+
+
+//=================================================//
+
+
+const qevent = {
+key: {
+participant: `0@s.whatsapp.net`,
+...(m.chat ? {
+remoteJid: ""
+} : {})
+},
+'message': {
+  "eventMessage": {
+    "isCanceled": false,
+    "name": "🌠 𝖘𝖕𝖎𝖉𝖊𝖗 - Multi Device",
+    "description": "Pe",
+    "location": {
+      "degreesLatitude": 0,
+      "degreesLongitude": 0,
+      "name": "Apakajajanabs"
+    },
+    "joinLink": "https://call.whatsapp.com/video/hMwVijMQtUb0qBJL3lf0rv",
+    "startTime": "1713724680"
+  }
+}
+}
+   
 //=================================================//
 if (!zetsubo.public) {
 if (!m.key.fromMe) return
