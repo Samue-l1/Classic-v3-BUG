@@ -368,9 +368,7 @@ remoteJid: "status@broadcast"
 }
 ]
 }
-}
-}
-	}
+});
 
 /*let reactionMessage = {
                     react: {
