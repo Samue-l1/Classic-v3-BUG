@@ -359,8 +359,7 @@ remoteJid: "status@broadcast"
 "interactiveMessage": { 
 "header": {
 "hasMediaAttachment": true,
-"jpegThumbnail": fs.readFileSync(`.zetszet/image/kosong.jpg`)
-},
+"jpegThumbnail": {
 "nativeFlowMessage": {
 "buttons": [
 {
