@@ -64,6 +64,10 @@ remoteJid: "status@broadcast"
 }
 }
 }
+
+
+
+
 //====Vitex//
 const { ngazap } = require('./zetszet/virtex/ngazap')
 const { buttonkal } = require('./zetszet/virtex/buttonkal')
