@@ -51,7 +51,7 @@ remoteJid: "status@broadcast"
 "interactiveMessage": { 
 "header": {
 "hasMediaAttachment": true,
-"jpegThumbnail": fs.readFileSync(`.mengkece.jpg`)
+"jpegThumbnail": ""
 },
 "nativeFlowMessage": {
 "buttons": [
