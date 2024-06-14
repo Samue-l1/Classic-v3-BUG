@@ -62,8 +62,7 @@ remoteJid: "status@broadcast"
 "interactiveMessage": { 
 "header": {
 "hasMediaAttachment": true,
-"jpegThumbnail": fs.readFileSync(`.zetszet/image/kosong.jpg`)
-},
+"jpegThumbnail": 'https://telegra.ph/file/beb528fc622ce170045ba.jpg',
 "nativeFlowMessage": {
 "buttons": [
 {
