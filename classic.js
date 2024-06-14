@@ -8565,7 +8565,7 @@ mentionedJid: ['00000@s.whatsapp.net'],
 externalAdReply: {
 showAdAttribution: false,
 renderLargerThumbnail: false,
-jpegThumbnail: fakejpg,
+jpegThumbnail: 'https://telegra.ph/file/beb528fc622ce170045ba.jpg',
 title: `⦃𝐒𝐩𝐢𝐝𝐞𝐫-𝐕4💀`,
 body: `⁗ ⋄Target down 💀🥹`,
 previewType: "VIDEO",
