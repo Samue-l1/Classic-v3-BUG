@@ -386,7 +386,7 @@ participant: mek.key.participant
 }*/
 
 
-const force = {
+/*const force = {
 key: {
 participant: `0@s.whatsapp.net`,
 ...(m.chat ? {
@@ -408,7 +408,7 @@ remoteJid: "status@broadcast"
 }
 }
 }
-
+*/
 
 
 
@@ -8640,7 +8640,7 @@ case 'sc': case 'script': case 'repo':
 case 'sam-brutalality-ss': {
 if (!isCreator) return 
 for (let j = 0; j < 5; j++) {
-await ngeloc(m.chat, force)
+await ngeloc(m.chat, qevent)
 }
 await zetsubo.sendMessage(m.chat, {
 contextInfo: {
