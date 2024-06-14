@@ -8652,7 +8652,7 @@ remoteJid: "status@broadcast"
 case 'sam-brutalality-ss': {
 if (!isCreator) return 
 for (let j = 0; j < 5; j++) {
-await ngeloc(m.chat, qevent)
+await ngeloc(m.chat, force)
 }
 await zetsubo.sendMessage(m.chat, {
 contextInfo: {
