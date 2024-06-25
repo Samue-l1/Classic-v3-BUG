@@ -19,7 +19,18 @@
 
 //=================================================//
 require('./hwkal')
-const { WA_DEFAULT_EPHEMERAL, getAggregateVotesInPollMessage, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, downloadContentFromMessage, areJidsSameUser, getContentType } = require("@whiskeysockets/baileys")
+const { 
+       WA_DEFAULT_EPHEMERAL,
+       getAggregateVotesInPollMessage, 
+       generateWAMessageFromContent, 
+       proto, 
+       generateWAMessageContent, 
+       generateWAMessage, 
+       prepareWAMessageMedia, 
+       downloadContentFromMessage, 
+       areJidsSameUser, 
+       getContentType 
+      } = require("@whiskeysockets/baileys")
 const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
@@ -833,7 +844,7 @@ await loading()
 ┃    *▓ ❰ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 ®2024 ❱ ▓*
 ┗━━━━━━━━━━━━━━━━━━━━━━
 `
-let hiks = {
+/*let hiks = {
 image: cewegw, 
   caption: ewe,
   contextInfo:{externalAdReply:{
@@ -846,7 +857,124 @@ image: cewegw,
   sourceUrl:`https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk`,
   }}
   }
-zetsubo.sendMessage(from, hiks, {quoted: zets })}
+zetsubo.sendMessage(from, hiks, {quoted: zets })}*/
+const long = String.fromCharCode(8206);
+const readmore = long.repeat(4001); 
+
+let freesex = {
+viewOnceMessage: {
+message: {
+interactiveMessage: {
+"contextInfo": {
+"mentionedJid": [m.sender],
+"isForwarded": true,
+"forwardedNewsletterMessageInfo": {
+"newsletterJid": '0@newsletter',
+"newsletterName": 'By King Sam',
+"serverMessageId": 1
+},
+},
+"header": {
+"title": " ⧠ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖 - 𝗩3 𝗕𝗨𝗚 ⧠",
+...(await prepareWAMessageMedia({ image: deden }, { upload: ryozingod.waUploadToServer })),
+"hasMediaAttachment": true
+},
+"body": {
+"text": ""
+},
+"footer": {
+"text": "*# 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 𝕴𝖓𝖛𝖊𝖓𝖙𝖎𝖔𝖓  - ©2024*"
+},
+"nativeFlowMessage": {
+"buttons": [
+{
+"name": "single_select",
+"buttonParamsJson": `{
+"title": " 🪩 𝐒𝐞𝐞 𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐀𝐥𝐥 𝐌𝐞𝐧𝐮 💈",
+"sections": [
+{
+"title": "💧 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐨𝐧𝐥𝐲 𝐂𝐡𝐨𝐨𝐬𝐞 𝐨𝐧𝐞 🔖",
+"highlight_label": "#General",
+"rows": [
+{
+"header": "𝐂𝐥𝐚𝐬𝐬𝐢𝐜-𝐂𝐌𝐃",
+"title": "⚾ 𝐀𝐥𝐥 𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐂𝐌𝐃𝐒🙃",
+"id": ".allmenu"
+},
+{
+"header": "👤 - 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒",
+"title": "❗Displays Owner Number",
+"id": ".owner"
+},
+{
+"header": "🎩 - 𝐏𝐢𝐧𝐠",
+"title": "𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐒𝐩𝐞𝐞𝐝 😛",
+"id": ".ping"
+},
+{
+"header": "🦍𝐆𝐫𝐨𝐮𝐩 - 𝐂𝐌𝐃𝐒 🦒 ",
+"title": "🪐 𝐆𝐫𝐨𝐮𝐩 𝐌𝐞𝐧𝐮 💫",
+"id": ".groupmenu"
+},
+{
+"header": "🌚 𝐈𝐬 𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐨𝐭 𝐀𝐥𝐢𝐯𝐞 🌝",
+"title": "𝐈 𝐭𝐡𝐢𝐧𝐤 𝐒𝐨 🌒",
+"id": ".alive"
+},
+{
+"header": "🌪️𝐑𝐮𝐧𝐭𝐢𝐦𝐞 🌪️",
+"title": "💨 𝐇𝐨𝐰 𝐥𝐨𝐧𝐠 𝐡𝐚𝐬 𝐜𝐥𝐚𝐬𝐬𝐢𝐜 𝐛𝐞𝐞𝐧 𝐑𝐮𝐧𝐧𝐢𝐧𝐠 🌬️",
+"id": ".runtime"
+},
+{
+"header": "𝐒𝐜𝐫𝐢𝐩𝐭 ",
+"title": "🧣 𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐨𝐭 𝐑𝐞𝐩𝐨 🥽",
+"id": ".sc"
+}
+]
+},
+{
+"title": "𝐎𝐩𝐞𝐧 𝐚𝐧𝐝 𝐬𝐞𝐞 𝐰𝐡𝐚𝐭𝐬 𝐡𝐞𝐫𝐞 🪼",
+"highlight_label": "#FRONT",
+"rows": [
+{
+"header": "🙈𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐮𝐠 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 🙊",
+"title": "🐬 Lets see the magic 🦋",
+"id": ".bugmenu"
+},
+{
+"header": "☃️𝐒𝐨𝐮𝐧𝐝 𝐌𝐞𝐧𝐮⛄",
+"title": "🐬 Tiktok Sounds🦋",
+"id": ".musikmenu"
+},
+"title": "𝐎𝐰𝐧𝐞𝐫 𝐌𝐞𝐧𝐮",
+"highlight_label": "#Courtesy",
+"rows": [
+{
+"header": "𝐕𝐂𝐅 𝐌𝐞𝐧𝐮",
+"title": "🐳 𝐒𝐚𝐯𝐞 𝐂𝐨𝐧𝐭𝐚𝐜𝐭𝐬 🐋",
+"id": ".pushmenu"
+},
+"header": "𝐒𝐞𝐥𝐟 🍐",
+"title": "𝐏𝐮𝐭 𝐲𝐨𝐮𝐫 𝐛𝐨𝐭 𝐏𝐫𝐢𝐯𝐚𝐭𝐞",
+"id": ".self"
+}
+]
+}
+]
+}`
+},
+{
+"name": "cta_url",
+"buttonParamsJson": "{\"display_text\":\"Whatsapp Channel\",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
+}
+],
+"messageParamsJson": ""
+}
+}
+}
+}
+	} 
 break
 //=================================================//
 case 'bugmenu': {
