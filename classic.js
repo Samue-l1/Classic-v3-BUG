@@ -65,7 +65,7 @@ remoteJid: "status@broadcast"
 }
 }
 
-const botNumber = await zetsubo.decodeJid(zetsubo.user.id)
+const botNumber = await ryozingod.decodeJid(ryozingod.user.id)
 
 //==========
 const setting = db.data.settings[botNumber]
