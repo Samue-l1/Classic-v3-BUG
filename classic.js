@@ -2497,27 +2497,15 @@ teksooo += `\n*Total : ${owner.length}*`
 zetsubo.sendMessage(from, { text: teksooo.trim() }, 'extendedTextMessage', { quoted:m, contextInfo: { "mentionedJid": owner } })
 break
 //=================================================//
-case 'pengguna':  {
-if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
-if (!args[0]) return reply(`*Contoh : ${command} add 258869103969*`)
-if (args[1]) {
-orgnye = args[1] + "@s.whatsapp.net"
-} else if (m.quoted) {
-orgnye = m.quoted.sender
-}
-const isBane = banned.includes(orgnye)
-if (args[0] === "add") {
-if (isBane) return reply('*Pengguna Ini telah Di Ban*')
-banned.push(orgnye)
-reply(`Succes ban Pengguna Ini`)
-} else if (args[0] === "del") {
-if (!isBane) return reply('*Pengguna Ini Telah Di hapus Dari Ban*')
-let delbans = banned.indexOf(orgnye)
-banned.splice(delbans, 1)
-zetsreply(`*Berhasil Menghapus Pengguna yang Di Ban*`)
-} else {
-reply("Error")
-}
+case 'changemenu':
+if (!isCreator) return reply(mess.owner)
+if (args.length < 1) return reply(`Example ${prefix + command} button/non`)
+if (q == 'button') {
+db.data.settings[botNumber].menuType = 'buttonImage'
+joreply(`Successfully Changed Menu To Button List Image`)
+} else if (q == 'non') {
+db.data.settings[botNumber].menuType = 'imageIos'
+joreply(`Successfully Changed Menu To ImageIos`)
 }
 break
 //=================================================//
