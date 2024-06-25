@@ -875,7 +875,7 @@ m.reply("Case Tidak Ditemukan")
 }
 break
 //=================================================//
-case 'menu': case 'help': {
+case 'menu': case 'allmenu': {
 await loading()
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
@@ -932,21 +932,7 @@ await loading()
 ┃    *▓ ❰ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 ®2024 ❱ ▓*
 ┗━━━━━━━━━━━━━━━━━━━━━━
 `
-let hiks = {
-image: cewegw, 
-  caption: ewe,
-  contextInfo:{externalAdReply:{
-  title: ' ⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺',
-  body: 'ᚙᚘ ⫹⧉⸙𝐋⚔𝐎᪥𝐑ᚘ𝐃ᚗ𝐒⸙𝐀࿈𝐌⸙⧉⫺ ᚘᚙ', 
-  showAdAttribution: true,
-  thumbnail:hinachan,
-  mediaType: 4,
-  MediaUrl:`https://telegra.ph/file/a3b5de3c2cd44f6b3aa80.jpg`,
-  sourceUrl:`https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk`,
-  }}
-  }
-zetsubo.sendMessage(from, hiks, {quoted: zets })}
-//button menu
+///button menu
 let freesex = {
 viewOnceMessage: {
 message: {
@@ -962,7 +948,7 @@ interactiveMessage: {
 },
 "header": {
 "title": " ⧠ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖 - 𝗩3 𝗕𝗨𝗚 ⧠",
-...(await prepareWAMessageMedia({ image: deden }, { upload: ryozingod.waUploadToServer })),
+...(await prepareWAMessageMedia({ image: cewegw }, { upload: zetsubo.waUploadToServer })),
 "hasMediaAttachment": true
 },
 "body": {
