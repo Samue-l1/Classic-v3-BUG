@@ -65,35 +65,6 @@ remoteJid: "status@broadcast"
 }
 }
 
-const botNumber = zetsubo.decodeJid(zetsubo.user.id)
-
-//==========
-const setting = db.data.settings[botNumber]
-        if (typeof setting !== 'object') db.data.settings[botNumber] = {}
-	    if (setting) {
-//    	    if (!('anticall' in setting)) setting.anticall = false
-    		if (!isNumber(setting.status)) setting.status = 0
-    		if (!('autobio' in setting)) setting.autobio = false
-            if (!('autoread' in setting)) setting.autoread = false
-            if (!('autoTyping' in setting)) setting.autoTyping = false
-            if (!('autoRecord' in setting)) setting.autoRecord = false
-//        if (!('goodbye' in setting)) chats.goodbye = setting.auto_leaveMsg
-//        if (!('welcome' in setting)) chats.welcome = setting.auto_welcomeMsg
-       if (!('onlygrub' in setting)) setting.onlygrub = false
-	  } else db.data.settings[botNumber] = {
-//    	  anticall: false,
-    		status: 0,
-    		stock:10,
-    		autobio: false,
-    		autoTyping: false,
-//    		auto_ai_grup: true,
-//    		goodbye: true,
-    		onlygrub: false,
-//        welcome: true, 
-    		autoread: false,
-    		menuType: 'imageIos' //> buttonImage
-	    }
-
 
 
 
@@ -2516,11 +2487,9 @@ case 'changemenu':
 if (!isCreator) return reply(mess.owner)
 if (args.length < 1) return reply(`Example ${prefix + command} button/non`)
 if (q == 'button') {
-db.data.settings[botNumber].menuType = 'buttonImage'
-joreply(`Successfully Changed Menu To Button List Image`)
+reply(`Successfully Changed Menu To Button List Image`)
 } else if (q == 'non') {
-db.data.settings[botNumber].menuType = 'imageIos'
-joreply(`Successfully Changed Menu To ImageIos`)
+reply(`Successfully Changed Menu To ImageIos`)
 }
 break
 //=================================================//
