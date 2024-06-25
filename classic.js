@@ -136,7 +136,22 @@ virgam = fs.readFileSync(`./zetszet/image/deden.jpeg`)
 //=================================================//
 module.exports = zetsubo = async (zetsubo, m, chatUpdate, store) => {
  try {
-var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype === 'messageContextInfo') ? (m.text) : ''
+//var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype === 'messageContextInfo') ? (m.text) : ''
+var body = (
+  m.mtype === 'conversation' ? m.message.conversation :
+  m.mtype === 'imageMessage' ? m.message.imageMessage.caption :
+  m.mtype === 'videoMessage' ? m.message.videoMessage.caption :
+  m.mtype === 'extendedTextMessage' ? m.message.extendedTextMessage.text :
+  m.mtype === 'buttonsResponseMessage' ? m.message.buttonsResponseMessage.selectedButtonId :
+  m.mtype === 'listResponseMessage' ? m.message.listResponseMessage.singleSelectReply.selectedRowId :
+  m.mtype === 'InteractiveResponseMessage' ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson)?.id :
+  m.mtype === 'templateButtonReplyMessage' ? m.message.templateButtonReplyMessage.selectedId :
+  m.mtype === 'messageContextInfo' ?                                                                                                                        m.message.buttonsResponseMessage?.selectedButtonId ||
+    m.message.listResponseMessage?.singleSelectReply.selectedRowId ||
+    m.message.InteractiveResponseMessage.NativeFlowResponseMessage ||
+    m.text :
+  ''
+);
 var budy = (typeof m.text == 'string' ? m.text : '')
 var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
 
@@ -609,6 +624,24 @@ if (budy.toLowerCase() == jawaban) {
 } else reply('*Jawaban Salah!*')
 }
 
+
+//============= [LIST RESPONCE CHECKING START ]================
+        if(m.mtype === "interactiveResponseMessage"){                                                                                                               console.log("interactiveResponseMessage Detected!")
+            let msg = m.message[m.mtype]  || m.msg
+            if(msg.nativeFlowResponseMessage  && !m.isBot  ){                                                                                                           let { id } = JSON.parse(msg.nativeFlowResponseMessage.paramsJson) || {}
+                if(id){
+                    let emit_msg = {
+                        key : { ...m.key } , // SET RANDOME MESSAGE ID                                                                                                          message:{ extendedTextMessage : { text : id } } ,
+                        pushName : m.pushName,
+                        messageTimestamp  : m.messageTimestamp || 754785898978
+                    }
+                    return XeonBotInc.ev.emit("messages.upsert" , { messages : [ emit_msg ] ,  type : "notify"})
+                }
+            }
+        }
+//============= [LIST RESPONCE CHECKING END ]================
+
+
 //TicTacToe
 this.game = this.game ? this.game : {}
 let room = Object.values(this.game).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
@@ -789,6 +822,8 @@ break
 //=================================================//
 case 'menu': case 'help': {
 await loading()
+const long = String.fromCharCode(8206);
+const readmore = long.repeat(4001);  
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -801,7 +836,7 @@ await loading()
 ┃	📅𝐃𝐚𝐭𝐞 𝐒𝐞𝐫𝐯𝐞𝐫 : ${moment.tz('Africa/Nairobi').format('DD/MM/YY')}
 ┃	🕑𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
 ┃
-┣━━━━━━━━ 𝗔𝗱𝗱 𝗔𝗰𝗰𝗲𝘀 ━━━━━
+┣━━━━━━━━ 𝗔𝗱𝗱 𝗔𝗰𝗰𝗲𝘀 ━━━━━ ${readmore}
 ┃
 ┃┏━━━━━━━━━━━━━━━━━━━
 ┃➢ 𝐚𝐝𝐝𝐩𝐫𝐞𝐦 (628xx/@𝐭𝐚𝐠)
@@ -858,8 +893,6 @@ image: cewegw,
   }}
   }
 zetsubo.sendMessage(from, hiks, {quoted: zets })}*/
-const long = String.fromCharCode(8206);
-const readmore = long.repeat(4001); 
 
 let freesex = {
 viewOnceMessage: {
@@ -974,7 +1007,9 @@ interactiveMessage: {
 }
 }
 }
-	} 
+} 
+await zetsubo.relayMessage(freesex.key.remoteJid, freesex.message, {     messageId: freesex.key.id }) 
+}
 break
 //=================================================//
 case 'bugmenu': {
