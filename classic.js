@@ -962,7 +962,7 @@ await loading()
 ┗━━━━━━━━━━━━━━━━━━━━━━
 `
 ///button menu
-let freesex = {
+let hiks = {
 viewOnceMessage: {
 message: {
 interactiveMessage: {
