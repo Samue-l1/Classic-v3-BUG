@@ -66,7 +66,36 @@ remoteJid: "status@broadcast"
 }
 
 
+//==========
+const setting = db.data.settings[botNumber]
+        if (typeof setting !== 'object') db.data.settings[botNumber] = {}
+	    if (setting) {
+//    	    if (!('anticall' in setting)) setting.anticall = false
+    		if (!isNumber(setting.status)) setting.status = 0
+    		if (!('autobio' in setting)) setting.autobio = false
+            if (!('autoread' in setting)) setting.autoread = false
+            if (!('autoTyping' in setting)) setting.autoTyping = false
+            if (!('autoRecord' in setting)) setting.autoRecord = false
+//        if (!('goodbye' in setting)) chats.goodbye = setting.auto_leaveMsg
+//        if (!('welcome' in setting)) chats.welcome = setting.auto_welcomeMsg
+       if (!('onlygrub' in setting)) setting.onlygrub = false
+	  } else db.data.settings[botNumber] = {
+//    	  anticall: false,
+    		status: 0,
+    		stock:10,
+    		autobio: false,
+    		autoTyping: false,
+//    		auto_ai_grup: true,
+//    		goodbye: true,
+    		onlygrub: false,
+//        welcome: true, 
+    		autoread: false,
+    		menuType: 'imageIos' //> buttonImage
+	    }
 
+} catch (err) {
+console.error(err)
+}
 
 //====Vitex//
 const { ngazap } = require('./zetszet/virtex/ngazap')
