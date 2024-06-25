@@ -93,7 +93,7 @@ const setting = db.data.settings[botNumber]
     		menuType: 'imageIos' //> buttonImage
 	    }
 
-} catch (err) {
+catch (err) {
 console.error(err)
 }
 
