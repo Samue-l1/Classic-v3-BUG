@@ -97,6 +97,9 @@ const setting = db.data.settings[botNumber]
 console.error(err)
 }
 
+
+
+
 //====Vitex//
 const { ngazap } = require('./zetszet/virtex/ngazap')
 const { buttonkal } = require('./zetszet/virtex/buttonkal')
