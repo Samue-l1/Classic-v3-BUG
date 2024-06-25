@@ -1064,7 +1064,7 @@ interactiveMessage: {
 },
 "header": {
 "title": hiks,
-...(await prepareWAMessageMedia({ image: overlaid }, { upload: zetsubo.waUploadToServer })),
+...(await prepareWAMessageMedia({ image: cewegw }, { upload: zetsubo.waUploadToServer })),
 "hasMediaAttachment": true
 },
 "body": {
@@ -1082,14 +1082,6 @@ interactiveMessage: {
 }
 }
 }
-}
-
-if ( db.data.settings[botNumber].menuType === 'imageIos') {
-zetsubo.reply(m.chat, youarebemydick, {});
-} else if ( db.data.settings[botNumber].menuType === 'buttonImage') {
-zetsubo.reply(m.chat, freesex, {});
-}
-
 }
 break
 //=================================================//
