@@ -11498,13 +11498,15 @@ zetsubo.copyNForward(from, msgs[budy.toLowerCase()], true)}}
 } catch (err) {
 reply(util.format(err))
     console.log(err)
-    let e = String(err)                                                                      if (e.includes("not-authorized")) return
-    if (e.includes("already-exists")) return                                                 if (e.includes("rate-overlimit")) return
+    let e = String(err)                                                                      
+    if (e.includes("not-authorized")) return
+    if (e.includes("already-exists")) return                                                 
+    if (e.includes("rate-overlimit")) return
     if (e.includes("Connection Closed")) return
     if (e.includes("Timed Out")) return
     if (e.includes("Value not found")) return
     if (e.includes("Socket connection timeout")) return
-}
+}}
 //=================================================//
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
