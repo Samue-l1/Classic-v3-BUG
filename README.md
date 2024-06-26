@@ -53,6 +53,10 @@
 
 [`HOW TO DEPLOY VIDEO TUTORIAL`](https://youtu.be/b5gpcwPvtgk?si=Ybg9m7gyDjh9gEwn)
 
+[`HOW TO AUTO DEPLOY DIRECT ON GITHUB`](https://youtu.be/-aOIDVebImo?si=TTl9GayCy3VD5z85)
+
+[`HOW TO RESTART WHEN THE BOT GOES OFF`](https://youtube.com/shorts/o0uLn17pRRs?si=i4VVlhSZLoFdk94u)
+
 # Instalasi
 ## Heroku Buildpack
 ```bash
