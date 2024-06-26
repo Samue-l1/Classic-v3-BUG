@@ -1039,11 +1039,11 @@ let msg = generateWAMessageFromContent(m.key.remoteJid, {
                       },
 		      {
                         "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"Channel📍 \",\"url\":\"https://whatsapp.com/channel/0029VaY0Zq32P59piTo5rg0K\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaY0Zq32P59piTo5rg0K\"}"
+                        "buttonParamsJson": "{\"display_text\":\"Channel📍 \",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
 		      },
 		      {
                         "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"Classic\",\"url\":\"https://github.com\",\"merchant_url\":\"https://github.com\"}"
+                        "buttonParamsJson": "{\"display_text\":\"YouTube 📺\",\"url\":\"https://youtube.com/@king_sam_hub\",\"merchant_url\":\"https://youtube.com/@king_sam_hub\"}"
 		      },
                     ]
                   })
