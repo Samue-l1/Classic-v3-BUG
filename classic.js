@@ -1011,6 +1011,7 @@ interactiveMessage: {
 } 
 await zetsubo.relayMessage(freesex.key.remoteJid, freesex.message, {     messageId: freesex.key.id }) 
 */
+try {
 let msg = generateWAMessageFromContent(m.key.remoteJid, {
             viewOnceMessage: {
               message: {
