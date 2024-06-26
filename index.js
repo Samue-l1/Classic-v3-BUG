@@ -347,6 +347,9 @@ data
 classic.serializeM = (m) => smsg(classic, m, store)
 classic.ev.on("connection.update", async (update) => {
 const { connection, lastDisconnect } = update;
+if (connection === "open") {
+await classic.sendMessage(classic.user.id, { text: `Classic-v3-BUG Started with prefix ${global.prefa}`})
+	}
 if (connection === "close") {
   let reason = new Boom(lastDisconnect?.error)?.output.statusCode;
   if (reason === DisconnectReason.badSession) {
