@@ -895,7 +895,7 @@ image: cewegw,
   }
 zetsubo.sendMessage(from, hiks, {quoted: zets })}*/
 
-let freesex = {
+/*let freesex = {
 viewOnceMessage: {
 message: {
 interactiveMessage: {
@@ -914,7 +914,7 @@ interactiveMessage: {
 "hasMediaAttachment": true
 },
 "body": {
-"text": ""
+"text": ewe
 },
 "footer": {
 "text": "*# 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 𝕴𝖓𝖛𝖊𝖓𝖙𝖎𝖔𝖓  - ©2024*"
@@ -1010,6 +1010,60 @@ interactiveMessage: {
 }
 } 
 await zetsubo.relayMessage(freesex.key.remoteJid, freesex.message, {     messageId: freesex.key.id }) 
+*/
+let msg = generateWAMessageFromContent(m.key.remoteJid, {
+            viewOnceMessage: {
+              message: {
+                "messageContextInfo": {
+                  "deviceListMetadata": {},
+                  "deviceListMetadataVersion": 2
+                },
+                interactiveMessage: proto.Message.InteractiveMessage.create({
+                  body: proto.Message.InteractiveMessage.Body.create({
+                    text: ewe
+                  }),
+                  footer: proto.Message.InteractiveMessage.Footer.create({
+                    text: "©King Sam"
+                  }),
+                  header: proto.Message.InteractiveMessage.Header.create({
+                    title: "",
+                    subtitle: "Classic-v3-BUG",
+                    hasMediaAttachment: false
+                  }),
+                  nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                    buttons: [
+                      {
+                        "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"Repo🔗\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://github.com/Samue-l1/Classic-v3-BUG\"}"
+                      },
+		      {
+                        "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"Channel📍 \",\"url\":\"https://whatsapp.com/channel/0029VaY0Zq32P59piTo5rg0K\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaY0Zq32P59piTo5rg0K\"}"
+		      },
+		      {
+                        "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"Classic\",\"url\":\"https://github.com\",\"merchant_url\":\"https://github.com\"}"
+		      },
+                    ]
+                  })
+                })
+              }
+            }
+          }, {});
+
+          if (!msg || !msg.key || !msg.key.remoteJid || !msg.key.id) {
+            const errorMessage = 'Error: Invalid message key.';
+            console.error(errorMessage);
+            return reply(errorMessage);
+          }
+
+          await zetsubo.relayMessage(msg.key.remoteJid, msg.message, {
+            messageId: msg.key.id
+          });
+        } catch (error) {
+          console.error('Error generating and relaying message:', error);
+          return reply('Error generating and relaying message.');
+        }
 }
 break
 //=================================================//
