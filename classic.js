@@ -909,7 +909,7 @@ interactiveMessage: {
 },
 "header": {
 "title": " ⧠ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖 - 𝗩3 𝗕𝗨𝗚 ⧠",
-...(await prepareWAMessageMedia({ image: deden }, { upload: ryozingod.waUploadToServer })),
+...(await prepareWAMessageMedia({ image: {url: "https://telegra.ph/file/9248c76c247b402e5f6ae.jpg"}}, { upload: zetsubo.waUploadToServer })),
 "hasMediaAttachment": true
 },
 "body": {
