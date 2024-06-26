@@ -11496,7 +11496,7 @@ let msgs = global.db.data.database
 if (!(budy.toLowerCase() in msgs)) return
 zetsubo.copyNForward(from, msgs[budy.toLowerCase()], true)}}
 } catch (err) {
-m.reply(util.format(err))
+reply(util.format(err))
     console.log(err)
     let e = String(err)                                                                      if (e.includes("not-authorized")) return
     if (e.includes("already-exists")) return                                                 if (e.includes("rate-overlimit")) return
@@ -11504,7 +11504,7 @@ m.reply(util.format(err))
     if (e.includes("Timed Out")) return
     if (e.includes("Value not found")) return
     if (e.includes("Socket connection timeout")) return
-}}
+}
 //=================================================//
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
