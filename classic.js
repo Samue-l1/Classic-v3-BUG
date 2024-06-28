@@ -978,6 +978,7 @@ let msg = generateWAMessageFromContent(from, {
                         "name": "cta_url",
                         "buttonParamsJson": "{\"display_text\":\"𝐑𝐄𝐏𝐎 🔗\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://github.com/Samue-l1/Classic-v3-BUG\"}"
                       },
+		      {
 		       "name": "cta_url",
                         "buttonParamsJson": "{\"display_text\":\"𝐎𝐖𝐍𝐄𝐑 🌎\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://wa.me/+254742491666?text=Hello+King+Sam\"}"
                       },
