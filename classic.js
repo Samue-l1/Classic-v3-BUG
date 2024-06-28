@@ -917,7 +917,7 @@ let msg = generateWAMessageFromContent(from, {
 "rows":[{"header":"🔖 𝙰𝙳𝙳 𝙼𝙴𝙽𝚄 🔖",
 "title":"",
 "description":"📍List Add menu commands 🥽",
-"id":"addmenu"},
+"id":"${prefix}addmenu"},
 {"header":"📔𝐕𝐂𝐅 𝐌𝐄𝐍𝐔 🪡",
 "title":"",
 "description":"🦄 𝙻𝚒𝚜𝚝 𝚅𝙲𝙵 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜 🦭",         
