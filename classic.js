@@ -827,8 +827,8 @@ const long = String.fromCharCode(8206);
 const readmore = long.repeat(4001);  
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
-┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
-┃  ➥𝐂𝐨𝐧𝐭𝐚𝐜𝐭 : @${m.sender.split('@')[0]}
+┃  ➥User: ${pushname}
+┃  ➥Creator : King Sam
 ┃
 ┣╼╼❴ ⧠ ᏴϴͲ ᏆΝҒϴ ⧠ ❵╼╼╼
 ┃
@@ -882,8 +882,8 @@ const readmore = long.repeat(4001);
 let menutxt = `
 ┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
-┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
-┃  ➥𝐂𝐨𝐧𝐭𝐚𝐜𝐭 : @${m.sender.split('@')[0]}
+┃  ➥ Creator: ${
+┃  ➥ User : @${m.sender.split('@')[0]}
 ┃
 ┣╼╼❴ ⧠ ᏴϴͲ ᏆΝҒϴ ⧠ ❵╼╼╼
 ┃
@@ -896,61 +896,7 @@ let menutxt = `
 ┣━━━━━━━━━━━━━━━━━━━━━━
 ┃    *▓ ❰ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 ®2024 ❱ ▓*
 ┗━━━━━━━━━━━━━━━━━━━━━━`
-/*try {
-let msg = generateWAMessageFromContent(m.key.remoteJid, {
-            viewOnceMessage: {
-              message: {
-                "messageContextInfo": {
-                  "deviceListMetadata": {},
-                  "deviceListMetadataVersion": 2
-                },
-                interactiveMessage: proto.Message.InteractiveMessage.create({
-                  body: proto.Message.InteractiveMessage.Body.create({
-                    text: ewe
-                  }),
-                  footer: proto.Message.InteractiveMessage.Footer.create({
-                    text: "©King Sam"
-                  }),
-                  header: proto.Message.InteractiveMessage.Header.create({
-                    title: "",
-                    subtitle: "Classic-v3-BUG",
-                    hasMediaAttachment: false
-                  }),
-                  nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                    buttons: [
-                      {
-                        "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"Repo🔗\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://github.com/Samue-l1/Classic-v3-BUG\"}"
-                      },
-		      {
-                        "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"Channel📍 \",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
-		      },
-		      {
-                        "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"YouTube 📺\",\"url\":\"https://youtube.com/@king_sam_hub\",\"merchant_url\":\"https://youtube.com/@king_sam_hub\"}"
-		      },
-                    ]
-                  })
-                })
-              }
-            }
-          }, {});
 
-          if (!msg || !msg.key || !msg.key.remoteJid || !msg.key.id) {
-            const errorMessage = 'Error: Invalid message key.';
-            console.error(errorMessage);
-            return reply(errorMessage);
-          }
-
-          await zetsubo.relayMessage(msg.key.remoteJid, msg.message, {
-            messageId: msg.key.id
-          });
-        } catch (error) {
-          console.error('Error generating and relaying message:', error);
-          return reply('Error generating and relaying message.');
-        }
-}*/
 try {
 let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -978,50 +924,62 @@ let msg = generateWAMessageFromContent(from, {
               {
                 "name": "single_select",
                 "buttonParamsJson":
-`{"title":"MENU 📃",
+`{"title":"MENU🗒️",
 "sections":[{"title":"Classic-v3-BUG",
-"rows":[{"header":"ALL MENU",
-"title":"Click to show",
-"description":"List all available menu",
-"id":"${prefix}allmenu"},
-{"header":"SEARCH MENU",
-"title":"Display Search menu",
-"description":"Displays List Of Search Commands",         
-"id":"${prefix}searchmenu"},
+"rows":[{"header":"ADD MENU",
+"title":"",
+"description":"List Add menu commands",
+"id":"${prefix}addmenu"},
+{"header":"PUSH MENU",
+"title":"",
+"description":"List Push Commands",         
+"id":"${prefix}pushmenu"},
+{"header":"FUN MENU",
+"title":"",
+"description":"List Fun Commands",
+"id":"${prefix}funmenu"},
+{"header":"BERITA MENU",
+"title":"",
+"description":"List Berita Commands",
+"id":"${prefix}beritamenu"},
+{"header":"MUSIC MENU",
+"title":"",
+"description":"List Music Commands",
+"id":"${prefix}listmusik"},
 {"header":"DOWNLOAD MENU",
-"title":"Display Download Menu",
+"title":"",
 "description":"Displays List Of Download Commands",
 "id":"${prefix}downloadmenu"},
 {"header":"GAME MENU",
-"title":"Display Game Menu",
-"description":"Displays List Of Game Commands",
+"title":"",
+"description":"List Game Commands",
 "id":"${prefix}gamemenu"},
-{"header":"FUN MENU",
-"title":"Display Fun Menu",
-"description":"Displays List Of Fun Commands",
-"id":"${prefix}funmenu"},
-{"header":"AI MENU",
-"title":"Display Ai menu",
-"description":"Displays List Of AI Commands",
-"id":"${prefix}aimenu"},
+{"header":"RANDOM MENU",
+"title":"",
+"description":"List Random Commands",
+"id":"${prefix}randommenu"},
+{"header":"ISLAM MENU",
+"title":"",
+"description":"List Islam Commands",
+"id":"${prefix}islammenu"},
 {"header":"GROUP MENU",
-"title":"Display Group Menu",
+"title":"",
 "description":"Displays List Of Group Commands",
 "id":"${prefix}groupmenu"},
 {"header":"OWNER MENU",
-"title":"Display Owner Menu",
+"title":"",
 "description":"Displays List Of Owner Commands",
 "id":"${prefix}ownermenu"},
-{"header":"CONVERT MENU",
-"title":"Display Converter Menu",
-"description":"Displays List Of Convert Commands",
-"id":"${prefix}convertmenu"},
-{"header":"STICKER MENU",
-"title":"Display Sticker Menu",
-"description":"Displays List Of Sticker Commands",
-"id":"${prefix}stickermenu"},
+{"header":"CUCIMATA MENU",
+"title":"",
+"description":"List Cucimata Commands",
+"id":"${prefix}cucimata"},
+{"header":"ASUPAN MENU",
+"title":"",
+"description":"List Asupan Commands",
+"id":"${prefix}asupan"},
 {"header":"BUG MENU",
-"title":"Display Bug Menu",                                   
+"title":"",                                   
 "description":"Displays List Of Bug Commands",
 "id":"${prefix}bugmenu"}]
 }]
@@ -1042,8 +1000,9 @@ let msg = generateWAMessageFromContent(from, {
           }),
           contextInfo: {
                   mentionedJid: [m.sender],
-                  forwardingScore: 999,                                         isForwarded: true,
-                forwardedNewsletterMessageInfo: {
+                  forwardingScore: 999,                                         
+		  isForwarded: true,
+                  forwardedNewsletterMessageInfo: {
                   newsletterJid: '120363222395675670@newsletter',
                   newsletterName: "Classic-v3-BUG",
                   serverMessageId: 143
