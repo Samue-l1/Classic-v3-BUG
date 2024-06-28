@@ -951,6 +951,7 @@ let msg = generateWAMessageFromContent(m.key.remoteJid, {
           return reply('Error generating and relaying message.');
         }
 }*/
+try {
 let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
@@ -960,16 +961,16 @@ let msg = generateWAMessageFromContent(from, {
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: xmenu_oh2
+            text: menutxt
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
-            text: botname
+            text: "Classic-v3-BUG"
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./XeonMedia/theme/cheemspic.jpg')}, { upload: XeonBotInc.waUploadToServer})),
+                ...(await prepareWAMessageMedia({ image : { url: "https://telegra.ph/file/a39c7520823692cc16338.jpg" }}, { upload: XeonBotInc.waUploadToServer})),
                   title: ``,
                   gifPlayback: true,
-                  subtitle: ownername,
+                  subtitle: "King Sam",
                   hasMediaAttachment: false
                 }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
@@ -1056,6 +1057,10 @@ let msg = generateWAMessageFromContent(from, {
 await zetaubo.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
+	} catch (error) {
+          console.error('Error generating and relaying message:', error);
+          return reply('Error generating and relaying message.');
+}
 } 
 break
 //=================================================//
@@ -10483,13 +10488,13 @@ const _0x3c52ee=_0x4109;(function(_0x1a4f9f,_0x3819cc){const _0x5c4a67=_0x4109,_
 }
 break
 //=================================================//
-case 'block': {
+/*case 'block': {
 if (!isCreator) return reply('*Premium Only*')
 await loading()
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await zetsubo.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
-break
+break*/
 //=================================================//
 case 'unblock': {
 if (!isCreator) return reply('*Premium Only*')
