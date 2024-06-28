@@ -1,19 +1,8 @@
 /*
 
-› Create By Haikal (HW MODS)
-› Base Ori Haikal (HW MODS)
+› Create By King Sam
+› Button by Tairo Makino
 
-🌷 KALAU MAU RENAME TARO CREDITS GUA : Haikal (HW MODS)
-   • [ Recode Bye > ZetsuboXygen777]
-   # AND↓
-   THANKS TO >
-  XygenGod777( Watashi / 私 )
-  Hw Mods Wa / Haikal (Base)
-  Adiwajshing (Baileys)
-  whiskeysockets (Baileys)
-  Thunder X7 (Inspirate)
-  Pak Tzy (Inspirate)
-  ♥️ ありがとう
                  >
 */
 
