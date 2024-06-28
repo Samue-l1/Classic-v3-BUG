@@ -878,140 +878,25 @@ const readmore = long.repeat(4001);
 ┃
 ┣━━━━━━━━━━━━━━━━━━━━━━
 ┃    *▓ ❰ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 ®2024 ❱ ▓*
-┗━━━━━━━━━━━━━━━━━━━━━━
-`
-/*let hiks = {
-image: cewegw, 
-  caption: ewe,
-  contextInfo:{externalAdReply:{
-  title: ' ⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺',
-  body: 'ᚙᚘ ⫹⧉⸙𝐋⚔𝐎᪥𝐑ᚘ𝐃ᚗ𝐒⸙𝐀࿈𝐌⸙⧉⫺ ᚘᚙ', 
-  showAdAttribution: true,
-  thumbnail:hinachan,
-  mediaType: 4,
-  MediaUrl:`https://telegra.ph/file/a3b5de3c2cd44f6b3aa80.jpg`,
-  sourceUrl:`https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk`,
-  }}
-  }
-zetsubo.sendMessage(from, hiks, {quoted: zets })}*/
-
-/*let freesex = {
-viewOnceMessage: {
-message: {
-interactiveMessage: {
-"contextInfo": {
-"mentionedJid": [m.sender],
-"isForwarded": true,
-"forwardedNewsletterMessageInfo": {
-"newsletterJid": '0@newsletter',
-"newsletterName": 'By King Sam',
-"serverMessageId": 1
-},
-},
-"header": {
-"title": " ⧠ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖 - 𝗩3 𝗕𝗨𝗚 ⧠",
-...(await prepareWAMessageMedia({ image: {url: "https://telegra.ph/file/9248c76c247b402e5f6ae.jpg"}}, { upload: zetsubo.waUploadToServer })),
-"hasMediaAttachment": true
-},
-"body": {
-"text": ewe
-},
-"footer": {
-"text": "*# 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 𝕴𝖓𝖛𝖊𝖓𝖙𝖎𝖔𝖓  - ©2024*"
-},
-"nativeFlowMessage": {
-"buttons": [
-{
-"name": "single_select",
-"buttonParamsJson": `{
-"title": " 🪩 𝐒𝐞𝐞 𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐀𝐥𝐥 𝐌𝐞𝐧𝐮 💈",
-"sections": [
-{
-"title": "💧 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐨𝐧𝐥𝐲 𝐂𝐡𝐨𝐨𝐬𝐞 𝐨𝐧𝐞 🔖",
-"highlight_label": "#General",
-"rows": [
-{
-"header": "𝐂𝐥𝐚𝐬𝐬𝐢𝐜-𝐂𝐌𝐃",
-"title": "⚾ 𝐀𝐥𝐥 𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐂𝐌𝐃𝐒🙃",
-"id": ".allmenu"
-},
-{
-"header": "👤 - 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒",
-"title": "❗Displays Owner Number",
-"id": ".owner"
-},
-{
-"header": "🎩 - 𝐏𝐢𝐧𝐠",
-"title": "𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐒𝐩𝐞𝐞𝐝 😛",
-"id": ".ping"
-},
-{
-"header": "🦍𝐆𝐫𝐨𝐮𝐩 - 𝐂𝐌𝐃𝐒 🦒 ",
-"title": "🪐 𝐆𝐫𝐨𝐮𝐩 𝐌𝐞𝐧𝐮 💫",
-"id": ".groupmenu"
-},
-{
-"header": "🌚 𝐈𝐬 𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐨𝐭 𝐀𝐥𝐢𝐯𝐞 🌝",
-"title": "𝐈 𝐭𝐡𝐢𝐧𝐤 𝐒𝐨 🌒",
-"id": ".alive"
-},
-{
-"header": "🌪️𝐑𝐮𝐧𝐭𝐢𝐦𝐞 🌪️",
-"title": "💨 𝐇𝐨𝐰 𝐥𝐨𝐧𝐠 𝐡𝐚𝐬 𝐜𝐥𝐚𝐬𝐬𝐢𝐜 𝐛𝐞𝐞𝐧 𝐑𝐮𝐧𝐧𝐢𝐧𝐠 🌬️",
-"id": ".runtime"
-},
-{
-"header": "𝐒𝐜𝐫𝐢𝐩𝐭 ",
-"title": "🧣 𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐨𝐭 𝐑𝐞𝐩𝐨 🥽",
-"id": ".sc"
-}
-]
-},
-{
-"title": "𝐎𝐩𝐞𝐧 𝐚𝐧𝐝 𝐬𝐞𝐞 𝐰𝐡𝐚𝐭𝐬 𝐡𝐞𝐫𝐞 🪼",
-"highlight_label": "#FRONT",
-"rows": [
-{
-"header": "🙈𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐮𝐠 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 🙊",
-"title": "🐬 Lets see the magic 🦋",
-"id": ".bugmenu"
-},
-{
-"header": "☃️𝐒𝐨𝐮𝐧𝐝 𝐌𝐞𝐧𝐮⛄",
-"title": "🐬 Tiktok Sounds🦋",
-"id": ".musikmenu"
-},
-"title": "𝐎𝐰𝐧𝐞𝐫 𝐌𝐞𝐧𝐮",
-"highlight_label": "#Courtesy",
-"rows": [
-{
-"header": "𝐕𝐂𝐅 𝐌𝐞𝐧𝐮",
-"title": "🐳 𝐒𝐚𝐯𝐞 𝐂𝐨𝐧𝐭𝐚𝐜𝐭𝐬 🐋",
-"id": ".pushmenu"
-},
-"header": "𝐒𝐞𝐥𝐟 🍐",
-"title": "𝐏𝐮𝐭 𝐲𝐨𝐮𝐫 𝐛𝐨𝐭 𝐏𝐫𝐢𝐯𝐚𝐭𝐞",
-"id": ".self"
-}
-]
-}
-]
-}`
-},
-{
-"name": "cta_url",
-"buttonParamsJson": "{\"display_text\":\"Whatsapp Channel\",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
-}
-],
-"messageParamsJson": ""
-}
-}
-}
-}
-} 
-await zetsubo.relayMessage(freesex.key.remoteJid, freesex.message, {     messageId: freesex.key.id }) 
-*/
-try {
+┗━━━━━━━━━━━━━━━━━━━━━━`
+let menutxt = `
+┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
+┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
+┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
+┃  ➥𝐂𝐨𝐧𝐭𝐚𝐜𝐭 : @${m.sender.split('@')[0]}
+┃
+┣╼╼❴ ⧠ ᏴϴͲ ᏆΝҒϴ ⧠ ❵╼╼╼
+┃
+┃    📚𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : *𝐁𝐚𝐢𝐥𝐞𝐲𝐬-𝐌𝐃*.
+┃	👾𝐏𝐫𝐞𝐟𝐢𝐱 : *𝐌𝐮𝐥𝐭𝐢-𝐏𝐫𝐞𝐟𝐢𝐱*.
+┃	📅𝐃𝐚𝐭𝐞 𝐒𝐞𝐫𝐯𝐞𝐫 : ${moment.tz('Africa/Nairobi').format('DD/MM/YY')}
+┃	🕑𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
+┃
+┣━━━━━━━━ 𝗔𝗱𝗱 𝗔𝗰𝗰𝗲𝘀 ━━━━━
+┣━━━━━━━━━━━━━━━━━━━━━━
+┃    *▓ ❰ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 ®2024 ❱ ▓*
+┗━━━━━━━━━━━━━━━━━━━━━━`
+/*try {
 let msg = generateWAMessageFromContent(m.key.remoteJid, {
             viewOnceMessage: {
               message: {
@@ -1065,7 +950,113 @@ let msg = generateWAMessageFromContent(m.key.remoteJid, {
           console.error('Error generating and relaying message:', error);
           return reply('Error generating and relaying message.');
         }
-}
+}*/
+let msg = generateWAMessageFromContent(from, {
+  viewOnceMessage: {
+    message: {
+        "messageContextInfo": {
+          "deviceListMetadata": {},
+          "deviceListMetadataVersion": 2
+        },
+        interactiveMessage: proto.Message.InteractiveMessage.create({
+          body: proto.Message.InteractiveMessage.Body.create({
+            text: xmenu_oh2
+          }),
+          footer: proto.Message.InteractiveMessage.Footer.create({
+            text: botname
+          }),
+          header: proto.Message.InteractiveMessage.Header.create({
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./XeonMedia/theme/cheemspic.jpg')}, { upload: XeonBotInc.waUploadToServer})),
+                  title: ``,
+                  gifPlayback: true,
+                  subtitle: ownername,
+                  hasMediaAttachment: false
+                }),
+          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+            buttons: [
+              {
+                "name": "single_select",
+                "buttonParamsJson":
+`{"title":"MENU 📃",
+"sections":[{"title":"Classic-v3-BUG",
+"rows":[{"header":"ALL MENU",
+"title":"Click to show",
+"description":"List all available menu",
+"id":"${prefix}allmenu"},
+{"header":"SEARCH MENU",
+"title":"Display Search menu",
+"description":"Displays List Of Search Commands",         
+"id":"${prefix}searchmenu"},
+{"header":"DOWNLOAD MENU",
+"title":"Display Download Menu",
+"description":"Displays List Of Download Commands",
+"id":"${prefix}downloadmenu"},
+{"header":"GAME MENU",
+"title":"Display Game Menu",
+"description":"Displays List Of Game Commands",
+"id":"${prefix}gamemenu"},
+{"header":"FUN MENU",
+"title":"Display Fun Menu",
+"description":"Displays List Of Fun Commands",
+"id":"${prefix}funmenu"},
+{"header":"AI MENU",
+"title":"Display Ai menu",
+"description":"Displays List Of AI Commands",
+"id":"${prefix}aimenu"},
+{"header":"GROUP MENU",
+"title":"Display Group Menu",
+"description":"Displays List Of Group Commands",
+"id":"${prefix}groupmenu"},
+{"header":"OWNER MENU",
+"title":"Display Owner Menu",
+"description":"Displays List Of Owner Commands",
+"id":"${prefix}ownermenu"},
+{"header":"CONVERT MENU",
+"title":"Display Converter Menu",
+"description":"Displays List Of Convert Commands",
+"id":"${prefix}convertmenu"},
+{"header":"STICKER MENU",
+"title":"Display Sticker Menu",
+"description":"Displays List Of Sticker Commands",
+"id":"${prefix}stickermenu"},
+{"header":"BUG MENU",
+"title":"Display Bug Menu",                                   
+"description":"Displays List Of Bug Commands",
+"id":"${prefix}bugmenu"}]
+}]
+}`
+              },
+              {
+                        "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"Repo🔗\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://github.com/Samue-l1/Classic-v3-BUG\"}"
+                      },
+		      {
+                        "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"Channel📍 \",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
+		      },
+		      {
+                        "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"YouTube 📺\",\"url\":\"https://youtube.com/@king_sam_hub\",\"merchant_url\":\"https://youtube.com/@king_sam_hub\"}"
+		}],
+          }),
+          contextInfo: {
+                  mentionedJid: [m.sender],
+                  forwardingScore: 999,                                         isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                  newsletterJid: '120363222395675670@newsletter',
+                  newsletterName: "Classic-v3-BUG",
+                  serverMessageId: 143
+                }
+                }
+        })
+    }
+  }
+}, {})
+
+await zetaubo.relayMessage(msg.key.remoteJid, msg.message, {
+  messageId: msg.key.id
+})
+} 
 break
 //=================================================//
 case 'bugmenu': {
