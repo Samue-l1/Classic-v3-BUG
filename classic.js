@@ -967,7 +967,7 @@ let msg = generateWAMessageFromContent(from, {
             text: "Classic-v3-BUG"
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : { url: "https://telegra.ph/file/a39c7520823692cc16338.jpg" }}, { upload: XeonBotInc.waUploadToServer})),
+                ...(await prepareWAMessageMedia({ image : { url: "https://telegra.ph/file/a39c7520823692cc16338.jpg" }}, { upload: classic.waUploadToServer})),
                   title: ``,
                   gifPlayback: true,
                   subtitle: "King Sam",
