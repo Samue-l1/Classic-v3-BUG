@@ -1054,7 +1054,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, {})
 
-await zetaubo.relayMessage(msg.key.remoteJid, msg.message, {
+await zetsubo.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 	} catch (error) {
