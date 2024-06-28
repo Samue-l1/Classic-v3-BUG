@@ -970,21 +970,24 @@ let msg = generateWAMessageFromContent(from, {
 {"header":"🗿 𝐁𝐔𝐆 𝐌𝐄𝐍𝐔 🦋",
 "title":"",                                   
 "description":"🐚 𝙳𝙸𝚂𝙿𝙻𝙰𝚈 𝙱𝚄𝙶 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 𝚆𝙷𝙸𝙲𝙷 𝚆𝙸𝙻𝙻 𝙱𝙴 𝙸𝙼𝙿𝚁𝙾𝚅𝙸𝚂𝙴𝙳 𝚂𝙾𝙾𝙽 🪨",
-"id":"${prefix}bugmenu"}]
+"id":"bugmenu"}]
 }]
 }`
               },
               {
                         "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"Repo🔗\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://github.com/Samue-l1/Classic-v3-BUG\"}"
+                        "buttonParamsJson": "{\"display_text\":\"𝐑𝐄𝐏𝐎 🔗\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://github.com/Samue-l1/Classic-v3-BUG\"}"
+                      },
+		       "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"𝐎𝐖𝐍𝐄𝐑 🌎\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://wa.me/+254742491666?text=Hello+King+Sam\"}"
                       },
 		      {
                         "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"Channel📍 \",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
+                        "buttonParamsJson": "{\"display_text\":\"𝐂𝐇𝐀𝐍𝐍𝐄𝐋🪀 \",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
 		      },
 		      {
                         "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"YouTube 📺\",\"url\":\"https://youtube.com/@king_sam_hub\",\"merchant_url\":\"https://youtube.com/@king_sam_hub\"}"
+                        "buttonParamsJson": "{\"display_text\":\"𝐘𝐎𝐔𝐓𝐔𝐁𝐄 📺\",\"url\":\"https://youtube.com/@king_sam_hub\",\"merchant_url\":\"https://youtube.com/@king_sam_hub\"}"
 		}],
           }),
           contextInfo: {
