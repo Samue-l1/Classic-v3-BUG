@@ -1,4 +1,4 @@
-/*
+I'll/*
 
 › Create By King Sam
 › Button by Tairo Makino
@@ -11444,7 +11444,7 @@ let msgs = global.db.data.database
 if (!(budy.toLowerCase() in msgs)) return
 zetsubo.copyNForward(from, msgs[budy.toLowerCase()], true)}}
 } catch (err) {
-reply(util.format(err))
+relay(util.format(err))
     console.log(err)
     let e = String(err)                                                                      
     if (e.includes("not-authorized")) return
