@@ -995,7 +995,7 @@ let msg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,                                         
 		  isForwarded: true,
                   forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363222395675670@newsletter',
+                  newsletterJid: '120363288746972771@newsleter',
                   newsletterName: "Classic-v3-BUG",
                   serverMessageId: 143
                 }
