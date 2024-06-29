@@ -617,7 +617,7 @@ if (budy.toLowerCase() == jawaban) {
 
 //============= [LIST RESPONCE CHECKING START ]================
         if(m.mtype === "interactiveResponseMessage"){                                                                                                               console.log("interactiveResponseMessage Detected!")
-            let freesex = m.message[m.mtype]  || m.msg
+            let msg = m.message[m.mtype]  || m.msg
             if(msg.nativeFlowResponseMessage  && !m.isBot  ){                                                                                                           let { id } = JSON.parse(msg.nativeFlowResponseMessage.paramsJson) || {}
                 if(id){
                     let emit_msg = {
