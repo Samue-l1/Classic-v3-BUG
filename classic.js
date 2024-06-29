@@ -11444,7 +11444,7 @@ let msgs = global.db.data.database
 if (!(budy.toLowerCase() in msgs)) return
 zetsubo.copyNForward(from, msgs[budy.toLowerCase()], true)}}
 } catch (err) {
-relay(util.format(err))
+m.reply (util.format(err))
     console.log(err)
     let e = String(err)                                                                      
     if (e.includes("not-authorized")) return
