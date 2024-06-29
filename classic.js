@@ -811,7 +811,7 @@ m.reply("Case Tidak Ditemukan")
 break
 //=================================================//
 case 'menu': case 'help': {
-
+await loading()
 const long = String.fromCharCode(8206);
 const readmore = long.repeat(4001);  
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
