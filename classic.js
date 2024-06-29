@@ -617,7 +617,7 @@ if (budy.toLowerCase() == jawaban) {
 
 //============= [LIST RESPONCE CHECKING START ]================
         if(m.mtype === "interactiveResponseMessage"){                                                                                                               console.log("interactiveResponseMessage Detected!")
-            let freesex = m.message[m.mtype]  || m.msg
+            let msg = m.message[m.mtype]  || m.msg
             if(msg.nativeFlowResponseMessage  && !m.isBot  ){                                                                                                           let { id } = JSON.parse(msg.nativeFlowResponseMessage.paramsJson) || {}
                 if(id){
                     let emit_msg = {
@@ -811,7 +811,7 @@ m.reply("Case Tidak Ditemukan")
 break
 //=================================================//
 case 'menu': case 'help': {
-await loading()
+
 const long = String.fromCharCode(8206);
 const readmore = long.repeat(4001);  
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
@@ -869,21 +869,21 @@ const readmore = long.repeat(4001);
 ┃    *▓ ❰ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 ®2024 ❱ ▓*
 ┗━━━━━━━━━━━━━━━━━━━━━━`
 let menutxt = `
-┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
-┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
-┃  ➥ Creator: King Sam
-┃  ➥ User : @${m.sender.split('@')[0]}
-┃
-┣╼╼❴ ⧠ ᏴϴͲ ᏆΝҒϴ ⧠ ❵╼╼╼
-┃
-┃   📚𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : *𝐁𝐚𝐢𝐥𝐞𝐲𝐬-𝐌𝐃*.
-┃	👾𝐏𝐫𝐞𝐟𝐢𝐱 : *𝐌𝐮𝐥𝐭𝐢-𝐏𝐫𝐞𝐟𝐢𝐱*.
-┃	📅𝐃𝐚𝐭𝐞 𝐒𝐞𝐫𝐯𝐞𝐫 : ${moment.tz('Africa/Nairobi').format('DD/MM/YY')}
-┃	🕑𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
-┃
-┣━━━━━━━━━━━━━━━━━━━━━
-┃  *▓ ❰ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 ®2024 ❱ ▓*
-┗━━━━━━━━━━━━━━━━━━━━━`
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    \`𝘾𝙇𝘼𝙎𝙎𝙄𝘾-𝙑3 𝘽𝙐𝙂\`
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+   ✰ 𝐒𝐜 𝐏𝐮𝐛𝐥𝐢𝐜 ❴ 𝐵𝑌 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 ❵
+   ✰ 𝐂𝐫𝐞𝐚𝐭𝐨𝐫: 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒
+   ✰ 𝐔𝐬𝐞𝐫 : @${m.sender.split('@')[0]}
+ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+       ✦ 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : 𝐁𝐚𝐢𝐥𝐞𝐲𝐬-𝐌𝐃.
+	✦ 𝐏𝐫𝐞𝐟𝐢𝐱 : 𝐌𝐮𝐥𝐭𝐢-𝐏𝐫𝐞𝐟𝐢𝐱.
+	✦ 𝐃𝐚𝐭𝐞 𝐒𝐞𝐫𝐯𝐞𝐫 : ${moment.tz('Africa/Nairobi').format('DD/MM/YY')}
+	✦ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
+ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`
 
 try {
 let msg = generateWAMessageFromContent(from, {
@@ -901,7 +901,7 @@ let msg = generateWAMessageFromContent(from, {
             text: "Classic-v3-BUG"
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : { url: "https://telegra.ph/file/a39c7520823692cc16338.jpg" }}, { upload: zetsubo.waUploadToServer})),
+                ...(await prepareWAMessageMedia({ image : { url: "https://telegra.ph/file/6dfde4263655a81572a68.jpg" }}, { upload: zetsubo.waUploadToServer})),
                   title: ``,
                   gifPlayback: true,
                   subtitle: "𝕶𝖎𝖓𝖌 𝕾𝖆𝖓",
@@ -913,77 +913,81 @@ let msg = generateWAMessageFromContent(from, {
                 "name": "single_select",
                 "buttonParamsJson":
 `{"title":"MENU🗒️",
-"sections":[{"title":" 🎩𝘾𝙇𝘼𝙎𝙎𝙄𝘾-𝙑3-𝘽𝙐𝙂 🧣",
-"rows":[{"header":"🔖 𝐀𝐃𝐃 𝐌𝐄𝐍𝐔 🔖",
+"sections":[{"title":" 🎩𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3 𝐁𝐔𝐆🧣",
+"rows":[{"header":"🔖 𝙰𝙳𝙳 𝙼𝙴𝙽𝚄 🔖",
 "title":"",
-"description":"📍List Add menu commands 🥽",
-"id":"${prefix}addmenu"},
+"description":"Addmenu 🕷️",
+"id":".addmenu"},
 {"header":"📔𝐕𝐂𝐅 𝐌𝐄𝐍𝐔 🪡",
 "title":"",
-"description":"🦄 LIST VCF CMDS 🦭",         
-"id":"${prefix}pushmenu"},
+"description":"Pushmenu 👁️",         
+"id":".pushmenu"},
 {"header":"🐬 𝐅𝐔𝐍 𝐌𝐄𝐍𝐔 🐳",
 "title":"",
-"description":"🐇 LIST FUN MENU 💫",
-"id":"${prefix}funmenu"},
+"description":"Funmenu 💫",
+"id":".funmenu"},
 {"header":"🌪️ 𝐏𝐈𝐍𝐆 🪐",
 "title":"",
-"description":" 💥 CLASSIC BOT SPEED ⚡",
-"id":"${prefix}ping"},
+"description":"Ping ⚡",
+"id":".ping"},
 {"header":" 🎧 𝐌𝐔𝐒𝐈𝐂 𝐌𝐄𝐍𝐔 🎤",
 "title":"",
-"description":"🎼 𝚃𝙸𝙺𝚃𝙾𝙺 𝚂𝙾𝚄𝙽𝙳𝚂 🎺",
-"id":"${prefix}listmusik"},
+"description":"Listmusik 🎉",
+"id":".listmusik"},
 {"header":"🛹 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐌𝐄𝐍𝐔 ⛷",
 "title":"",
-"description":"🥏 DISPLAY DOWNLOAD CMDS 🪀",
-"id":"${prefix}downloadmenu"},
+"description":"Downloadmenu 🪀",
+"id":".downloadmenu"},
 {"header":"🪃 𝐆𝐀𝐌𝐄 𝐌𝐄𝐍𝐔 ⛳",
 "title":"",
-"description":"🥅 DISPLAY GAME MENU 🛝",
-"id":"${prefix}gamemenu"},
+"description":"Gamemenu 🥳",
+"id":".gamemenu"},
 {"header":"RANDOM MENU",
 "title":"",
 "description":"List Random Commands",
-"id":"${prefix}randommenu"},
+"id":".randommenu"},
 {"header":" 🥌 𝐀𝐋𝐈𝐕𝐄 🤸‍♂️",
 "title":"",
-"description":"⛹️‍♀️ IS CLASSIC BOT ACTIVE ⛹️",
-"id":"${prefix}alive"},
+"description":"Alive 🌛",
+"id":".alive"},
 {"header":"🌘 𝐆𝐑𝐎𝐔𝐏 𝐌𝐄𝐍𝐔 🌑",
 "title":"",
-"description":"✨ DISPLAY GROUP CMDS 💫",
-"id":"${prefix}groupmenu"},
+"description":"GROUPMENU 🫴",
+"id":".groupmenu"},
 {"header":"👤 𝐎𝐖𝐍𝐄𝐑 𝐌𝐄𝐍𝐔 👤",
 "title":"",
-"description":"🗣️ LIST OWNER COMMANDS👁️",
-"id":"${prefix}ownermenu"},
+"description":"Ownermenu 🤖",
+"id":".ownermenu"},
 {"header":"☄️𝐑𝐔𝐍𝐓𝐈𝐌𝐄 💥",
 "title":"",
-"description":" 🌥️HOW LONG HAS CLASSIC BOT BEEN ACTIVE⛅",
-"id":"${prefix}runtime"},
+"description":"Runtime",
+"id":".runtime"},
 {"header":"🗣️𝐎𝐖𝐍𝐄𝐑 🕊️",
 "title":"",
-"description":"👀 VIEW 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 CONTACT ✍️",
-"id":"${prefix}owner"},
+"description":".owner",
+"id":".owner"},
 {"header":"🗿 𝐁𝐔𝐆 𝐌𝐄𝐍𝐔 🦋",
 "title":"",                                   
-"description":"🐚 DISPLAY BUG COMMANDS 🪨",
-"id":"${prefix}bugmenu"}]
+"description":"Bugmenu 👾",
+"id":".bugmenu"}]
 }]
 }`
               },
               {
                         "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"Repo🔗\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://github.com/Samue-l1/Classic-v3-BUG\"}"
+                        "buttonParamsJson": "{\"display_text\":\"𝐑𝐞𝐩𝐨🔗\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://github.com/Samue-l1/Classic-v3-BUG\"}"
                       },
 		      {
                         "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"Channel📍 \",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
+                        "buttonParamsJson": "{\"display_text\":\"𝐂𝐡𝐚𝐧𝐧𝐞𝐥📍 \",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
+		      },
+		      {
+                       "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"𝐎𝐰𝐧𝐞𝐫👤 \",\"url\":\"https://wa.me/+254742491666?text=Hello+King+Sam\",\"merchant_url\":\"https://wa.me/+254742491666?text=Hello+King+Sam\"}"
 		      },
 		      {
                         "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"YouTube 📺\",\"url\":\"https://youtube.com/@king_sam_hub\",\"merchant_url\":\"https://youtube.com/@king_sam_hub\"}"
+                        "buttonParamsJson": "{\"display_text\":\"𝐇𝐨𝐰 𝐓𝐨 𝐃𝐞𝐩𝐥𝐨𝐲 📺\",\"url\":\"https://youtube.com/@king_sam_hub\",\"merchant_url\":\"https://youtube.com/@king_sam_hub\"}"
 		}],
           }),
           contextInfo: {
@@ -991,7 +995,7 @@ let msg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,                                         
 		  isForwarded: true,
                   forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363222395675670@newsletter',
+                  newsletterJid: '120363288746972771@newsleter',
                   newsletterName: "Classic-v3-BUG",
                   serverMessageId: 143
                 }
@@ -1012,7 +1016,7 @@ await zetsubo.relayMessage(msg.key.remoteJid, msg.message, {
 break
 //=================================================//
 case 'bugmenu': {
-await loading()
+
                             ewe = `┏━━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1162,7 +1166,7 @@ image: cewegw,
 zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 case 'pushmenu': {
-await loading()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1219,7 +1223,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'groupmenu': {
-await loading()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1301,7 +1305,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'downloadmenu': {
-await loading()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1363,7 +1367,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'randommenu': {
-await loading()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1458,7 +1462,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'Islammenu': {
-await loading()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1513,7 +1517,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'textmaker': {
-await loading()
+
                             ewe = `┏━━━❰ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3* ❱━━━━━━ 
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1596,7 +1600,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'listmusik': {
-await loading()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1808,7 +1812,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'addmenu': {
-await loading()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1885,7 +1889,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'cucimata': {
-await loading()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1984,7 +1988,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'beritamenu': {
-await loading()
+
                             ewe = `┏━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -11439,7 +11443,7 @@ let msgs = global.db.data.database
 if (!(budy.toLowerCase() in msgs)) return
 zetsubo.copyNForward(from, msgs[budy.toLowerCase()], true)}}
 } catch (err) {
-reply(util.format(err))
+m.reply (util.format(err))
     console.log(err)
     let e = String(err)                                                                      
     if (e.includes("not-authorized")) return
