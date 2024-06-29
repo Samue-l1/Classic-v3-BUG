@@ -965,12 +965,12 @@ let msg = generateWAMessageFromContent(from, {
 "id":".runtime"},
 {"header":"🗣️𝐎𝐖𝐍𝐄𝐑 🕊️",
 "title":"",
-"description":"Owner 👤",
+"description":".owner",
 "id":".owner"},
 {"header":"🗿 𝐁𝐔𝐆 𝐌𝐄𝐍𝐔 🦋",
 "title":"",                                   
 "description":"Bugmenu 👾",
-"id":"${prefix}bugmenu"}]
+"id":".bugmenu"}]
 }]
 }`
               },
