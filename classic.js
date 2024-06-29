@@ -962,7 +962,7 @@ let msg = generateWAMessageFromContent(from, {
 {"header":"☄️𝐑𝐔𝐍𝐓𝐈𝐌𝐄 💥",
 "title":"",
 "description":"Runtime",
-"id":"${prefix}runtime"},
+"id":"runtime"},
 {"header":"🗣️𝐎𝐖𝐍𝐄𝐑 🕊️",
 "title":"",
 "description":"Owner 👤",
