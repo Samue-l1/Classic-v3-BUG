@@ -811,63 +811,6 @@ m.reply("Case Tidak Ditemukan")
 break
 //=================================================//
 case 'menu': case 'help': {
-
-const long = String.fromCharCode(8206);
-const readmore = long.repeat(4001);  
-                            ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
-┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
-┃  ➥User: ${pushname}
-┃  ➥Creator : King Sam
-┃
-┣╼╼❴ ⧠ ᏴϴͲ ᏆΝҒϴ ⧠ ❵╼╼╼
-┃
-┃    📚𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : *𝐁𝐚𝐢𝐥𝐞𝐲𝐬-𝐌𝐃*.
-┃	👾𝐏𝐫𝐞𝐟𝐢𝐱 : *𝐌𝐮𝐥𝐭𝐢-𝐏𝐫𝐞𝐟𝐢𝐱*.
-┃	📅𝐃𝐚𝐭𝐞 𝐒𝐞𝐫𝐯𝐞𝐫 : ${moment.tz('Africa/Nairobi').format('DD/MM/YY')}
-┃	🕑𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
-┃
-┣━━━━━━━━ 𝗔𝗱𝗱 𝗔𝗰𝗰𝗲𝘀 ━━━━━ ${readmore}
-┃
-┃┏━━━━━━━━━━━━━━━━━━━
-┃➢ 𝐚𝐝𝐝𝐩𝐫𝐞𝐦 (628xx/@𝐭𝐚𝐠)
-┃➢ 𝐝𝐞𝐥𝐩𝐫𝐞𝐦𝐢𝐮𝐦 (628𝐱𝐱/@𝐭𝐚𝐠)
-┃➢ 𝐝𝐞𝐥𝐩𝐫𝐞𝐦 (628𝐱𝐱/@𝐭𝐚𝐠)
-┃➢ 𝐥𝐢𝐬𝐭𝐩𝐫𝐞𝐦
-┃➢ 𝐩𝐞𝐧𝐠𝐠𝐮𝐧𝐚 𝐚𝐝𝐝 (628𝐱𝐱)
-┃➢ 𝐩𝐞𝐧𝐠𝐠𝐮𝐧𝐚 𝐝𝐞𝐥 (628𝐱𝐱)
-┃➨ 𝖆𝖚𝖙𝖔𝖘𝖙𝖆𝖙𝖚𝖘𝖛𝖎𝖊𝖜 
-┃➢ 𝐩𝐮𝐛𝐥𝐢𝐜
-┃➢ 𝐬𝐞𝐥𝐟
-┃┗━━━━━━━━━━━━━━━━━━━━
-┃
-┣━━━━━⟤ 𝐌𝐄𝐍𝐔 ⟥━━━━━━━
-┃
-┃┏━━━━❴❖ 𝐋𝐈𝐒𝐓𝐌𝐄𝐍𝐔 ❖❵━━━━
-┃➟ 𝐆𝐚𝐦𝐞𝐦𝐞𝐧𝐮
-┃➟ 𝐈𝐬𝐥𝐚𝐦𝐦𝐞𝐧𝐮
-┃➟ 𝐁𝐮𝐠𝐦𝐞𝐧𝐮
-┃➟ 𝐆𝐫𝐨𝐮𝐩𝐦𝐞𝐧𝐮
-┃➟𝐁𝐞𝐫𝐢𝐭𝐚𝐦𝐞𝐧𝐮
-┃➟ 𝐅𝐮𝐧𝐦𝐞𝐧𝐮
-┃➟ 𝐀𝐝𝐝𝐦𝐞𝐧𝐮
-┃➟ 𝐑𝐚𝐧𝐝𝐨𝐦𝐦𝐞𝐧𝐮
-┃➟ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐦𝐞𝐧𝐮
-┃➟ 𝐓𝐞𝐱𝐭𝐦𝐚𝐤𝐞𝐫
-┃➟ 𝐋𝐢𝐬𝐭𝐦𝐮𝐬𝐢𝐤
-┃➟ 𝐂𝐮𝐜𝐢𝐦𝐚𝐭𝐚
-┃➟ 𝐀𝐬𝐮𝐩𝐚𝐧
-┃➟ 𝐩𝐮𝐬𝐡𝐦𝐞𝐧𝐮
-┃ ┗━━━━━━━━━━━━━
-┃   ━━⧠ 𝐁𝐎𝐍𝐔𝐒 ⧠━━━
-┃  ╭╼╼╼╼╼╼╼╼╼╮
-┃   ➨ 𝐩𝐢𝐧𝐠
-┃   ➨ 𝐚𝐥𝐢𝐯𝐞
-┃   ➨ 𝐫𝐮𝐧𝐭𝐢𝐦𝐞
-┃  ╰╼╼╼╼╼╼╼╼╼╯
-┃
-┣━━━━━━━━━━━━━━━━━━━━━━
-┃    *▓ ❰ 𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 ®2024 ❱ ▓*
-┗━━━━━━━━━━━━━━━━━━━━━━`
 let menutxt = `
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     \`𝘾𝙇𝘼𝙎𝙎𝙄𝘾-𝙑3 𝘽𝙐𝙂\`
@@ -877,15 +820,15 @@ let menutxt = `
    ✰ 𝐔𝐬𝐞𝐫 : @${m.sender.split('@')[0]}
  
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-       ✦ 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : 𝐁𝐚𝐢𝐥𝐞𝐲𝐬-𝐌𝐃.
-	✦ 𝐏𝐫𝐞𝐟𝐢𝐱 : 𝐌𝐮𝐥𝐭𝐢-𝐏𝐫𝐞𝐟𝐢𝐱.
-	✦ 𝐃𝐚𝐭𝐞 𝐒𝐞𝐫𝐯𝐞𝐫 : ${moment.tz('Africa/Nairobi').format('DD/MM/YY')}
-	✦ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
+    ✦ 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : 𝐁𝐚𝐢𝐥𝐞𝐲𝐬-𝐌𝐃.
+    ✦ 𝐏𝐫𝐞𝐟𝐢𝐱 : 𝐌𝐮𝐥𝐭𝐢-𝐏𝐫𝐞𝐟𝐢𝐱.
+    ✦ 𝐃𝐚𝐭𝐞 𝐒𝐞𝐫𝐯𝐞𝐫 : ${moment.tz('Africa/Nairobi').format('DD/MM/YY')}
+    ✦ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
  
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`
 
-try {
+/*try {
 let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
@@ -973,7 +916,7 @@ let msg = generateWAMessageFromContent(from, {
 }]
 }`
               },
-              {
+                     {
                         "name": "cta_url",
                         "buttonParamsJson": "{\"display_text\":\"𝐑𝐞𝐩𝐨🔗\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://github.com/Samue-l1/Classic-v3-BUG\"}"
                       },
@@ -1012,7 +955,162 @@ await zetsubo.relayMessage(msg.key.remoteJid, msg.message, {
           console.error('Error generating and relaying message:', error);
           return reply('Error generating and relaying message.');
 }
+
+}*/
+try {
+let msg = generateWAMessageFromContent(m.key.remoteJid, {
+            viewOnceMessage: {
+              message: {
+                "messageContextInfo": {
+                  "deviceListMetadata": {},
+                  "deviceListMetadataVersion": 2
+                },
+                interactiveMessage: proto.Message.InteractiveMessage.create({
+                  body: proto.Message.InteractiveMessage.Body.create({
+                    text: menutxt,
+                  }),
+                  footer: proto.Message.InteractiveMessage.Footer.create({
+                    text: "King Sam"
+                  }),
+                  header: proto.Message.InteractiveMessage.Header.create({
+		    ...(await prepareWAMessageMedia({ image: { url: 'https://telegra.ph/file/6dfde4263655a81572a68.jpg' } }, { upload: zetsubo.waUploadToServer })),
+                    title: "",
+                    subtitle: "Classic-v3-BUG",
+                    hasMediaAttachment: false
+                  }),
+                  nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                    buttons: [
+		       {
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"MENU List🚀","id":"${prefix}taira"}`                                     
+		       },
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"PING 💤","id":"${prefix}ping"}`                                    
+			},
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"☄️𝐑𝐔𝐍𝐓𝐈𝐌𝐄 💥","id":"${prefix}runtime"}`                                     
+			},
+		      {
+                        "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"𝐂𝐡𝐚𝐧𝐧𝐞𝐥📍 \",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
+		      },
+		      {
+                       "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"𝐎𝐰𝐧𝐞𝐫👤 \",\"url\":\"https://wa.me/+254742491666?text=Hello+King+Sam\",\"merchant_url\":\"https://wa.me/+254742491666?text=Hello+King+Sam\"}"
+		      },
+		      {
+                        "name": "cta_url",
+                        "buttonParamsJson": "{\"display_text\":\"𝐇𝐨𝐰 𝐓𝐨 𝐃𝐞𝐩𝐥𝐨𝐲 📺\",\"url\":\"https://youtube.com/@king_sam_hub\",\"merchant_url\":\"https://youtube.com/@king_sam_hub\"}"
+		      },
+                    ]
+                  })
+                })
+              }
+            }
+          }, {});
+
+          if (!msg || !msg.key || !msg.key.remoteJid || !msg.key.id) {
+            const errorMessage = 'Error: Invalid message key.';
+            console.error(errorMessage);
+            return reply(errorMessage);
+          }
+
+          await zetsubo.relayMessage(msg.key.remoteJid, msg.message, {
+            messageId: msg.key.id
+          });
+        } catch (error) {
+          console.error('Error generating and relaying message:', error);
+          return reply('Error generating and relaying message.');
+	}
 } 
+break
+//=================================================//
+case 'taira': {
+try {
+let msg = generateWAMessageFromContent(m.key.remoteJid, {
+            viewOnceMessage: {
+              message: {
+                "messageContextInfo": {
+                  "deviceListMetadata": {},
+                  "deviceListMetadataVersion": 2
+                },
+                interactiveMessage: proto.Message.InteractiveMessage.create({
+                  body: proto.Message.InteractiveMessage.Body.create({
+                    text: "Click Me 🚀",
+                  }),
+                  footer: proto.Message.InteractiveMessage.Footer.create({
+                    text: "King Sam"
+                  }),
+                  header: proto.Message.InteractiveMessage.Header.create({
+		   ...(await prepareWAMessageMedia({ image: { url: 'https://telegra.ph/file/6dfde4263655a81572a68.jpg' } }, { upload: zetsubo.waUploadToServer })),
+                    title: "",
+                    subtitle: "Classic-v3-BUG",
+                    hasMediaAttachment: false
+                  }),
+                  nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                    buttons: [
+		       {
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"Ownermenu 🤖","id":"${prefix}ownermenu"}`                                     
+		       },
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"Bugmenu 👾","id":"${prefix}bugmenu"}`                                    
+			},
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"GROUPMENU 🫴","id":"${prefix}groupmenu"}`                                     
+			},
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"RANDOMMENU 🙋","id":"${prefix}randommenu"}`                                     
+			},
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"Gamemenu 🥳","id":"${prefix}gamemenu"}`                                    
+			},
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"Downloadmenu 🪀","id":"${prefix}downloadmenu"}`                                   
+			},
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"Listmusik 🎉","id":"${prefix}listmusik"}`                                     
+			},
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"Funmenu 💫","id":"${prefix}funmenu"}`                                     
+			},
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"Pushmenu 👁️","id":"${prefix}pushmenu"}`                                     
+			},
+			{
+                        "name": "quick_reply",
+                        "buttonParamsJson": `{"display_text":"Addmenu 🕷️","id":"${prefix}addmenu"}`                                     },
+                    ]
+                  })
+                })
+              }
+            }
+          }, {});
+
+          if (!msg || !msg.key || !msg.key.remoteJid || !msg.key.id) {
+            const errorMessage = 'Error: Invalid message key.';
+            console.error(errorMessage);
+            return reply(errorMessage);
+          }
+
+          await zetsubo.relayMessage(msg.key.remoteJid, msg.message, {
+            messageId: msg.key.id
+          });
+        } catch (error) {
+          console.error('Error generating and relaying message:', error);
+          return reply('Error generating and relaying message.');
+	} 
+}
 break
 //=================================================//
 case 'bugmenu': {
