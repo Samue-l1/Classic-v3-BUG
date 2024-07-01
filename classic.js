@@ -413,7 +413,7 @@ message: {
 }
 }), { userJid: m.chat, quoted: kuwoted })
 //await ryozingod.relayMessage(target, etc.message, { messageId: etc.key.id }) Gunakan Ini Jika Ingin Bug Keliatan Di Wa Pengirim
-await classic.relayMessage(target, etc.message, { participant: { jid: target }, messageId: etc.key.id }); //Gunakan Ini Jika Ingin Bug Hanya Terlihat Di Wa Target ( Benefit - WhatsApp pengguna tidak ikut crash )
+await zetsubo.relayMessage(target, etc.message, { participant: { jid: target }, messageId: etc.key.id }); //Gunakan Ini Jika Ingin Bug Hanya Terlihat Di Wa Target ( Benefit - WhatsApp pengguna tidak ikut crash )
 	 }
 
 /*let reactionMessage = {
