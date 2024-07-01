@@ -3359,7 +3359,7 @@ mentionedJid: ['00000@s.whatsapp.net'],
 externalAdReply: {
 showAdAttribution: false,
 renderLargerThumbnail: false,
-jpegThumbnail: fakejpg,
+jpegThumbnail: ``,
 title: ``,
 body: ``,
 previewType: "VIDEO",
