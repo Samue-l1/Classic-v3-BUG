@@ -37,7 +37,8 @@
 
 ## ```Bot Support Group Chats```
 
-- [`GC`]([https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk](https://chat.whatsapp.com/ETsxysQPYXxG1P8JQ1RQHV))
+- [`GC`](https://chat.whatsapp.com/ETsxysQPYXxG1P8JQ1RQHV)
+- 
 - [`Channel`](https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e)
 
 
