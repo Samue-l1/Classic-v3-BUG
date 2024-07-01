@@ -3229,7 +3229,7 @@ reply(`*Classic-V3 has Delivered  ${bnnd} Kindly wait for 3 minutes*`)
 }
 break
 //=================================================//
-case "ckill": {
+case 'ckill': {
   if (!isCreatori) return reply(mess.prem)
   if (!args[0]) return reply(`Use ${prefix+command} Target number|2\nExample ${prefix+command} 254xxxxxxxxxx,2`) 
   let number = text.split(',')[0];
