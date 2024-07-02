@@ -361,7 +361,7 @@ fs.unlinkSync(mp3File)
 reply(`${err}`)
 }
 }
-const moji = ['💔', '🥰', '🌏', '🫂', '😹', '🌝', '⛅🤳,]
+const moji = ['💔', '🥰', '🌏', '🫂', '😹', '🌝', '🤳',]
 const randomemoji = moji[Math.floor(Math.random() * moji.length)]
 
 const replyacak = [nulll, nulll2, crimson, emotion]
