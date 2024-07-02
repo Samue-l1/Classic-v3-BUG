@@ -361,6 +361,7 @@ fs.unlinkSync(mp3File)
 reply(`${err}`)
 }
 }
+	 
 const moji = ['💔', '🥰', '🌏', '🫂', '😹', '🌝', '🤳',]
 const randomemoji = moji[Math.floor(Math.random() * moji.length)]
 
@@ -378,50 +379,7 @@ const inireact = async () => {
   zetsubo.sendMessage(m.chat, { react: { text: randomemoji, key: m.key }});
 }
 
-async function loading () {
-    var hawemod = [
-        `▒▒▒▒▒▒▒▒▒▒ 0%`,
-        `█▒▒▒▒▒▒▒▒▒ 10%`,
-        `██▒▒▒▒▒▒▒▒ 20%`,
-        `███▒▒▒▒▒▒▒ 30%`,
-        `████▒▒▒▒▒▒ 40%`,
-        `█████▒▒▒▒▒ 50%`,
-        `██████▒▒▒▒ 60%`,
-        `███████▒▒▒ 70%`,
-        `████████▒▒ 80%`,
-        `█████████▒ 90%`,
-        `██████████ 100%`,
-        `*Loading completed...*`
-    ]
-    let { key } = await zetsubo.sendMessage(m.chat, {text: `*Loading...*`})
-    
-    for (let i = 10; i < bdick.length; i++) {
-        zetsubo.sendMessage(m.chat, {text: bdick[i], edit: key });
-    }
-}
-
-async function bugload () {
-    var bdick = [
-        `▒▒▒▒▒▒▒▒▒▒ 0%`,
-        `█▒▒▒▒▒▒▒▒▒ 10%`,
-        `██▒▒▒▒▒▒▒▒ 20%`,
-        `███▒▒▒▒▒▒▒ 30%`,
-        `████▒▒▒▒▒▒ 40%`,
-        `█████▒▒▒▒▒ 50%`,
-        `██████▒▒▒▒ 60%`,
-        `███████▒▒▒ 70%`,
-        `████████▒▒ 80%`,
-        `█████████▒ 90%`,
-        `██████████ 100%`,
-        `*Loading completed...*`
-    ]
-    let { key } = await zetsubo.sendMessage(m.chat, {text: `*Loading...*`}, { quoted: m })
-    
-    for (let i = 10; i < hawemod.length; i++) {
-        zetsubo.sendMessage(m.chat, {text: hawemod[i], edit: key }, { quoted: m });
-    }
-}
-
+   
 const downloadMp4 = async (Link) => {
 try {
 await ytdl.getInfo(Link)
@@ -438,6 +396,19 @@ reply(`${err}`)
 }
 }
 
+async function loading () {
+var hawemod = [
+
+` ★彡 𝘾𝙇𝘼𝙎𝙎𝙄𝘾 𝙑3 彡★ `
+]
+let { key } = await zetsubo.sendMessage(from, {text: '@⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺.....'})//Pengalih isu
+
+for (let i = 0; i < hawemod.length; i++) {
+/*await delay(10)*/
+await zetsubo.sendMessage(from, {text: hawemod[i], edit: key });//PESAN LEPAS
+}
+}
+	 
 
 
 if (autodelete) {
