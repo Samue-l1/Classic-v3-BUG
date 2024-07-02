@@ -361,6 +361,66 @@ fs.unlinkSync(mp3File)
 reply(`${err}`)
 }
 }
+const moji = ['💔', '🥰', '🌏', '🫂', '😹', '🌝', '⛅🤳,]
+const randomemoji = moji[Math.floor(Math.random() * moji.length)]
+
+const replyacak = [nulll, nulll2, crimson, emotion]
+//Reaction
+const inireact = async () => {
+  const emojis = ["💦", "🕳️", "🔥", "💫", "👁️", "👀", "👽", "👾"];
+  
+  for (const emoji of emojis) {
+    await sleep(80);
+    zetsubo.sendMessage(m.chat, { react: { text: emoji, key: m.key }});
+  }
+  
+  await sleep(50);
+  zetsubo.sendMessage(m.chat, { react: { text: randomemoji, key: m.key }});
+}
+
+async function loading () {
+    var bdick = [
+        `▒▒▒▒▒▒▒▒▒▒ 0%`,
+        `█▒▒▒▒▒▒▒▒▒ 10%`,
+        `██▒▒▒▒▒▒▒▒ 20%`,
+        `███▒▒▒▒▒▒▒ 30%`,
+        `████▒▒▒▒▒▒ 40%`,
+        `█████▒▒▒▒▒ 50%`,
+        `██████▒▒▒▒ 60%`,
+        `███████▒▒▒ 70%`,
+        `████████▒▒ 80%`,
+        `█████████▒ 90%`,
+        `██████████ 100%`,
+        `*Loading completed...*`
+    ]
+    let { key } = await ryozingod.sendMessage(m.chat, {text: `*Loading...*`})
+    
+    for (let i = 10; i < bdick.length; i++) {
+        zetsubo ryozingod.sendMessage(m.chat, {text: bdick[i], edit: key });
+    }
+}
+
+async function bugload () {
+    var bdick = [
+        `▒▒▒▒▒▒▒▒▒▒ 0%`,
+        `█▒▒▒▒▒▒▒▒▒ 10%`,
+        `██▒▒▒▒▒▒▒▒ 20%`,
+        `███▒▒▒▒▒▒▒ 30%`,
+        `████▒▒▒▒▒▒ 40%`,
+        `█████▒▒▒▒▒ 50%`,
+        `██████▒▒▒▒ 60%`,
+        `███████▒▒▒ 70%`,
+        `████████▒▒ 80%`,
+        `█████████▒ 90%`,
+        `██████████ 100%`,
+        `*Loading completed...*`
+    ]
+    let { key } = await zetsubo.sendMessage(m.chat, {text: `*Loading...*`}, { quoted: ryobug })
+    
+    for (let i = 10; i < bdick.length; i++) {
+        zetsubo.sendMessage(m.chat, {text: bdick[i], edit: key }, { quoted: ryobug });
+    }
+}
 
 const downloadMp4 = async (Link) => {
 try {
