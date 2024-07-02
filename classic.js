@@ -396,7 +396,7 @@ async function loading () {
     let { key } = await ryozingod.sendMessage(m.chat, {text: `*Loading...*`})
     
     for (let i = 10; i < bdick.length; i++) {
-        zetsubo ryozingod.sendMessage(m.chat, {text: bdick[i], edit: key });
+        zetsubo.sendMessage(m.chat, {text: bdick[i], edit: key });
     }
 }
 
