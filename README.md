@@ -49,7 +49,7 @@
 
 ## `Generate Pair Code For Session`
 
-[`Classic Pairing`](https://replit.com/@pesguru02/Classic-Pairing)
+[`Classic Pairing`](https://classic-v3-session.onrender.com/)
 
 [`HOW TO DEPLOY VIDEO TUTORIAL`](https://youtu.be/b5gpcwPvtgk?si=Ybg9m7gyDjh9gEwn)
 
