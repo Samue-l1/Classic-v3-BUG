@@ -925,7 +925,7 @@ let menutxt = `
  
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-© 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 © 𝙲𝚕𝚊𝚜𝚜𝚒𝚌 𝙱𝚘𝚝 𝙰𝚍𝚖𝚒𝚗𝚜`
+©𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 © 𝙲𝚕𝚊𝚜𝚜𝚒𝚌 𝙱𝚘𝚝 𝙰𝚍𝚖𝚒𝚗𝚜`
 
 /*try {
 let msg = generateWAMessageFromContent(from, {
@@ -1127,6 +1127,7 @@ let msg = generateWAMessageFromContent(m.key.remoteJid, {
 break
 //=================================================//
 case 'taira': {
+await inireact()
 try {
 let msg = generateWAMessageFromContent(m.key.remoteJid, {
             viewOnceMessage: {
