@@ -379,7 +379,7 @@ const inireact = async () => {
 }
 
 async function loading () {
-    var bdick = [
+    var hawemod = [
         `▒▒▒▒▒▒▒▒▒▒ 0%`,
         `█▒▒▒▒▒▒▒▒▒ 10%`,
         `██▒▒▒▒▒▒▒▒ 20%`,
@@ -393,7 +393,7 @@ async function loading () {
         `██████████ 100%`,
         `*Loading completed...*`
     ]
-    let { key } = await ryozingod.sendMessage(m.chat, {text: `*Loading...*`})
+    let { key } = await zetsubo.sendMessage(m.chat, {text: `*Loading...*`})
     
     for (let i = 10; i < bdick.length; i++) {
         zetsubo.sendMessage(m.chat, {text: bdick[i], edit: key });
@@ -415,10 +415,10 @@ async function bugload () {
         `██████████ 100%`,
         `*Loading completed...*`
     ]
-    let { key } = await zetsubo.sendMessage(m.chat, {text: `*Loading...*`}, { quoted: ryobug })
+    let { key } = await zetsubo.sendMessage(m.chat, {text: `*Loading...*`}, { quoted: m })
     
-    for (let i = 10; i < bdick.length; i++) {
-        zetsubo.sendMessage(m.chat, {text: bdick[i], edit: key }, { quoted: ryobug });
+    for (let i = 10; i < hawemod.length; i++) {
+        zetsubo.sendMessage(m.chat, {text: hawemod[i], edit: key }, { quoted: m });
     }
 }
 
@@ -438,18 +438,7 @@ reply(`${err}`)
 }
 }
 
-async function loading () {
-var hawemod = [
 
-` ★彡 𝘾𝙇𝘼𝙎𝙎𝙄𝘾 𝙑3 彡★ `
-]
-let { key } = await zetsubo.sendMessage(from, {text: '@⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺.....'})//Pengalih isu
-
-for (let i = 0; i < hawemod.length; i++) {
-/*await delay(10)*/
-await zetsubo.sendMessage(from, {text: hawemod[i], edit: key });//PESAN LEPAS
-}
-}
 
 if (autodelete) {
 zetsubo.sendMessage(m.chat,
