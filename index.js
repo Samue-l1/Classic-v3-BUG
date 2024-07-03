@@ -1,19 +1,6 @@
 /*
-› Create By zetsubo
-› Base Ori zetsubo
-
-🌷 KALAU MAU RENAME TARO CREDITS GUA : HW MODS WA & ZetsuboXygen */
-
-//   • [ Recode Bye > ZetsuboXygen777]
-/*   # AND↓
-   THANKS TO >
-  XygenGod777( Watashi / 私 )
-  Hw Mods Wa / Haikal (Base)
-  Adiwajshing (Baileys)
-  whiskeysockets (Baileys)
-  Thunder X7 (Inspirate)
-  Pak Tzy (Inspirate)
-  ♥️ ありがとう
+› King Sam
+› 
                  >
 */
 
@@ -234,9 +221,9 @@ classic.ev.on("messages.upsert", async (chatUpdate) => {
       if (!mek.message) return;
       mek.message = Object.keys(mek.message)[0] === "ephemeralMessage" ? mek.message.ephemeralMessage.message : mek.message;
       if (mek.key && mek.key.remoteJid === "status@broadcast") return;
-      if (!client.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
+      if (!zetsubo.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
       if (mek.key.id.startsWith("BAE5") && mek.key.id.length === 16) return;
-      m = smsg(client, mek, store);
+      m = smsg(classic, mek, store);
       require("./classicsession")(client, m, chatUpdate, store);
     } catch (err) {
       console.log(err);

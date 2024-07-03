@@ -37,8 +37,8 @@
 
 ## ```Bot Support Group Chats```
 
-- [`1st GC`](https://chat.whatsapp.com/EPSGKau0IVi7J5lyOJO7Jk)
-- [`2nd GC`](https://chat.whatsapp.com/ETsxysQPYXxG1P8JQ1RQHV)
+- [`GC`](https://chat.whatsapp.com/ETsxysQPYXxG1P8JQ1RQHV)
+- 
 - [`Channel`](https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e)
 
 
@@ -49,7 +49,7 @@
 
 ## `Generate Pair Code For Session`
 
-[`Classic Pairing`](https://replit.com/@pesguru02/Classic-Pairing)
+[`Classic Pairing`](https://classic-v3-session.onrender.com/)
 
 [`HOW TO DEPLOY VIDEO TUTORIAL`](https://youtu.be/b5gpcwPvtgk?si=Ybg9m7gyDjh9gEwn)
 
