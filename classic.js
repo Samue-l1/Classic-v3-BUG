@@ -326,7 +326,7 @@ reply(`${err}`)
 async function loading () {
 var hawemod = [
 
-` ★彡★ 𝐃𝐔𝐃𝐔𝐔_𝐌𝐄𝐍𝐃𝐄𝐙 ★彡 𝙑3 彡★ `
+` ★彡★ 𝐃𝐔𝐃𝐔𝐔_𝐌𝐄𝐍𝐃𝐄𝐙 ★彡 𝙑1 彡★ `
 ]
 let { key } = await zetsubo.sendMessage(from, {text: '@ミ★ 𝐃𝐔𝐃𝐔𝐔_𝐌𝐄𝐍𝐃𝐄𝐙 ★彡.....'})//Pengalih isu
 
