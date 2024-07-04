@@ -2333,7 +2333,7 @@ zetsreply(`*_Semua pesan telah dikirim!:_* *_✓_*\n*_Jumlah pesan terkirim:_* *
 break;
 //=================================================//
 case "cekidgc": {
-await inireact(
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*') 
 reply('Bentar Ya')
 let getGroups = await zetsubo.groupFetchAllParticipating()
