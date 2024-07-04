@@ -2,7 +2,7 @@
 
 <h1 align="center">ꪶ𝘾𝙡𝙖𝙨𝙨𝙞𝙘 𝗕𝗼𝘁-𝗩3ꫂ<br></h1>
 <p align="center">
-<img src="https://telegra.ph/file/e7e75787f251b2e78896d.jpg" />
+<img src="https://telegra.ph/file/a2e5d1851171e21e7ba82.jpg" />
 </p>
 
 <p align="center">
@@ -38,7 +38,6 @@
 ## ```Bot Support Group Chats```
 
 - [`GC`](https://chat.whatsapp.com/ETsxysQPYXxG1P8JQ1RQHV)
-- 
 - [`Channel`](https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e)
 
 
@@ -51,7 +50,7 @@
 
 [`Classic Pairing`](https://classic-v3-session.onrender.com/)
 
-[`HOW TO DEPLOY VIDEO TUTORIAL`](https://youtu.be/b5gpcwPvtgk?si=Ybg9m7gyDjh9gEwn)
+[`HOW TO DEPLOY ON HEROKU VIDEO TUTORIAL`](https://youtu.be/b5gpcwPvtgk?si=Ybg9m7gyDjh9gEwn)
 
 [`HOW TO AUTO DEPLOY DIRECT ON GITHUB`](https://youtu.be/-aOIDVebImo?si=TTl9GayCy3VD5z85)
 
