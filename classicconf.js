@@ -12,6 +12,9 @@ Base Haikal Hw Mods : Copyan Dari Base Dika
   whiskeysockets (Baileys)
   Thunder X7 (Inspirate)
   Pak Tzy (Inspirate)
+  Maintainer (Taira Makino)
+  Maintener2(Samue-l1)
+  Maintener3(Emperordagoat)
   ♥️ ありがとう
                  >
 */
@@ -37,6 +40,16 @@ global.autoviewstatus = process.env.autoviewstatus || "TRUE"
 global.wlcm = []
 global.wlcmm = []
 global.anticall = true
+/*
+Declaring Menu type
+
+V1 = Photo
+V2 = Video
+V3 = Text
+V4 = Button
+
+*/
+global.menutype = "v1"
 //=================================================//
 //Gausah Juga
 global.limitawal = {
