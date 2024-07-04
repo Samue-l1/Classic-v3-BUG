@@ -4360,8 +4360,8 @@ break
 //=================================================//
 case 'emojimix': { 
 await inireact()
-if (isBan) 
- let [emoji1, emoji2] = text.split`+`
+if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
+let [emoji1, emoji2] = text.split`+`
 if (!emoji1) throw `Example : ${prefix + command} 😅+🤔`
 if (!emoji2) throw `Example : ${prefix + command} 😅+🤔`
 let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
