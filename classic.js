@@ -2839,7 +2839,7 @@ if (!isCreator) return reply('*Premium Only*')
 if (!m.isGroup) return reply('Make it in the Stupid Group')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
 if (!isAdmins) return reply('Considered Admin Group')
-await inireact()()
+await inireact()
 var groupe = await zetsubo.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
@@ -2850,12 +2850,11 @@ zetsubo.groupParticipantsUpdate(from, mems, 'demote')
 break
 //=================================================//
 case'promoteall':
-await inireact()
 if (!isCreator) return reply('*Premium Only*')
 if (!m.isGroup) return reply('Make it in the Stupid Group')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
 if (!isAdmins) return reply('Considered Admin Group')
-await inireact()()
+await inireact()
 var groupe = await zetsubo.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
@@ -2865,10 +2864,9 @@ mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 zetsubo.groupParticipantsUpdate(from, mems, 'promote')
 break
 //=================================================//
-case 'sticker': case 's': case 'stickergif': case 'sgif': 
+case 'sticker': case 's': case 'stickergif': case 'sgif': {
 if (!quoted) throw `reply Video/Image D Caption ${prefix + command}`
 if (/image/.test(mime)) {
-await inireact()
 let media = await quoted.download()
 let encmedia = await zetsubo.sendImageAsSticker(from, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
