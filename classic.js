@@ -2866,10 +2866,9 @@ zetsubo.groupParticipantsUpdate(from, mems, 'promote')
 break
 //=================================================//
 case 'sticker': case 's': case 'stickergif': case 'sgif': 
-await inireact()
 if (!quoted) throw `reply Video/Image D Caption ${prefix + command}`
 if (/image/.test(mime)) {
-await inireact()()
+await inireact()
 let media = await quoted.download()
 let encmedia = await zetsubo.sendImageAsSticker(from, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
