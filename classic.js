@@ -7,7 +7,7 @@
 */
 
 //=================================================//
-require('./hwkal')
+require('./classicconf')
 const { 
        WA_DEFAULT_EPHEMERAL,
        getAggregateVotesInPollMessage, 
