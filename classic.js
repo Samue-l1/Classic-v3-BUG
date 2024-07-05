@@ -98,7 +98,7 @@ const hmbug = async (target, txt) => {
       title: txt
     }
   }
-  zetsubo.replyMessage(target, etc, {})
+  zetsubo.reply(target, etc, {})
   await sleep(300);
 }
 
