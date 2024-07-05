@@ -906,6 +906,16 @@ zetsreply(getCase(args[0]))
 m.reply("Case not found")
 }
 break
+		
+//=================================================//
+case "menutype":
+if (!isCreator) return reply('*𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐮𝐬𝐞𝐫𝐬 𝐨𝐧𝐥𝐲*')
+await inireact()
+if (!args[0]) return reply(`Choose between\nV1 - Photo\nV2 - Video\nV3 - Text\nV4 - Button`)
+let chosen = args[0]
+global.menutype = chosen
+await reply(`Successfully set Menu type to ${chosen} 🤩`)
+break
 //=================================================//
 case 'menu': case 'help': {
 await inireact()
@@ -927,135 +937,6 @@ let menutxt = `
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ©𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 `
 
-/*try {
-let msg = generateWAMessageFromContent(from, {
-  viewOnceMessage: {
-    message: {
-        "messageContextInfo": {
-          "deviceListMetadata": {},
-          "deviceListMetadataVersion": 2
-        },
-        interactiveMessage: proto.Message.InteractiveMessage.create({
-          body: proto.Message.InteractiveMessage.Body.create({
-            text: menutxt
-          }),
-          footer: proto.Message.InteractiveMessage.Footer.create({
-            text: "Classic-v3-BUG"
-          }),
-          header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : { url: "https://telegra.ph/file/6dfde4263655a81572a68.jpg" }}, { upload: zetsubo.waUploadToServer})),
-                  title: ``,
-                  gifPlayback: true,
-                  subtitle: "𝕶𝖎𝖓𝖌 𝕾𝖆𝖓",
-                  hasMediaAttachment: false
-                }),
-          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-            buttons: [
-              {
-                "name": "single_select",
-                "buttonParamsJson":
-`{"title":"MENU🗒️",
-"sections":[{"title":" 🎩𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3 𝐁𝐔𝐆🧣",
-"rows":[{"header":"🔖 𝙰𝙳𝙳 𝙼𝙴𝙽𝚄 🔖",
-"title":"",
-"description":"Addmenu 🕷️",
-"id":".addmenu"},
-{"header":"📔𝐕𝐂𝐅 𝐌𝐄𝐍𝐔 🪡",
-"title":"",
-"description":"Pushmenu 👁️",         
-"id":".pushmenu"},
-{"header":"🐬 𝐅𝐔𝐍 𝐌𝐄𝐍𝐔 🐳",
-"title":"",
-"description":"Funmenu 💫",
-"id":".funmenu"},
-{"header":"🌪️ 𝐏𝐈𝐍𝐆 🪐",
-"title":"",
-"description":"Ping ⚡",
-"id":".ping"},
-{"header":" 🎧 𝐌𝐔𝐒𝐈𝐂 𝐌𝐄𝐍𝐔 🎤",
-"title":"",
-"description":"Listmusik 🎉",
-"id":".listmusik"},
-{"header":"🛹 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐌𝐄𝐍𝐔 ⛷",
-"title":"",
-"description":"Downloadmenu 🪀",
-"id":".downloadmenu"},
-{"header":"🪃 𝐆𝐀𝐌𝐄 𝐌𝐄𝐍𝐔 ⛳",
-"title":"",
-"description":"Gamemenu 🥳",
-"id":".gamemenu"},
-{"header":"RANDOM MENU",
-"title":"",
-"description":"List Random Commands",
-"id":".randommenu"},
-{"header":" 🥌 𝐀𝐋𝐈𝐕𝐄 🤸‍♂️",
-"title":"",
-"description":"Alive 🌛",
-"id":".alive"},
-{"header":"🌘 𝐆𝐑𝐎𝐔𝐏 𝐌𝐄𝐍𝐔 🌑",
-"title":"",
-"description":"GROUPMENU 🫴",
-"id":".groupmenu"},
-{"header":"👤 𝐎𝐖𝐍𝐄𝐑 𝐌𝐄𝐍𝐔 👤",
-"title":"",
-"description":"Ownermenu 🤖",
-"id":".ownermenu"},
-{"header":"☄️𝐑𝐔𝐍𝐓𝐈𝐌𝐄 💥",
-"title":"",
-"description":"Runtime",
-"id":".runtime"},
-{"header":"🗣️𝐎𝐖𝐍𝐄𝐑 🕊️",
-"title":"",
-"description":".owner",
-"id":".owner"},
-{"header":"🗿 𝐁𝐔𝐆 𝐌𝐄𝐍𝐔 🦋",
-"title":"",                                   
-"description":"Bugmenu 👾",
-"id":".bugmenu"}]
-}]
-}`
-              },
-                     {
-                        "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"𝐑𝐞𝐩𝐨🔗\",\"url\":\"https://github.com/Samue-l1/Classic-v3-BUG\",\"merchant_url\":\"https://github.com/Samue-l1/Classic-v3-BUG\"}"
-                      },
-		      {
-                        "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"𝐂𝐡𝐚𝐧𝐧𝐞𝐥📍 \",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
-		      },
-		      {
-                       "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"𝐎𝐰𝐧𝐞𝐫👤 \",\"url\":\"https://wa.me/+254742491666?text=Hello+King+Sam\",\"merchant_url\":\"https://wa.me/+254742491666?text=Hello+King+Sam\"}"
-		      },
-		      {
-                        "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"𝐇𝐨𝐰 𝐓𝐨 𝐃𝐞𝐩𝐥𝐨𝐲 📺\",\"url\":\"https://youtube.com/@king_sam_hub\",\"merchant_url\":\"https://youtube.com/@king_sam_hub\"}"
-		}],
-          }),
-          contextInfo: {
-                  mentionedJid: [m.sender],
-                  forwardingScore: 999,                                         
-		  isForwarded: true,
-                  forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363288746972771@newsleter',
-                  newsletterName: "Classic-v3-BUG",
-                  serverMessageId: 143
-                }
-                }
-        })
-    }
-  }
-}, {})
-
-await zetsubo.relayMessage(msg.key.remoteJid, msg.message, {
-  messageId: msg.key.id
-})
-	} catch (error) {
-          console.error('Error generating and relaying message:', error);
-          return reply('Error generating and relaying message.');
-}
-
-}*/
 try {
 let msg = generateWAMessageFromContent(m.key.remoteJid, {
             viewOnceMessage: {
