@@ -1,6 +1,6 @@
 /*
 › King Sam
-› 
+› Taira Makino
                  >
 */
 
