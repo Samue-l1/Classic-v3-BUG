@@ -1092,6 +1092,7 @@ if(menutype === "v1") {
         }
 } else return
 	} catch(error) { await reply('Unable to send menu due to an error,try to change menu type with menutype command')}
+}
 break
 //=================================================//
 case 'taira': {
