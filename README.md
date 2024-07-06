@@ -48,7 +48,7 @@
 
 ## `Generate Pair Code For Session`
 
-[`Classic Pairing`](https://classic-v3-session.onrender.com/)
+[`Classic Pairing`](https://classic-v3-session.onrender.com)
 
 [`HOW TO DEPLOY ON HEROKU VIDEO TUTORIAL`](https://youtu.be/b5gpcwPvtgk?si=Ybg9m7gyDjh9gEwn)
 
