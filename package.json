@@ -14,6 +14,7 @@
 "@adiwajshing/keyed-db": "^0.2.4",
 "@hapi/boom": "^10.0.1",
 "awesome-phonenumber": "^5.10.0",
+"@ffmpeg-installer/ffmpeg": "^1.1.0",
 "@whiskeysockets/baileys": "^6.3.0",
 "axios": "^1.4.0",
 "chalk": "^4.1.2",
