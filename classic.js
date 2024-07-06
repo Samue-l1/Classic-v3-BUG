@@ -1164,7 +1164,7 @@ let msg = generateWAMessageFromContent(m.key.remoteJid, {
           console.error('Error generating and relaying message:', error);
           return reply('Error generating and relaying message.');
 	}
-} },
+},
                   "deviceListMetadataVersion": 2
                 },
                 interactiveMessage: proto.Message.InteractiveMessage.create({
