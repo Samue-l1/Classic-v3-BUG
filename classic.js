@@ -919,7 +919,7 @@ break
 //=================================================//
 case 'menu': case 'help': {
 await inireact()
-let menutxt = `
+let messg = `
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     \`𝘾𝙇𝘼𝙎𝙎𝙄𝘾-𝙑3 𝘽𝙐𝙂\`
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -1032,7 +1032,7 @@ if(menutype === "v1") {
                 },
                 interactiveMessage: proto.Message.InteractiveMessage.create({
                   body: proto.Message.InteractiveMessage.Body.create({
-                    text: menutxt,
+                    text: msssg,
                   }),
                   footer: proto.Message.InteractiveMessage.Footer.create({
                     text: "King Sam"
@@ -1108,7 +1108,7 @@ let msg = generateWAMessageFromContent(m.key.remoteJid, {
                     text: "Click Me 🚀",
                   }),
                   footer: proto.Message.InteractiveMessage.Footer.create({
-                    text: "𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 "
+                    text: "𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 || ᴸᴼᴿᴰᴛᴀɪʀᴀ"
                   }),
                   header: proto.Message.InteractiveMessage.Header.create({
 		   ...(await prepareWAMessageMedia({ image: { url: 'https://telegra.ph/file/6dfde4263655a81572a68.jpg' } }, { upload: zetsubo.waUploadToServer })),
