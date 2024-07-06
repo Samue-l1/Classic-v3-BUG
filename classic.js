@@ -1091,7 +1091,7 @@ if(menutype === "v1") {
           return reply('Error generating and relaying message.');
         }
 } else return
-	} catch(error) { await reply("Unable to send menu due to an error,try to change menu type with menutype command"}
+	} catch(error) { await reply('Unable to send menu due to an error,try to change menu type with menutype command'}
 break
 //=================================================//
 case 'taira': {
