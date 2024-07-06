@@ -1005,7 +1005,6 @@ let msg = generateWAMessageFromContent(m.key.remoteJid, {
           return reply('Error generating and relaying message.');
 	}
 } */
-try {
 global.logo = "https://telegra.ph/file/6dfde4263655a81572a68.jpg"
 global.vidmenu = "https://telegra.ph/file/05ebf02a511b7d36bd20d.mp4"
 if(menutype === "v1") {
@@ -1091,7 +1090,6 @@ if(menutype === "v1") {
           return reply('Error generating and relaying message.');
         }
 } else return
-	} catch(error) { await reply('Unable to send menu due to an error,try to change menu type with menutype command')}
 }
 break
 //=================================================//
