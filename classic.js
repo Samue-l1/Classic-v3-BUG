@@ -1107,68 +1107,6 @@ let msg = generateWAMessageFromContent(m.key.remoteJid, {
                 },
                 interactiveMessage: proto.Message.InteractiveMessage.create({
                   body: proto.Message.InteractiveMessage.Body.create({
-                    text: menutxt,
-                  }),
-                  footer: proto.Message.InteractiveMessage.Footer.create({
-                    text: "King Sam"
-                  }),
-                  header: proto.Message.InteractiveMessage.Header.create({
-		    ...(await prepareWAMessageMedia({ image: { url: 'https://telegra.ph/file/6dfde4263655a81572a68.jpg' } }, { upload: zetsubo.waUploadToServer })),
-                    title: "",
-                    subtitle: "Classic-v3-BUG",
-                    hasMediaAttachment: false
-                  }),
-                  nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                    buttons: [
-		       {
-                        "name": "quick_reply",
-                        "buttonParamsJson": `{"display_text":"MENU List🚀","id":"${prefix}taira"}`                                     
-		       },
-			{
-                        "name": "quick_reply",
-                        "buttonParamsJson": `{"display_text":"PING 💤","id":"${prefix}ping"}`                                    
-			},
-			{
-                        "name": "quick_reply",
-                        "buttonParamsJson": `{"display_text":"☄️𝐑𝐔𝐍𝐓𝐈𝐌𝐄 💥","id":"${prefix}runtime"}`                                     
-			},
-		      {
-                        "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"𝐂𝐡𝐚𝐧𝐧𝐞𝐥📍 \",\"url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\",\"merchant_url\":\"https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e\"}"
-		      },
-		      {
-                       "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"𝐎𝐰𝐧𝐞𝐫👤 \",\"url\":\"https://wa.me/+254742491666?text=Hello+King+Sam\",\"merchant_url\":\"https://wa.me/+254742491666?text=Hello+King+Sam\"}"
-		      },
-		      {
-                        "name": "cta_url",
-                        "buttonParamsJson": "{\"display_text\":\"𝐇𝐨𝐰 𝐓𝐨 𝐃𝐞𝐩𝐥𝐨𝐲 📺\",\"url\":\"https://youtube.com/@king_sam_hub\",\"merchant_url\":\"https://youtube.com/@king_sam_hub\"}"
-		      },
-                    ]
-                  })
-                })
-              }
-            }
-          }, {});
-
-          if (!msg || !msg.key || !msg.key.remoteJid || !msg.key.id) {
-            const errorMessage = 'Error: Invalid message key.';
-            console.error(errorMessage);
-            return reply(errorMessage);
-          }
-
-          await zetsubo.relayMessage(msg.key.remoteJid, msg.message, {
-            messageId: msg.key.id
-          });
-        } catch (error) {
-          console.error('Error generating and relaying message:', error);
-          return reply('Error generating and relaying message.');
-	}
-},
-                  "deviceListMetadataVersion": 2
-                },
-                interactiveMessage: proto.Message.InteractiveMessage.create({
-                  body: proto.Message.InteractiveMessage.Body.create({
                     text: "Click Me 🚀",
                   }),
                   footer: proto.Message.InteractiveMessage.Footer.create({
