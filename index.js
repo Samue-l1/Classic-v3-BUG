@@ -237,7 +237,6 @@ classic.ev.on("messages.upsert", async (chatUpdate) => {
       if (!classic.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
       if (mek.key.id.startsWith("BAE5") && mek.key.id.length === 16) return;
       m = smsg(classic, mek, store);
-      require("classicconf")(classic, m, chatUpdate, store);
     } catch (err) {
       console.log(err);
     }
