@@ -1102,11 +1102,6 @@ let msg = generateWAMessageFromContent(m.key.remoteJid, {
             viewOnceMessage: {
               message: {
                 "messageContextInfo": {
-                  "deviceListMetadata": {try {
-let msg = generateWAMessageFromContent(m.key.remoteJid, {
-            viewOnceMessage: {
-              message: {
-                "messageContextInfo": {
                   "deviceListMetadata": {},
                   "deviceListMetadataVersion": 2
                 },
