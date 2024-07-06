@@ -46,7 +46,7 @@ DUDUU_MENDEZ 𝘽𝙤𝙩 Multi Device is a whatsapp bot created by <a href="htt
 
 # Setup For Deployment 👇
 
-- FORK THE REPOSITORY [`Here`](https://github.com/duduumendez2/DUDUU_MENDEZ-V1-BUG/fork)
+- FORK THE REPOSITORY [`Here`](https://github.com/Samue-l1/Classic-v3-BUG/fork)
 
 ## `Generate Pair Code For Session`
 
