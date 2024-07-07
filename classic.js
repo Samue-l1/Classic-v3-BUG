@@ -1031,7 +1031,7 @@ if(menutype === "v1") {
                 },
                 interactiveMessage: proto.Message.InteractiveMessage.create({
                   body: proto.Message.InteractiveMessage.Body.create({
-                    text: msssg,
+                    text: `𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,
                   }),
                   footer: proto.Message.InteractiveMessage.Footer.create({
                     text: "King Sam"
