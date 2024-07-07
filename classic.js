@@ -920,21 +920,21 @@ break
 case 'menu': case 'help': {
 let messg = `
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    \`𝘾𝙇𝘼𝙎𝙎𝙄𝘾-𝙑3 𝘽𝙐𝙂\`
+    \`K29-MD\`
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-   ✰ 𝐒𝐜 𝐏𝐮𝐛𝐥𝐢𝐜 ❴ 𝐵𝑌 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 ❵
-   ✰ 𝐂𝐫𝐞𝐚𝐭𝐨𝐫: 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒
+   ✰ 𝐒𝐜 𝐏𝐮𝐛𝐥𝐢𝐜 ❴ 𝐵𝑌 K29PROMAX ❵
+   ✰ 𝐂𝐫𝐞𝐚𝐭𝐨𝐫: K29
    ✰ 𝐔𝐬𝐞𝐫 : @${m.sender.split('@')[0]}
  
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    ✦ 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : 𝐁𝐚𝐢𝐥𝐞𝐲𝐬-𝐌𝐃.
+    ✦ 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : K29-𝐌𝐃.
     ✦ 𝐏𝐫𝐞𝐟𝐢𝐱 : 𝐌𝐮𝐥𝐭𝐢-𝐏𝐫𝐞𝐟𝐢𝐱.
     ✦ 𝐃𝐚𝐭𝐞 𝐒𝐞𝐫𝐯𝐞𝐫 : ${moment.tz('Africa/Nairobi').format('DD/MM/YY')}
     ✦ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
  
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-©𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 `
+©K29 `
 
 /*try {
 let msg = generateWAMessageFromContent(m.key.remoteJid, {
@@ -2087,7 +2087,7 @@ await inireact()
 ┃➟ 𝒎𝒆𝒓𝒅𝒆𝒌𝒂
 ┃➟ 𝒋𝒂𝒍𝒂𝒏𝒕𝒊𝒌𝒖𝒔-𝒎𝒆𝒎𝒆
 ┃┗━━━━━━━━━━━━━━━━━━
-┃ ➥➥➥❰*𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 ®2024*❱➥➥➥
+┃ ➥➥➥❰*K29-MD ®2024*❱➥➥➥
 ┗━━━━━━━━━━━━━━━━━━━
 `
 let hiks = {
@@ -3461,7 +3461,7 @@ case 'broadcast':
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
-                                title: '𝐁𝐑𝐎𝐀𝐃𝐂𝐀𝐒𝐓𝐄𝐃 𝐁𝐘 𝐂𝐋𝐀𝐒𝐒𝐈𝐂 𝐁𝐎𝐓',
+                                title: '𝐁𝐑𝐎𝐀𝐃𝐂𝐀𝐒𝐓𝐄𝐃 𝐁𝐘 K29PROMAX 𝐁𝐎𝐓',
                                 body: `Sent ${i.length} Group`,
                                 thumbnailUrl: 'https://telegra.ph/file/d2a1d3bbfabf34fabe666.jpg',
                                 sourceUrl: 'https://chat.whatsapp.com/ETsxysQPYXxG1P8JQ1RQHV',
@@ -3490,7 +3490,7 @@ const audiovn = "./Classic.mp3";
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "𝐇𝐢 𝐇𝐮𝐦𝐚𝐧,𝐂𝐥𝐚𝐬𝐬𝐢𝐜 𝐁𝐨𝐭 𝐈𝐬 𝐀𝐥𝐢𝐯𝐞 𝐚𝐧𝐝 𝐊𝐢𝐜𝐤𝐢𝐧𝐠",
+          title: "𝐇𝐢 𝐇𝐮𝐦𝐚𝐧,K29 𝐁𝐨𝐭 𝐈𝐬 𝐀𝐥𝐢𝐯𝐞 𝐚𝐧𝐝 𝐊𝐢𝐜𝐤𝐢𝐧𝐠",
           body: "https://chat.whatsapp.com/ETsxysQPYXxG1P8JQ1RQHV",
           thumbnailUrl: "https://telegra.ph/file/f6d66a60454e31e0a2c0d.jpg",
           sourceUrl: "https://chat.whatsapp.com/ETsxysQPYXxG1P8JQ1RQHV",
