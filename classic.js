@@ -929,6 +929,7 @@ await reply(`Successfully set Menu type to ${chosen} 🤩`)
 break
 //=================================================//
 case 'menu': case 'help': {
+await inireact()
 let messg = `
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     \`𝘾𝙇𝘼𝙎𝙎𝙄𝘾-𝙑3 𝘽𝙐𝙂\`
