@@ -367,7 +367,7 @@ reply(`${err}`)
 }
 }
 	 
-const moji = ['💔', '💀', '🌏', '💢', '🩸', '🥳', '✅',]
+const moji = ['🦠', '🦹', '🌏', '💢', '🩸', '🥳', '✅',]
 const randomemoji = moji[Math.floor(Math.random() * moji.length)]
 
 //Reaction
