@@ -1959,7 +1959,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'cucimata': {
-await inireact()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -2126,7 +2126,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'asupan': {
-await inireact()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -2197,7 +2197,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'funmenu':
-await inireact()
+
 if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
 let fooutgkzz = `Runtime : ⏳ ${runtime(process.uptime())}`
 sendGeekzMessage(from, { 
@@ -2697,7 +2697,7 @@ await zetsubo.groupParticipantsUpdate(from, [users], 'promote')
 break
 //=================================================//
 case 'demote': {
-await inireact()
+
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
 if (!m.isGroup) return reply('Make it in the Stupid Group')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
@@ -2798,7 +2798,6 @@ if (!m.isGroup) return reply('Make it in the Stupid Group')
 if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
 if (!isAdmins) return reply('Considered Admin Group')
 if (!text) throw 'Text Nya ?'
-await inireact()
 await zetsubo.groupUpdateDescription(from, text).then((res)).catch((err) => reply(jsonformat(err)))
 }
 break
