@@ -921,7 +921,6 @@ break
 //=================================================//
 case "menutype":
 if (!isCreator) return reply('*𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐮𝐬𝐞𝐫𝐬 𝐨𝐧𝐥𝐲*')
-await inireact()
 if (!args[0]) return reply(`Choose between\nV1 - Photo\nV2 - Video\nV3 - Text\nV4 - Button`)
 let chosen = args[0]
 global.menutype = chosen
@@ -929,7 +928,6 @@ await reply(`Successfully set Menu type to ${chosen} 🤩`)
 break
 //=================================================//
 case 'menu': case 'help': {
-await inireact()
 let messg = `
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     \`𝘾𝙇𝘼𝙎𝙎𝙄𝘾-𝙑3 𝘽𝙐𝙂\`
@@ -1115,7 +1113,6 @@ if(menutype === "v1") {
 break
 //=================================================//
 case 'taira': {
-await inireact()
 try {
 let msg = generateWAMessageFromContent(m.key.remoteJid, {
             viewOnceMessage: {
@@ -1202,7 +1199,7 @@ let msg = generateWAMessageFromContent(m.key.remoteJid, {
 break
 //=================================================//
 case 'bugmenu': {
-await inireact()
+	
                             ewe = ` *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* 
                             
   
@@ -1239,7 +1236,7 @@ image: cewegw,
 zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 case 'pushmenu': {
-await inireact()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1296,7 +1293,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'groupmenu': {
-await inireact()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1378,7 +1375,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'downloadmenu': {
-await inireact()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1440,7 +1437,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'randommenu': {
-await inireact()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1535,7 +1532,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'Islammenu': {
-await inireact()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1590,7 +1587,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'textmaker': {
-await inireact()
+
                             ewe = `┏━━━❰ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3* ❱━━━━━━ 
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1673,7 +1670,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'listmusik': {
-await inireact()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
@@ -1885,7 +1882,7 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'addmenu': {
-await inireact()
+
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━
 ┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
