@@ -2,24 +2,32 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  build-and-start:
+  build:
+
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [20.x]
+
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Use Node.js 20
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'
-        
+        node-version: ${{ matrix.node-version }}
+
     - name: Install dependencies
-      run: npm install || yarn install
-      
+      run: npm install
+
     - name: Start application
       run: npm start
