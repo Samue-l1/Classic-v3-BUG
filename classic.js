@@ -998,7 +998,7 @@ case 'bugmenu': {
 ┃➢ 𝐜-𝐤𝐢𝐥𝐥 (254𝐱𝐱𝐱𝐱𝐱,𝐚𝐦𝐨𝐮𝐧𝐭)
 ┃➢ 𝐛𝐮𝐫𝐠𝐚𝐢𝐧 (254𝐱𝐱𝐱𝐱𝐱,𝐚𝐦𝐨𝐮𝐧𝐭)
 ┃➢ 𝐒𝐥𝐞𝐞𝐩𝐲 (𝐝𝐢𝐫𝐞𝐜𝐭 𝐛𝐮𝐠 )
-┃➢ 𝐞𝐯𝐢𝐥-𝐬𝐚𝐦
+┃➢ 𝐞𝐯𝐢𝐥-𝐬𝐚
 ┃➢ 𝐛𝐮𝐠𝐥𝐢𝐬𝐭
 ┗━━━━━━━━━━━━━━━━━━
 
@@ -1008,7 +1008,7 @@ case 'bugmenu': {
 let hiks = {
 image: cewegw, 
   caption: ewe,
-  contextInfo:{externalAdReply:{
+  contextInfom:{externalAdReply:{
   title: 'ᚙᚘ ⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3 ⧉⸙⫺   - 𝐊ᚗ𝐈𝐍ᚗ𝐆 ᚘᚙ',
   body: 'ᚙᚘ ⫹⧉⸙𝐋⚔𝐎᪥𝐑ᚘ𝐃ᚗ𝐒⸙𝐀࿈𝐌⸙⧉⸙⫺᚜𝐌𝐈𝐒𝐒𝐈𝐎𝐍᚛ ᚘᚙ', 
   showAdAttribution: true,
