@@ -40,7 +40,7 @@ global.autoviewstatus = process.env.autoviewstatus || "TRUE"
 global.wlcm = []
 global.wlcmm = []
 global.anticall = true
-global.rn = typing
+global.rn = 'typing'
 /*
 Declaring Menu type
 
