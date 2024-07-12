@@ -3981,37 +3981,36 @@ teks = `${resi.quotes}\n`
 reply(teks)
 break
 //=================================================//
-case 'asupan1':
-	if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-	await inireact()
-	axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=https://vt.tiktok.com/ZS83Ytq5b/`).then(({ data }) => {
-zetsubo.sendMessage(from, { video: { url: data.result.link }, mimetype: 'video/mp4', caption:`¥ Ah Sayang 🤤` })
-	})
-	break
-	//=================================================//
-case 'asupan2':
-	if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-	await inireact()
-	axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=https://vt.tiktok.com/ZS83Y9a9d/`).then(({ data }) => {
-zetsubo.sendMessage(from, { video: { url: data.result.link }, mimetype: 'video/mp4', caption:`¥ Ah Sayang 🤤` })
-	})
-	break
+case "close": case "mute": { 
+  
+                 if (!m.isGroup) throw group; 
+                 if (!isBotAdmin) throw botAdmin; 
+                 if (!isAdmin) throw admin; 
+  
+                     await zetsubo.groupSettingUpdate(m.chat, 'announcement'); 
+ m.reply('Group successfully locked!'); 
+ } 
+ break; 
 //=================================================//
-case 'asupan3':
-	if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-	await inireact()
-	axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=https://vt.tiktok.com/ZS83YpRr4/`).then(({ data }) => {
-zetsubo.sendMessage(from, { video: { url: data.result.link }, mimetype: 'video/mp4', caption:`¥ Ah Sayang 🤤` })
-	})
-	break
+case "newlink": 
+ case "reset": { 
+   if (!m.isGroup) throw group; // add "new Error" to create a new Error object 
+   if (!isAdmin) throw admin; // add "new Error" to create a new Error object 
+   if (!isBotAdmin) throw botAdmin; // add "new Error" to create a new Error object 
+   await zetsubo.groupRevokeInvite(m.chat); 
+   await zetsubo.sendText(m.chat, 'Group link revoked!', m); // use "client.sendText" instead of "m.reply" to ensure message is sent 
+   let response = await zetsubo.groupInviteCode(m.chat); 
+ zetsubo.sendText(m.sender, `https://chat.whatsapp.com/${response}\n\nHere is the new group link for ${groupMetadata.subject}`, m, { detectLink: true }); 
+ zetsubo.sendText(m.chat, `Sent you the new group link in your inbox!`, m); 
+   // use "client.sendTextWithMentions" instead of "client.sendText" to include group name in message 
+ }
+          
+  break;
 //=================================================//
-case 'asupan4':
-	if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-	await inireact()
-	axios.get(`https://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=https://vt.tiktok.com/ZS83YfoYm/`).then(({ data }) => {
-zetsubo.sendMessage(from, { video: { url: data.result.link }, mimetype: 'video/mp4', caption:`¥ Ah Sayang 🤤` })
-	})
-	break
+case "credits": 
+  
+              zetsubo.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/72615a4dd05a7f00b8228.jpg' }, caption: `We give all thanks to ♥️ :\n\n -Zetsubooxgy ➪ Indonesia\n - Writing the base code using case method\n\n - 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒➪ India\n - For Developing the Bot to where it is now 💯\nhttps://github.com/Samue-l1\n\n -Lord Taira - Nigerian 🇳🇬\n-For Adding bot buttons to make it more Fancy\n\n - Emporor Lord ➪ Nigeria 🇳🇬\n - For Adding Workflows for easy GitHub Deployment \n\n > Classic-v3 Bot︎`}); 
+ break;
 //=================================================//
 case 'asupan5':
 	if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
@@ -4173,15 +4172,23 @@ await fs.unlinkSync(encmedia)
 }
 break
 //=================================================//
-case 'artimimpi': case 'tafsirmimpi': {
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
- if (!text) throw `Example : ${prefix + command} belanja`
- let anu = await primbon.tafsir_mimpi(text)
- if (anu.status == false) return reply(anu.message)
- zetsubo.sendText(from, `⭔ *Mimpi :* ${anu.message.mimpi}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Solusi :* ${anu.message.solusi}`, m)
-}
-break
+case "enc":
+
+if (!text && !m.quoted) throw 'Bring the source to encrypt';
+
+const sourcecode4 = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : m.text
+let resultPromise4 = cpp.runSource(sourcecode4);
+resultPromise4
+    .then(resultt4 => {
+        console.log(resultt4);
+reply(resultt4.stdout);
+reply(resultt4.stderr);
+    })
+    .catch(err => {
+        console.log(resultt4.stderr);
+reply(resultt4.stderr)
+    });
+break;
 //=================================================//
 case 'ramalanjodoh': case 'ramaljodoh': {
 if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
