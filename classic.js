@@ -2795,28 +2795,299 @@ quoted: m
 }
 break
 //=================================================//
-case 'antilink': {
-await inireact()
-if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
-if (!m.isGroup) return reply('Make it in the Stupid Group')
-if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
-if (!isAdmins) return reply('Considered Admin Group')
-await inireact()
-if (args.length < 1) return reply('ketik on untuk mengaktifkan\nketik off untuk menonaktifkan')
-if (args[0] === "on") {
-if (AntiLink) return reply('Sudah Aktif')
-ntilink.push(from)
-reply('Antilink is on🌷')
-} else if (args[0] === "off") {
-if (!AntiLink) return reply('Sudah Mati')
-let off = ntilink.indexOf(from)
-ntilink.splice(off, 1)
-reply('Succes antilink off🌷')
-} else {
-reply('🩸')
-}
-}
-break
+case 'antilinkgc': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        if (!isBotAdmins) return reply(mess.botadmin);
+        if (!isAdmins && !isCreator) return reply(mess.useradmin)
+        if (args[0] === "on") {
+          if (AntiLink) return reply('Already activated')
+          ntilink.push(from)
+          reply('Activated _Antilink_ in this group.')
+          var groupe = await zetsubo.groupMetadata(from)
+          var members = groupe['participants']
+          var mems = []
+          members.map(async adm => {
+            mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+          })
+          zetsubo.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m })
+        } else if (args[0] === "off") {
+          if (!AntiLink) return reply('Already deactivated!')
+          let off = ntilink.indexOf(from)
+          ntilink.splice(off, 1)
+          reply('Deactivated _Antilink_ in this group!')
+        } else {
+          let buttonsntilink = [
+            { buttonId: `${prefix}antilinkgc on`, buttonText: { displayText: 'On' }, type: 1 },
+            { buttonId: `${prefix}antilinkgc off`, buttonText: { displayText: 'Off' }, type: 1 }
+          ]
+          await zetsubo.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
+        }
+      }
+        break;
+
+
+      case 'antilinkyoutubevideo': case 'antilinkyoutubevid': case 'antilinkytvid': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        if (!isBotAdmins) return reply(mess.botadmin);
+        if (!isAdmins && !isCreator) return reply(mess.useradmin)
+        if (args[0] === "on") {
+          if (AntiLinkYoutubeVid) return reply('Already activated')
+          ntilinkytvid.push(from)
+          reply('Activated youtube video antilink !')
+          var groupe = await zetsubo.groupMetadata(from)
+          var members = groupe['participants']
+          var mems = []
+          members.map(async adm => {
+            mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+          })
+          zetsubo.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m })
+        } else if (args[0] === "off") {
+          if (!AntiLinkYoutubeVid) return reply('Already deactivated')
+          let off = ntilinkytvid.indexOf(from)
+          ntilinkytvid.splice(off, 1)
+          reply('Deactivated youtube video antilink !')
+        } else {
+          let buttonsntilink = [
+            { buttonId: `${prefix}antilinkyoutubevideo on`, buttonText: { displayText: 'On' }, type: 1 },
+            { buttonId: `${prefix}antilinkyoutubevideo off`, buttonText: { displayText: 'Off' }, type: 1 }
+          ]
+          await zetsubo.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
+        }
+      }
+        break;
+
+
+      case 'antilinkyoutubech': case 'antilinkyoutubechannel': case 'antilinkytch': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        if (!isBotAdmins) return reply(mess.botadmin);
+        if (!isAdmins && !isCreator) return reply(mess.useradmin)
+        if (args[0] === "on") {
+          if (AntiLinkYoutubeChannel) return reply('Already activated')
+          ntilinkytch.push(from)
+          reply('Activated youtube channel antilink !')
+          var groupe = await zetsubo.groupMetadata(from)
+          var members = groupe['participants']
+          var mems = []
+          members.map(async adm => {
+            mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+          })
+          zetsubo.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m })
+        } else if (args[0] === "off") {
+          if (!AntiLinkYoutubeChannel) return reply('Already deactivated')
+          let off = ntilinkytch.indexOf(from)
+          ntilinkytch.splice(off, 1)
+          reply('Deactivated youtube channel antilink !')
+        } else {
+          let buttonsntilink = [
+            { buttonId: `${prefix}antilinkyoutubech on`, buttonText: { displayText: 'On' }, type: 1 },
+            { buttonId: `${prefix}antilinkyoutubech off`, buttonText: { displayText: 'Off' }, type: 1 }
+          ]
+          await zetsubo.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
+        }
+      }
+        break;
+
+
+      case 'antilinkinstagram': case 'antilinkig': case 'antilinkinsta': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        if (!isBotAdmins) return reply(mess.botadmin);
+        if (!isAdmins && !isCreator) return reply(mess.useradmin)
+        if (args[0] === "on") {
+          if (AntiLinkInstagram) return reply('Already activated')
+          ntilinkig.push(from)
+          reply('Activated instagram antilink !')
+          var groupe = await zetsubo.groupMetadata(from)
+          var members = groupe['participants']
+          var mems = []
+          members.map(async adm => {
+            mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+          })
+          zetsubo.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m })
+        } else if (args[0] === "off") {
+          if (!AntiLinkInstagram) return reply('Already deactivated')
+          let off = ntilinkig.indexOf(from)
+          ntilinkig.splice(off, 1)
+          reply('Deactivated instagram antilink !')
+        } else {
+          let buttonsntilink = [
+            { buttonId: `${prefix}antilinkinstagram on`, buttonText: { displayText: 'On' }, type: 1 },
+            { buttonId: `${prefix}antilinkinstagram off`, buttonText: { displayText: 'Off' }, type: 1 }
+          ]
+          await zetsubo.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
+        }
+      }
+        break;
+
+
+      case 'antilinkfacebook': case 'antilinkfb': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        if (!isBotAdmins) return reply(mess.botadmin);
+        if (!isAdmins && !isCreator) return reply(mess.useradmin)
+        if (args[0] === "on") {
+          if (AntiLinkFacebook) return reply('Already activated')
+          ntilinkfb.push(from)
+          reply('Activated facebook antilink !')
+          var groupe = await zetsubo.groupMetadata(from)
+          var members = groupe['participants']
+          var mems = []
+          members.map(async adm => {
+            mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+          })
+          zetsubo.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m })
+        } else if (args[0] === "off") {
+          if (!AntiLinkFacebook) return reply('Already deactivated')
+          let off = ntilinkfb.indexOf(from)
+          ntilinkfb.splice(off, 1)
+          reply('Deactivated facebook antilink !')
+        } else {
+          let buttonsntilink = [
+            { buttonId: `${prefix}antilinkfacebook on`, buttonText: { displayText: 'On' }, type: 1 },
+            { buttonId: `${prefix}antilinkfacebook off`, buttonText: { displayText: 'Off' }, type: 1 }
+          ]
+          await zetsubo.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off `, `${global.BotName}`, m)
+        }
+      }
+        break;
+
+
+      case 'antilinktelegram': case 'antilinktg': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        if (!isBotAdmins) return reply(mess.botadmin);
+        if (!isAdmins && !isCreator) return reply(mess.useradmin)
+        if (args[0] === "on") {
+          if (AntiLinkTelegram) return reply('Already activated')
+          ntilinktg.push(from)
+          reply('Activated telegram antilink !')
+          var groupe = await zetsubo.groupMetadata(from)
+          var members = groupe['participants']
+          var mems = []
+          members.map(async adm => {
+            mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+          })
+          zetsubo.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m })
+        } else if (args[0] === "off") {
+          if (!AntiLinkTelegram) return reply('Already deactivated')
+          let off = ntilinkig.indexOf(from)
+          ntilinkig.splice(off, 1)
+          reply('Deactivated telegram antilink in this group')
+        } else {
+          let buttonsntilink = [
+            { buttonId: `${prefix}antilinktelegram on`, buttonText: { displayText: 'On' }, type: 1 },
+            { buttonId: `${prefix}antilinktelegram off`, buttonText: { displayText: 'Off' }, type: 1 }
+          ]
+          await zetsubo.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off `, `${global.BotName}`, m)
+        }
+      }
+        break;
+
+
+      case 'antilinktiktok': case 'antilinktt': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        if (!isBotAdmins) return reply(mess.botadmin);
+        if (!isAdmins && !isCreator) return reply(mess.useradmin)
+        if (args[0] === "on") {
+          if (AntiLinkTiktok) return reply('Already activated')
+          ntilinktt.push(from)
+          reply('Activated tiktok antilink !')
+          var groupe = await zetsubo.groupMetadata(from)
+          var members = groupe['participants']
+          var mems = []
+          members.map(async adm => {
+            mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+          })
+          zetsubo.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m })
+        } else if (args[0] === "off") {
+          if (!AntiLinkTiktok) return reply('Already deactivated')
+          let off = ntilinktt.indexOf(from)
+          ntilinktt.splice(off, 1)
+          reply('Deactivated tiktok antilink !')
+        } else {
+          let buttonsntilink = [
+            { buttonId: `${prefix}antilinktiktok on`, buttonText: { displayText: 'On' }, type: 1 },
+            { buttonId: `${prefix}antilinktiktok off`, buttonText: { displayText: 'Off' }, type: 1 }
+          ]
+          await zetsubo.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
+        }
+      }
+        break;
+
+
+      case 'antilinktwt': case 'antilinktwitter': case 'antilinktwit': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        if (!isBotAdmins) return reply(mess.botadmin);
+        if (!isAdmins && !isCreator) return reply(mess.useradmin)
+        if (args[0] === "on") {
+          if (AntiLinkTwitter) return reply('Already activated')
+          ntilinktwt.push(from)
+          reply('Activated twitter antilink in this group !')
+          var groupe = await zetsubo.groupMetadata(from)
+          var members = groupe['participants']
+          var mems = []
+          members.map(async adm => {
+            mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+          })
+          zetsubo.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m })
+        } else if (args[0] === "off") {
+          if (!AntiLinkTwitter) return reply('Already deactivated')
+          let off = ntilinktwt.indexOf(from)
+          ntilinktwt.splice(off, 1)
+          reply('Deactivated twitter antilink !')
+        } else {
+          let buttonsntilink = [
+            { buttonId: `${prefix}antilinktwt on`, buttonText: { displayText: 'On' }, type: 1 },
+            { buttonId: `${prefix}antilinktwt off`, buttonText: { displayText: 'Off' }, type: 1 }
+          ]
+          await zetsubo.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
+        }
+      }
+        break;
+
+      case 'antilinkall': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        if (!isBotAdmins) return reply(mess.botadmin);
+        if (!isAdmins && !isCreator) return reply(mess.useradmin);
+        zetsubo.sendMessage(from, { react: { text: "🫡", key: m.key } });
+
+        if (args[0] === "on") {
+
+          if (AntiLinkAll) return reply('Already activated');
+          ntilinkall.push(from);
+          reply('Enabled all antilink!');
+          var groupe = await zetsubo.groupMetadata(from);
+          var members = groupe['participants'];
+          var mems = [];
+          members.map(async adm => {
+            mems.push(adm.id.replace('c.us', 's.whatsapp.net'));
+          });
+          zetsubo.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m });
+        } else if (args[0] === "off") {
+          if (!AntiLinkAll) return reply('Already deactivated');
+          let off = ntilinkall.indexOf(from);
+          ntilinkall.splice(off, 1);
+          reply('Disabled all antilink!');
+        } else {
+          reply(`Please use '${prefix}antilinkall on' to enable the Antilink system or '${prefix}antilinkall off' to disable it.`);
+        }
+      }
+        break;
 //=================================================
 case 'autodelete': {
 await inireact()
@@ -3394,17 +3665,21 @@ zetsubo.sendMessage(m.chat, { sticker: { url: xeonresources[i].url }})
 }
 break
 //=================================================
-case 'autostatusview':
-                if (!isCreator) return reply(`Successfully changed auto status/story view`)
-                if (args.length < 1) return reply(`Example ${prefix + command} on/off`)
-                if (q === 'on') {
-                    autoread_status = true
-                    reply(`Successfully changed auto status/story view to ${q}`)
-                } else if (q === 'off') {
-                    autoread_status = false
-                    reply(`Successfully changed auto status/story view to ${q}`)
-                }
-                break
+case 'tagadmins': case 'admins': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        zetsubo.sendMessage(from, { react: { text: "🗿", key: m.key } })
+        //if (!text) return reply(`*Please quote or write a meaningful message to tag admins to*`)
+        let teks = `*ADMINS*
+
+*Message : ${text}*\n\n`
+        for (let mem of groupAdmins) {
+          teks += `❤️ @${mem.split('@')[0]}\n`
+        }
+        zetsubo.sendMessage(m.chat, { text: teks, mentions: groupAdmins }, { quoted: m })
+      }
+        break;
 //=================================================//
 case 'art':
 case 'awoo':
@@ -3426,26 +3701,36 @@ case 'megumin':
 case 'wallnime':
 case 'quotesimage':
 await inireact()
-zetsubo.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random/${command}?apikey=${apikey}` } })
+zetsubo.sendMessage(from, { image: { url:`https://api.lolhuman.xyz/api/random/${command}?apikey=${apikey}` } })
 break
 //=================================================//
-case 'neko' :
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
-zetsubo.sendMessage(from, {image: {url:waifudd.data.url},caption:`Ah Sayang 🥺🥺`},{ quoted:m }).catch(err => {
- return('Error!')
-})
-break
+case 'kickall': {
+        mess
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly);
+        if (!isBotAdmins) return reply(mess.botadmin);
+        if (!isAdmins && !isCreator) return reply(mess.useradmin)
+        const delay = time => new Promise(res => setTimeout(res, time));
+        let mentioned = participants.map(v => v.jid)
+        for (let member of mentioned) {
+          zetsubo.groupParticipantsUpdate(m.chat, [member], 'remove')
+        }
+      }
+
+        break;
 //=================================================//
-case 'waifu' :
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`) 
-zetsubo.sendMessage(from, {image: {url:waifudd.data.url},caption:`Ahh Sayang 🥺🙏`}, { quoted:m }).catch(err => {
- return('Error!')
-})
-break
+case 'translate': case 'trt': case 'trans': {
+        if (isBan) return reply(mess.banned);
+        zetsubo.sendMessage(from, { react: { text: "⌛", key: m.key } })
+
+        if (!args.join(" ")) return reply("Pls enter any text to translate")
+        tes = await fetchJson(`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
+        Infoo = tes.info
+        Detek = tes.translate
+        reply(`Input : ${Detek}\nTranslation Results : ${Infoo}`)
+      }
+        break;
 //=================================================//
 case 'kill':case 'pat':case 'lick':case 'bite':case 'yeet':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'highfive':case 'handhold':
 if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
@@ -3456,42 +3741,54 @@ zetsubo.sendImage(from, data.url, 'Success Coy', m)
 })
 break
 //=================================================//
-case 'fajar':
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-FajarNews().then(async(res) => {
-console.log(res) 
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-reply(teks) 
-})
-break
+case 'vv': {
+            if (isBan) return reply(mess.banned);
+            if (isBanChat) return reply(mess.bangc);
+                if (!m.quoted) return reply(`Reply to an Image/Video`)
+                if (/image/.test(mime)) {
+                    anuan = await zetsubo.downloadAndSaveMediaMessage(quoted)
+                    zetsubo.sendMessage(m.chat, {
+                        image: {
+                            url: ``
+                        },
+                        caption: `Your View once 🌚!`,
+                        fileLength: "999",
+                        viewOnce: true
+                    }, {
+                        quoted: m
+                    })
+                } else if (/video/.test(mime)) {                                                             anuanuan = await Taira.downloadAndSaveMediaMessage(quoted)
+                    zetsubo.sendMessage(m.chat, {
+                        video: {
+                            url: anuanuan
+                        },
+                        caption: `Your View once Video 🌚!`,
+                        fileLength: "99999999",
+                        viewOnce: true
+                    }, {
+                        quoted: m
+                    })
+                }
+            }
+            break;
 //=================================================//
-case 'cnn':
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-CNNNews().then(res => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-reply(teks) 
-})
-break
+case "tts": case "texttospeech": case "say": case "speak": {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        zetsubo.sendMessage(from, { react: { text: "⌛", key: m.key } })
+
+        if (!args[0]) return reply("Please give me a text so that i can speak it!")
+
+        let texttosay = text
+          ? text
+          : m.quoted && m.quoted.text
+            ? m.quoted.text
+            : m.text;
+        const SpeakEngine = require("google-tts-api");
+        const texttospeechurl = SpeakEngine.getAudioUrl(texttosay, { lang: "en", slow: false, host: "https://translate.google.com", });
+        zetsubo.sendMessage(m.chat, { audio: { url: texttospeechurl, }, mimetype: "audio/mpeg", fileName: `TairaSpeechEngine.mp3`, }, { quoted: m, });
+      }
+        break;
 //=================================================//
 case 'delete':
             case 'del': {
@@ -3516,80 +3813,72 @@ case 'delete':
             }
             break
 //=================================================//
-case 'cnbc':
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-CNBCNews().then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
-break
+case 'swm': case 'take': case 'stickerwm': case 'steal': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        zetsubo.sendMessage(from, { react: { text: "🫡", key: m.key } })
+
+        if (!args.join(" ")) return reply(`use -take Classic Bot|By: 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`)
+        const swn = args.join(" ")
+        const pcknm = swn.split("|")[0];
+        const atnm = swn.split("|")[1];
+        if (m.quoted.isAnimated === true) {
+          Zetsubo.downloadAndSaveMediaMessage(quoted, "gifee")
+          zetsubo.sendMessage(from, { sticker: fs.readFileSync("gifee.webp") }, { quoted: m })
+        } else if (/image/.test(mime)) {
+          let media = await quoted.download()
+          let encmedia = await zetsubo.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+          await fs.unlinkSync(encmedia)
+        } else if (/video/.test(mime)) {
+          if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds is allowed!')
+          let media = await quoted.download()
+          let encmedia = await zetsubo.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+          await fs.unlinkSync(encmedia)
+        } else {
+          reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 seconds is allowed!`)
+        }
+      }
+        break;
+		
 //=================================================//
-case 'tribun':
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-TribunNews().then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
-break
+      case 'soulmate': {
+
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(`${mess.grouponly}`);
+        zetsubo.sendMessage(from, { react: { text: "🌝", key: m.key } });
+
+        let member = participants.map(u => u.id);
+        let me = m.sender;
+        let jodoh = member[Math.floor(Math.random() * member.length)];
+
+        let message = `👫 Be me Soulmate...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
+        zetsubo.sendMessage(m.chat, { text: message, mentions: [me, jodoh] }, { quoted: m });
+      }
+        break;
+
 //=================================================//
-case 'indozone':
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-IndozoneNews().then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
-break
+     case 'handsomecheck':
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        zetsubo.sendMessage(from, { react: { text: "😺", key: m.key } })
+        if (!text) return reply(`Tag Someone, Example : ${prefix + command} @Kai`)
+        const gan = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100']
+        const teng = gan[Math.floor(Math.random() * gan.length)]
+        zetsubo.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
+        break;
 //=================================================//
-case 'kompas':
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-KompasNews().then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
-break
+case 'beautifulcheck':
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        zetsubo.sendMessage(from, { react: { text: "😺", key: m.key } })
+
+        if (!text) return reply(`Tag Someone, Example : ${prefix + command} @Kai`)
+        const can = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100']
+        const tik = can[Math.floor(Math.random() * can.length)]
+        zetsubo.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
+        break;
+		
 //=================================================//
 case 'tourl': {
 await inireact()
@@ -3607,41 +3896,100 @@ await inireact()
             }
             break
 //=================================================//
-case 'daily':
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-DailyNews().then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
-break
+      case 'dare':
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        zetsubo.sendMessage(from, { react: { text: "🍼", key: m.key } })
+
+        const dare = [
+          "eat 2 tablespoons of rice without any side dishes, if it's dragging you can drink",
+          "spill people who make you pause",
+          "call crush/pickle now and send ss",
+          "drop only emote every time you type on gc/pc for 1 day.",
+          "say Welcome to Who Wants To Be a Millionaire! to all the groups you have",
+          "call ex saying miss",
+          "sing the chorus of the last song you played",
+          "vn your ex/crush/girlfriend, says hi (name), wants to call, just a moment. I miss🥺👉🏼👈🏼",
+          "Bang on the table (which is at home) until you get scolded for being noisy",
+          "Tell random people - I was just told I was your twin first, we separated, then I had plastic surgery. And this is the most ciyusss_ thing",
+          "mention ex's name",
+          "make 1 rhyme for the members!",
+          "send ur whatsapp chat list",
+          "chat random people with gheto language then ss here",
+          "tell your own version of embarrassing things",
+          "tag the person you hate",
+          "Pretending to be possessed, for example: possessed by dog, possessed by grasshoppers, possessed by refrigerator, etc.",
+          "change name to *I AM DONKEY* for 24 hours",
+          "shout *ma chuda ma chuda ma chuda* in front of your house",
+          "snap/post boyfriend photo/crush",
+          "tell me your boyfriend type!",
+          "say *i hv crush on you, do you want to be my girlfriend?* to the opposite sex, the last time you chatted (submit on wa/tele), wait for him to reply, if you have, drop here",
+          "record ur voice that read *titar ke age do titar, titar ke piche do titar*",
+          "prank chat ex and say *i love u, please come back.* without saying dare!",
+          "chat to contact wa in the order according to your battery %, then tell him *i am lucky to hv you!*",
+          "change the name to *I am a child of randi* for 5 hours",
+          "type in bengali 24 hours",
+          "Use selmon bhoi photo for 3 days",
+          "drop a song quote then tag a suitable member for that quote",
+          "send voice note saying can i call u baby?",
+          "ss recent call whatsapp",
+          "Say *YOU ARE SO BEAUTIFUL DON'T LIE* to guys!",
+          "pop to a group member, and say fuck you",
+          "Act like a chicken in front of ur parents",
+          "Pick up a random book and read one page out loud in vn n send it here",
+          "Open your front door and howl like a wolf for 10 seconds",
+          "Take an embarrassing selfie and paste it on your profile picture",
+          "Let the group choose a word and a well known song. You have to sing that song and send it in voice note",
+          "Walk on your elbows and knees for as long as you can",
+          "sing national anthem in voice note",
+          "break;dance for 30 seconds in the sitting room😂",
+          "Tell the saddest story you know",
+          "make a twerk dance video and put it on status for 5mins",
+          "Eat a raw piece of garlic",
+          "Show the last five people you texted and what the messages said",
+          "put your full name on status for 5hrs",
+          "make a short dance video without any filter just with a music and put it on ur status for 5hrs",
+          "call ur bestie, bitch",
+          "put your photo without filter on ur status for 10mins",
+          "say i love oli london in voice note🤣🤣",
+          "Send a message to your ex and say I still like you",
+          "call Crush/girlfriend/bestie now and screenshot here",
+          "pop to one of the group member personal chat and Say you ugly bustard",
+          "say YOU ARE BEAUTIFUL/HANDSOME to one of person who is in top of ur pinlist or the first person on ur chatlist",
+          "send voice notes and say, can i call u baby, if u r boy tag girl/if girl tag boy",
+          "write i love you (random grup member name, who is online) in personal chat, (if u r boy write girl name/if girl write boy name) take a snap of the pic and send it here",
+          "use any bollywood actor photo as ur pfp for 3 days",
+          "put your crush photo on status with caption, this is my crush",
+          "change name to I AM GAY for 5 hours",
+          "chat to any contact in whatsapp and say i will be ur bf/gf for 5hours",
+          "send voice note says i hv crush on you, want to be my girlfriend/boyfriend or not? to any random person from the grup(if u girl choose boy, if boy choose girl",
+          "slap ur butt hardly send the sound of slap through voice note😂",
+          "state ur gf/bf type and send the photo here with caption, ugliest girl/boy in the world",
+          "shout bravooooooooo and send here through voice note",
+          "snap your face then send it here",
+          "Send your photo with a caption, i am lesbian",
+          "shout using harsh words and send it here through vn",
+          "shout you bastard in front of your mom/papa",
+          "change the name to i am idiot for 24 hours",
+          "slap urself firmly and send the sound of slap through voice note😂",
+          "say i love the bot owner Kai through voice note",
+          "send your gf/bf pic here",
+          "make any tiktok dance challenge video and put it on status, u can delete it after 5hrs",
+          "break;up with your best friend for 5hrs without telling him/her that its a dare",
+          "tell one of your frnd that u love him/her and wanna marry him/her, without telling him/her that its a dare",
+          "say i love depak kalal through voice note",
+          "write i am feeling horny and put it on status, u can delete it only after 5hrs",
+          "write i am lesbian and put it on status, u can delete only after 5hrs",
+          "kiss your mommy or papa and say i love you😌",
+          "put your father name on status for 5hrs",
+          "send abusive words in any grup, excepting this grup, and send screenshot proof here"
+        ]
+        const zetsubodareww = dare[Math.floor(Math.random() * dare.length)]
+        buffer = await getBuffer(`https://images4.alphacoders.com/101/1016619.jpg`)
+        zetsubo.sendMessage(from, { image: buffer, caption: '*You have chosen Dare...*\n\n' + Tairadareww }, { quoted: m })
+        break;
 //=================================================//
-case 'inews':
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-iNews().then(async(res) => {
-no = 0
-teks = ""
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-reply(teks) 
-})
-break
+
 //=================================================//
 case 'okezone':
 if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
@@ -3671,7 +4019,108 @@ let proses = await remini(media, "enhance");
 zetsubo.sendMessage(m.chat, { image: proses, caption: '> Generated by Classic-v3 Bug'}, { quoted: m })
 }
 break
-//=================================================//
+//====================================
+	case 'truth':
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        zetsubo.sendMessage(from, { react: { text: "🌝", key: m.key } })
+
+        const truth = [
+          "Have you ever liked anyone? How long?",
+          "If you can or if you want, which gc/outside gc would you make friends with? (maybe different/same type)",
+          "apa ketakutan terbesar kamu?",
+          "Have you ever liked someone and felt that person likes you too?",
+          "What is the name of your friend's ex-girlfriend that you used to secretly like?",
+          "Have you ever stolen money from your father or mom? The reason?",
+          "What makes you happy when you're sad?",
+          "Ever had a one sided love? if so who? how does it feel bro?",
+          "been someone's mistress?",
+          "the most feared thing",
+          "Who is the most influential person in your life?",
+          "what proud thing did you get this year",
+          "Who is the person who can make you awesome",
+          "Who is the person who has ever made you very happy?",
+          "Who is closest to your ideal type of partner here",
+          "Who do you like to play with??",
+          "Have you ever rejected people? the reason why?",
+          "Mention an incident that made you hurt that you still remember",
+          "What achievements have you got this year??",
+          "What's your worst habit at school??",
+          "What song do you sing most in the shower",
+          "Have you ever had a near-death experience",
+          "When was the last time you were really angry. Why?",
+          "Who is the last person who called you",
+          "Do you have any hidden talents, What are they",
+          "What word do you hate the most?",
+          "What is the last YouTube video you watched?",
+          "What is the last thing you Googled",
+          "Who in this group would you want to swap lives with for a week",
+          "What is the scariest thing thats ever happened to you",
+          "Have you ever farted and blamed it on someone else",
+          "When is the last time you made someone else cry",
+          "Have you ever ghosted a friend",
+          "Have you ever seen a dead body",
+          "Which of your family members annoys you the most and why",
+          "If you had to delete one app from your phone, which one would it be",
+          "What app do you waste the most time on",
+          "Have you ever faked sick to get home from school",
+          "What is the most embarrassing item in your room",
+          "What five items would you bring if you got stuck on a desert island",
+          "Have you ever laughed so hard you peed your pants",
+          "Do you smell your own farts",
+          "have u ever peed on the bed while sleeping ðŸ¤£ðŸ¤£",
+          "What is the biggest mistake you have ever made",
+          "Have you ever cheated in an exam",
+          "What is the worst thing you have ever done",
+          "When was the last time you cried",
+          "whom do you love the most among ur parents",
+          "do u sometimes put ur finger in ur nosetrilðŸ¤£",
+          "who was ur crush during the school days",
+          "tell honestly, do u like any boy in this grup",
+          "have you ever liked anyone? how long?",
+          "do you have gf/bf','what is your biggest fear?",
+          "have you ever liked someone and felt that person likes you too?",
+          "What is the name of your ex boyfriend of your friend that you once liked quietly?",
+          "ever did you steal your mothers money or your fathers money",
+          "what makes you happy when you are sad",
+          "do you like someone who is in this grup? if you then who?",
+          "have you ever been cheated on by people?",
+          "who is the most important person in your life",
+          "what proud things did you get this year",
+          "who is the person who can make you happy when u r sad",
+          "who is the person who ever made you feel uncomfortable",
+          "have you ever lied to your parents",
+          "do you still like ur ex",
+          "who do you like to play together with?",
+          "have you ever stolen big thing in ur life? the reason why?",
+          "Mention the incident that makes you hurt that you still remember",
+          "what achievements have you got this year?",
+          "what was your worst habit at school?",
+          "do you love the bot creator Kai?",
+          "have you ever thought of taking revenge from ur teacher?",
+          "do you like current prime minister of ur country",
+          "you non veg or veg",
+          "if you could be invisible, what is the first thing you would do",
+          "what is a secret you kept from your parents",
+          "Who is your secret crush",
+          "whois the last person you creeped on social media",
+          "If a genie granted you three wishes, what would you ask for",
+          "What is your biggest regret",
+          "What animal do you think you most look like",
+          "How many selfies do you take a day",
+          "What was your favorite childhood show",
+          "if you could be a fictional character for a day, who would you choose",
+          "whom do you text the most",
+          "What is the biggest lie you ever told your parents",
+          "Who is your celebrity crush",
+          "Whats the strangest dream you have ever had",
+          "do you play pubg, if you then send ur id number"
+        ]
+        const Tairatruthww = truth[Math.floor(Math.random() * truth.length)]
+        buffer = await getBuffer(`https://images2.alphacoders.com/650/650812.jpg`)
+        Taira.sendMessage(from, { image: buffer, caption: '*You have chosen Truth...*\n' + Tairatruthww }, { quoted: m })
+        break;
+//=============//
 case 'tourl': {
 inireact()
     reply(mess.wait)
@@ -3698,42 +4147,19 @@ case 'autoread':
                 }
                 break
 //=================================================//
-case "kontan":
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-KontanNews().then(async (res) => {
-teks = ""
-no = 0
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Jenis: ${i.berita_jenis}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
-break
+case 'stupidcheck': case 'uncleancheck':
+      case 'hotcheck': case 'smartcheck':
+      case 'greatcheck':
+      case 'evilcheck': case 'dogcheck':
+      case 'coolcheck':
+      case 'waifucheck':
+        cantik = body.slice(1)
+        const okebnh1 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100']
+        const zetsubokak = okebnh1[Math.floor(Math.random() * okebnh1.length)]
+        zetsubo.sendMessage(m.chat, { text: zetsubokak }, { quoted: m })
+        break;
 //=================================================//
-case "merdeka":
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-MerdekaNews().then(async (res) => {
-teks = ""
-no = 0
-for (let i of res) {
-no += 1
-teks += `\n• ${no.toString()} •\n`
-teks += `Berita: ${i.berita}\n`
-teks += `Upload: ${i.berita_diupload}\n`
-teks += `Link: ${i.berita_url}\n`
-}
-teks += ""
-zetsubo.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted:m })
-})
-break
+
 //=================================================//
 case "jalantikus":
 await inireact()
@@ -3768,24 +4194,17 @@ reply(text)
 .catch(console.error)
 break
 //=================================================
-case 'alquran':
-if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-await inireact()
-if (args.length < 1) return reply(`Example: ${prefix + command} 18 or ${prefix + command} 18/10 or ${prefix + command} 18/1-10`)
-axios
-.get(`https://api.lolhuman.xyz/api/quran/${args[0]}?apikey=${apikey}`)
-.then(({ data }) => {
-var ayat = data.result.ayat
-var text = `QS. ${data.result.surah} : 1-${ayat.length}\n\n`
-for (var x of ayat) {
-text += `${x.arab}\n${x.ayat}. ${x.latin}\n${x.indonesia}\n\n`
-}
-text = text.replace(/<u>/g, '_').replace(/<\/u>/g, '_')
-text = text.replace(/<strong>/g, '*').replace(/<\/strong>/g, '*')
-reply(text)
-})
-.catch(console.error)
-break
+case 'weather':
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        zetsubo.sendMessage(from, { react: { text: "✨", key: m.key } })
+        if (!args[0]) return reply("Enter your location to search weather.")
+        myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
+
+        const weathertext = `           🌤 *Weather Report* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
+        zetsubo.sendMessage(from, { video: { url: 'https://media.tenor.com/bC57J4v11UcAAAPo/weather-sunny.mp4' }, gifPlayback: true, caption: weathertext }, { quoted: m })
+
+        break;
 //=================================================
 case 'alquranaudio':
 if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
