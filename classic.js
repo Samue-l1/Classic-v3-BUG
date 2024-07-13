@@ -484,7 +484,7 @@ await zetsubo.relayMessage(target, etc.message, { participant: { jid: target }, 
 if (!zetsubo.public) {
 if (!m.key.fromMe) return
 }
-let rn = ['recording'] 
+let rn = ['typing'] 
 let jd = rn[Math.floor(Math.random() * rn.length)];
 if (m.message) {
 zetsubo.sendPresenceUpdate(jd, from)
@@ -1733,7 +1733,7 @@ await inireact()
 ┃➢ 𝐝𝐞𝐥𝐩𝐫𝐞𝐦 (254𝐱𝐱/@𝐭𝐚𝐠)
 ┃➢ 𝐥𝐢𝐬𝐭𝐩𝐫𝐞𝐦
 ┃➢ 𝐩𝐞𝐧𝐠𝐠𝐮𝐧𝐚 𝐚𝐝𝐝 (254𝐱𝐱)
-┃➢ 𝐩𝐞𝐧𝐠𝐠𝐮𝐧𝐚 𝐝𝐞𝐥 (254𝐱𝐱)
+┃➢ 𝐬𝐞𝐭𝐩𝐫𝐞𝐟𝐢𝐱 
 ┃➢ 𝐥𝐢𝐬𝐭𝐛𝐚𝐧
 ┃➢ 𝐩𝐮𝐛𝐥𝐢𝐜
 ┃➢ 𝐬𝐞𝐥𝐟
@@ -2085,29 +2085,25 @@ teksooo += `\n*Total : ${owner.length}*`
 zetsubo.sendMessage(from, { text: teksooo.trim() }, 'extendedTextMessage', { quoted:m, contextInfo: { "mentionedJid": owner } })
 break
 //=================================================//
-case 'pengguna':  {
-if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*')
-if (!args[0]) return reply(`*Contoh : ${command} add 258869103969*`)
-if (args[1]) {
-orgnye = args[1] + "@s.whatsapp.net"
-} else if (m.quoted) {
-orgnye = m.quoted.sender
-}
-const isBane = banned.includes(orgnye)
-if (args[0] === "add") {
-if (isBane) return reply('*Pengguna Ini telah Di Ban*')
-banned.push(orgnye)
-reply(`Succes ban Pengguna Ini`)
-} else if (args[0] === "del") {
-if (!isBane) return reply('*Pengguna Ini Telah Di hapus Dari Ban*')
-let delbans = banned.indexOf(orgnye)
-banned.splice(delbans, 1)
-zetsreply(`*Berhasil Menghapus Pengguna yang Di Ban*`)
-} else {
-reply("Error")
-}
-}
-break
+case 'setprefix': {
+  
+    if (isBan) return reply(mess.banned);	 			
+    if (isBanChat) return reply(mess.bangc);
+    if (!isCreator) return reply(mess.botowner)
+      zetsubo.sendMessage(from, { react: { text: "🦋" , key: m.key }})
+
+    if (args.length !== 1) {
+      return reply(`Please provide a single character as the new prefix.`);
+    } else {
+      const newPrefix = args[0];
+      try {
+        global.prefa = [newPrefix];
+        return reply(`Prefix Successfully changed to "${newPrefix}"`);
+      } catch (error) {
+        console.error('Error changing prefix:', error);
+        return reply(`An error occurred while changing the prefix. Please try again later.`);
+      }
+	}}
 //=================================================//
 case 'listban':
 if (isBan) return reply('*Lu Di Ban Owner*')
@@ -2117,7 +2113,25 @@ teksooop += `- ${ii}\n`
 }
 zetsreply(teksooop)
 break
-//=================================================//
+//===================case 'setprefix': {
+  
+    if (isBan) return reply(mess.banned);	 			
+    if (isBanChat) return reply(mess.bangc);
+    if (!isCreator) return reply(mess.botowner)
+      zetsubo.sendMessage(from, { react: { text: "🌝" , key: m.key }})
+
+    if (args.length !== 1) {
+      return reply(`Please provide a single character as the new prefix.`);
+    } else {
+      const newPrefix = args[0];
+      try {
+        global.prefa = [newPrefix];
+        return reply(`Prefix Successfully changed to "${newPrefix}"`);
+      } catch (error) {
+        console.error('Error changing prefix:', error);
+        return reply(`An error occurred while changing the prefix. Please try again later.`);
+      }
+	}}==============================//
 case 'owner': case 'creator':{
 await inireact()
  zetsubo.sendContact(from, global.owner, m)
