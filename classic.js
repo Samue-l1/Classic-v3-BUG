@@ -1758,11 +1758,11 @@ zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
 case 'credits' :
-		
+await inireact()		
 if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-let fooutgkzz = `Runtime : ⏳ ${runtime(process.uptime())}`
+let fooutgdhsikzz = `Runtime : ⏳ ${runtime(process.uptime())}`
 sendGeekzMessage(from, { 
-text: `𝑯𝒆𝒍𝒍𝒐 ${pushname} ${salam2}
+text: `𝑯𝒆𝒍𝒍𝒐 ${pushname} 
 𝑻𝒐𝒕𝒂𝒍 𝑷𝒓𝒆𝒎𝒊𝒖𝒎 :  ${owner.length}
 𝑺𝒕𝒂𝒕𝒖𝒔 : ${isCreator ? 'Premium' : 'Free'}
  🌎 𝐀𝐋𝐋 𝐓𝐇𝐀𝐍𝐊𝐒 𝐓𝐎 🥳
@@ -1802,7 +1802,7 @@ mentionedJid:[sender],
 break
 //=================================================//
 case 'funmenu':
-
+await inireact()
 if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
 let fooutgkzz = `Runtime : ⏳ ${runtime(process.uptime())}`
 sendGeekzMessage(from, { 
