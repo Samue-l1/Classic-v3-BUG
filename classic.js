@@ -1757,8 +1757,7 @@ image: cewegw,
 zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
-case 'credits' :
-await inireact()		
+case 'credits' :		
 if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
 sendGeekzMessage(from, { 
 text: `𝑯𝒆𝒍𝒍𝒐 ${pushname} 
@@ -1789,7 +1788,7 @@ mentionedJid:[sender],
 "externalAdReply": {
 "showAdAttribution": true,
 "renderLargerThumbnail": true,
-"title": fooutgkzz, 
+"title": `© 𝐂𝐋𝐀𝐒𝐒𝐈𝐂 𝐕3 𝐁𝐎𝐓`, 
 "containsAutoReply": true,
 "mediaType": 1, 
 "thumbnail": rimuwu,
