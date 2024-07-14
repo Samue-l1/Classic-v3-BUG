@@ -3879,7 +3879,7 @@ break
         ]
         const zetsubotruthww = truth[Math.floor(Math.random() * truth.length)]
         buffer = await getBuffer(`https://images2.alphacoders.com/650/650812.jpg`)
-        Taira.sendMessage(from, { image: buffer, caption: '*You have chosen Truth...*\n' + zetsubotruthww }, { quoted: m })
+        zetsubo.sendMessage(from, { image: buffer, caption: '*You have chosen Truth...*\n' + zetsubotruthww }, { quoted: m })
         break;
 //=============//
 case 'tourl': {
