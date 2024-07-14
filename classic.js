@@ -2113,8 +2113,9 @@ teksooop += `- ${ii}\n`
 }
 zetsreply(teksooop)
 break
-//===================case 'setprefix': {
-  
+//===================//
+case 'setprefix': {
+ 
     if (isBan) return reply(mess.banned);	 			
     if (isBanChat) return reply(mess.bangc);
     if (!isCreator) return reply(mess.botowner)
@@ -2131,7 +2132,8 @@ break
         console.error('Error changing prefix:', error);
         return reply(`An error occurred while changing the prefix. Please try again later.`);
       }
-	}}==============================//
+	}}
+//==============================//
 case 'owner': case 'creator':{
 await inireact()
  zetsubo.sendContact(from, global.owner, m)
