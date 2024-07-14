@@ -1760,7 +1760,6 @@ break
 case 'credits' :
 await inireact()		
 if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
-let classicfancy = `Runtime : ⏳ ${runtime(process.uptime())}`
 sendGeekzMessage(from, { 
 text: `𝑯𝒆𝒍𝒍𝒐 ${pushname} 
 𝑻𝒐𝒕𝒂𝒍 𝑷𝒓𝒆𝒎𝒊𝒖𝒎 :  ${owner.length}
