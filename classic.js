@@ -1757,75 +1757,48 @@ image: cewegw,
 zetsubo.sendMessage(from, hiks, {quoted: zets })}
 break
 //=================================================//
-case 'asupan': {
-
-                            ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━
-┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
-┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
-┃  ➥𝐂𝐨𝐧𝐭𝐚𝐜𝐭 : @${m.sender.split('@')[0]}
-┃
-┣╼╼❴ ⧠ ᏴϴͲ ᏆΝҒϴ ⧠ ❵╼╼╼
-┃
-┃    📚𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : *𝐁𝐚𝐢𝐥𝐞𝐲𝐬-𝐌𝐃*.
-┃	👾𝐏𝐫𝐞𝐟𝐢𝐱 : *𝐌𝐮𝐥𝐭𝐢-𝐏𝐫𝐞𝐟𝐢𝐱*.
-┃	📅𝐃𝐚𝐭𝐞 𝐒𝐞𝐫𝐯𝐞𝐫 : ${moment.tz('Africa/Nairobi').format('DD/MM/YY')}
-┃	🕑𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
-┃
-┣━━━━━━━━ 𝗔𝗱𝗱 𝗔𝗰𝗰𝗲𝘀 ━━━━━━
-┃
-┃┏━━━━━━━━━━━━━━━━━
-┃➢ 𝐚𝐝𝐝𝐩𝐫𝐞𝐦 (628xx/@𝐭𝐚𝐠)
-┃➢ 𝐝𝐞𝐥𝐩𝐫𝐞𝐦𝐢𝐮𝐦 (628𝐱𝐱/@𝐭𝐚𝐠)
-┃➢ 𝐝𝐞𝐥𝐩𝐫𝐞𝐦 (628𝐱𝐱/@𝐭𝐚𝐠)
-┃➢ 𝐥𝐢𝐬𝐭𝐩𝐫𝐞𝐦
-┃➢ 𝐩𝐞𝐧𝐠𝐠𝐮𝐧𝐚 𝐚𝐝𝐝 (628𝐱𝐱)
-┃➢ 𝐩𝐞𝐧𝐠𝐠𝐮𝐧𝐚 𝐝𝐞𝐥 (628𝐱𝐱)
-┃➢ 𝐥𝐢𝐬𝐭𝐛𝐚𝐧
-┃➢ 𝐩𝐮𝐛𝐥𝐢𝐜
-┃➢ 𝐬𝐞𝐥𝐟
-┃┗━━━━━━━━━━━━━━━━━
-┃
-┃━━━━━━「 SANGE 」━━━━━
-┃
-┃┏━━━━━━━━━━━━━━━━
-┃➟ asupan1
-┃➟ asupan2
-┃➟ asupan3
-┃➟ asupan4
-┃➟ asupan5
-┃➟ asupan6
-┃➟ asupan7
-┃➟ asupan8
-┃➟ asupan9
-┃➟ asupan10
-┃➟ asupan11
-┃➟ asupan12
-┃➟ asupan13
-┃➟ asupan14
-┃➟ asupan15
-┃➟ asupan16
-┃➟ asupan17
-┃➟ asupan18
-┃➟ asupan18
-┃➟ asupan20
-┃┗━━━━━━━━━━━━━━━━━
-┃ ➥➥❰ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 ®2024* ❱➥➥
-┗━━━━━━━━━━━━━━━━━━
-`
-let hiks = {
-image: cewegw, 
-  caption: ewe,
-  contextInfo:{externalAdReply:{
-  title: '⧉⸙𝐋⚔𝐎᪥𝐑ᚘ𝐃ᚗ𝐒⸙𝐀࿈𝐌⸙⧉',
-  body: '⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺', 
-  showAdAttribution: true,
-  thumbnail:hinachan,
-  mediaType: 4,
-  MediaUrl:`https://telegra.ph/file/a3b5de3c2cd44f6b3aa80.jpg`,
-  sourceUrl:`https://www.instagram.com/ano_nymous_sam?utm_source=qr&igsh=MzNlNGNkZWQ4Mg==`,
-  }}
-  }
-zetsubo.sendMessage(from, hiks, {quoted: zets })}
+case 'credits' :
+		
+if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
+let fooutgkzz = `Runtime : ⏳ ${runtime(process.uptime())}`
+sendGeekzMessage(from, { 
+text: `𝑯𝒆𝒍𝒍𝒐 ${pushname} ${salam2}
+𝑻𝒐𝒕𝒂𝒍 𝑷𝒓𝒆𝒎𝒊𝒖𝒎 :  ${owner.length}
+𝑺𝒕𝒂𝒕𝒖𝒔 : ${isCreator ? 'Premium' : 'Free'}
+ 🌎 𝐀𝐋𝐋 𝐓𝐇𝐀𝐍𝐊𝐒 𝐓𝐎 🥳
+▬▭▬▭▬▭▬▭▬▬▭▬▭▬
+ ⦁ 𝐙𝐞𝐭𝐬𝐮𝐛𝐨𝐨𝐱𝐲𝐠 ⥈ 𝐈𝐧𝐝𝐨𝐧𝐞𝐬𝐢𝐚 🇮🇩
+ ➢ 𝐖𝐫𝐢𝐭𝐢𝐧𝐠 𝐭𝐡𝐞 𝐛𝐚𝐬𝐞 𝐜𝐨𝐝𝐞 𝐮𝐬𝐢𝐧𝐠 𝐜𝐚𝐬𝐞 𝐦𝐞𝐭𝐡𝐨𝐝
+▬▭▬▭▬▭▬▭▬▬▭▬▭▬
+ ⦁ 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 ⥈ 𝐊𝐞𝐧𝐲𝐚 🇰🇪
+ ➢ 𝐒𝐜𝐫𝐢𝐩𝐭 𝐦𝐚𝐧𝐭𝐚𝐢𝐧𝐚𝐧𝐜𝐞 𝐚𝐧𝐝 𝐦𝐚𝐝𝐞 𝐢𝐭 𝐚 𝐜𝐨𝐦𝐩𝐥𝐞𝐭𝐞 𝐛𝐨𝐭
+▬▭▬▭▬▭▬▭▬▬▭▬▭▬
+ ⦁ 𝐋𝐨𝐫𝐝 𝐓𝐚𝐢𝐫𝐚 ⥈ 𝐍𝐢𝐠𝐞𝐫𝐢𝐚 🇳🇬
+ ➢ 𝐀𝐝𝐝𝐞𝐝 𝐭𝐡𝐞 𝐦𝐞𝐧𝐮 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐭𝐨 𝐦𝐚𝐤𝐞 𝐭𝐡𝐞 𝐛𝐨𝐭 𝐦𝐨𝐫𝐞 𝐟𝐚𝐧𝐜𝐲
+▬▭▬▭▬▭▬▭▬▬▭▬▭▬
+ ⦁ 𝐄𝐦𝐩𝐨𝐫𝐨𝐫 𝐋𝐨𝐫𝐝
+ ➢ 𝐅𝐨𝐫 𝐚𝐝𝐝𝐢𝐧𝐠 𝐠𝐢𝐭𝐡𝐮𝐛 𝐖𝐨𝐫𝐤𝐟𝐥𝐨𝐰 𝐟𝐨𝐫 𝐞𝐚𝐬𝐲 𝐝𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭
+▬▭▬▭▬▭▬▭▬▬▭▬▭▬
+ ⦁ 𝐓𝐡𝐚𝐧𝐤𝐬 𝐭𝐨 ${pushname} 
+ ➢ 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠 𝐭𝐡𝐞 𝐁𝐨𝐭 
+▬▭▬▭▬▭▬▭▬▬▭▬▭▬
+© 𝐂𝐋𝐀𝐒𝐒𝐈𝐂 𝐕3 𝐁𝐎𝐓
+`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": fooutgkzz, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": rimuwu,
+"mediaUrl": gr,
+"sourceUrl": gr,
+}
+}
+})
 break
 //=================================================//
 case 'funmenu':
@@ -3513,7 +3486,6 @@ case 'kickall': {
 case 'translate': case 'trt': case 'trans': {
         if (isBan) return reply(mess.banned);
         zetsubo.sendMessage(from, { react: { text: "⌛", key: m.key } })
-
         if (!args.join(" ")) return reply("Pls enter any text to translate")
         tes = await fetchJson(`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
         Infoo = tes.info
@@ -3776,7 +3748,7 @@ await inireact()
         ]
         const zetsubodareww = dare[Math.floor(Math.random() * dare.length)]
         buffer = await getBuffer(`https://images4.alphacoders.com/101/1016619.jpg`)
-        zetsubo.sendMessage(from, { image: buffer, caption: '*You have chosen Dare...*\n\n' + Tairadareww }, { quoted: m })
+        zetsubo.sendMessage(from, { image: buffer, caption: '*You have chosen Dare...*\n\n' + zetsubodareww }, { quoted: m })
         break;
 //=================================================//
 
@@ -3906,9 +3878,9 @@ break
           "Whats the strangest dream you have ever had",
           "do you play pubg, if you then send ur id number"
         ]
-        const Tairatruthww = truth[Math.floor(Math.random() * truth.length)]
+        const zetsubotruthww = truth[Math.floor(Math.random() * truth.length)]
         buffer = await getBuffer(`https://images2.alphacoders.com/650/650812.jpg`)
-        Taira.sendMessage(from, { image: buffer, caption: '*You have chosen Truth...*\n' + Tairatruthww }, { quoted: m })
+        Taira.sendMessage(from, { image: buffer, caption: '*You have chosen Truth...*\n' + zetsubotruthww }, { quoted: m })
         break;
 //=============//
 case 'tourl': {
@@ -4205,10 +4177,6 @@ case "newlink":
           
   break;
 //=================================================//
-case "credits": 
-  
-              zetsubo.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/6dfde4263655a81572a68.jpg' }, caption: `We give all thanks to ♥️ :\n\n -Zetsubooxgy ➪ Indonesia\n - Writing the base code using case method\n\n - 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒➪ India\n - For Developing the Bot to where it is now 💯\nhttps://github.com/Samue-l1\n\n -Lord Taira - Nigerian 🇳🇬\n-For Adding bot buttons to make it more Fancy\n\n - Emporor Lord ➪ Nigeria 🇳🇬\n - For Adding Workflows for easy GitHub Deployment \n\n > Classic-v3 Bot︎`}); 
- break;
 //=================================================//
 case 'asupan5':
 	if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
