@@ -39,6 +39,7 @@ const hxz = require('hxz-api')
 const ytdl = require("ytdl-core")
 const { Configuration, OpenAIApi } = require('openai')
 const { exec, spawn, execSync } = require("child_process")
+const isBanChat = m.isGroup ? banchat.includes(from) : false
 const qbug = {
 key: {
 remoteJid: 'status@broadcast',
