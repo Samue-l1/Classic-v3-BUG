@@ -41,8 +41,6 @@ low = require('./lib/lowdb')}
 const { Low, JSONFile } = low
 const mongoDB = require('./lib/mongoDB')
 //=================================================//
-const express = require('express')
-const app = express()
 const port = process.env.PORT || 4000;
 //=================================================//
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
