@@ -74,6 +74,17 @@ https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 * Start the Worker
 * Enjoy the Bot.
 
+#### DEPLOY TO RENDER
+
+ ★ Register To Render 
+    <br>
+<a href='https://dashboard.render.com/register' target="_blank"><img alt='Render' src='https://img.shields.io/badge/CREATE-h?color=black&style=for-the-badge&logo=render' width="96.35" height="28"/></a></p>
+
+★ Now Deploy
+    <br>
+<a href='https://dashboard.render.com/select-repo?type=web' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/DEPLOY -h?color=black&style=for-the-badge&logo=render' width="96.35" height="28"/></a></p>
+
+
 ```
 ## `For Termux/Ssh/Ubuntu`
 ```bash
