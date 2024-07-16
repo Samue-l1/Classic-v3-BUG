@@ -2,7 +2,7 @@
 
 <h1 align="center">ꪶ𝘾𝙡𝙖𝙨𝙨𝙞𝙘 𝗕𝗼𝘁-𝗩3ꫂ<br></h1>
 <p align="center">
-<img src="https://telegra.ph/file/a2e5d1851171e21e7ba82.jpg" />
+<img src="https://telegra.ph/file/a2e5d1851171e21e7ba82.jpg"/>
 </p>
 
 <p align="center">
