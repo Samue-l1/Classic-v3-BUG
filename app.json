@@ -1,10 +1,10 @@
 {
-  "name": "Spider-MD",
+  "name": "Classic-v3-BUG",
   "description": "whatsapp md bot build with nodejs",
   "repository": "https://github.com/Samue-l1/Classic-V4",
   "logo": "https://telegra.ph/file/d2a1d3bbfabf34fabe666.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"]
-"env": {
+  "env": {
       "autoviewstatus": {
         "description": "Put TRUE,if you want the bot to view status ",
         "required": false
