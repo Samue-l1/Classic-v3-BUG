@@ -1,0 +1,6 @@
+build: 
+  docker: 
+      worker: Dockerfile
+run:
+
+   web: npm i -g forever && forever index.js && forever save && forever logs
