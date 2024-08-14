@@ -1,0 +1,78 @@
+{"noiseKey":{"private":{"type":"Buffer","data":"cGC9GMKy52BdHjRjQQiPD/aHafUdJjhDEeJtP3jCLns="},"public":{"type":"Buffer","data":"OyC7KOPW/2KZMQSmIXSzzwm2ecoPO9n02Sd25OKsRlw="}},"pairingEphemeralKeyPair":{"private":{"type":"Buffer","data":"aGxHOz2pfruyQsx8jsbSPIVCtiwhy9xkhmHBs61FMnY="},"public":{"type":"Buffer","data":"R/ZYTPTxOWhxeqhHVy3XQTOpPyJvecIIHEVS40XNbQg="}},"signedIdentityKey":{"private":{"type":"Buffer","data":"QMDituhUfHpXitzF1oj5QbeJtxn6qsmM8jJwpmcpxXo="},"public":{"type":"Buffer","data":"ywjLvRrXmZ1POrhAoKb/PCvAZTTjEe64Ota5C4j2DGs="}},"signedPreKey":{"keyPair":{"private":{"type":"Buffer","data":"wFmxPIZGzPQf3ucXPbE9Ww9LmrSWrrk5wpOqkuCyKVQ="},"public":{"type":"Buffer","data":"vHU1AXh0QMuLpcIu2XgSscE7qiL9S/RXWazpNWKavnk="}},"signature":{"type":"Buffer","data":"vDhjGOfxh0yUgpYjoQY1KtlYyxRLbsXZUoMaldm131tzRlX8h0dX2KUyXLd8lhY4xHhiyWLGTe3EcVWBmh5pBA=="},"keyId":1},"registrationId":108,"advSecretKey":"tYLyfBZrT2WdaSOoIhKM+sihmBYvMBXIOHvSqpHAdyc=","processedHistoryMessages":[],"nextPreKeyId":31,"firstUnuploadedPreKeyId":31,"accountSyncCounter":0,"accountSettings":{"unarchiveChats":false},"deviceId":"eGO8fpLBT-2xTK1xAf21qA","phoneId":"4934367b-4d8f-4f4b-b71d-62fc98c1a42a","identityId":{"type":"Buffer","data":"pewnwl+sSmxkOVM/jNOfcQO9opE="},"registered":true,"backupToken":{"type":"Buffer","data":"7jm+Nhhx3DKF5txWPbR/rRhvrzk="},"registration":{},"pairingCode":"691YYQWN","me":{"id":"254748142187:50@s.whatsapp.net"},"account":{"details":"CNWysaYBEIXc87UGGBYgACgA","accountSignatureKey":"Q78/cnBPNb7v5VuDl0CqR/eTiIW2UsGWZAwSrC4rHFQ=","accountSignature":"6e/GWSALdLCozrJUxYzPI+0wtcO/zm4jKWkuhdtuYHznMJH+4YZI/RKCVZqCjaF+EwhCtl6gzFc6c2WUpGncCQ==","deviceSignature":"zYB3HGvCkmEZ2ath9AnxEPvNFhndR1vCWLJ5lbr88l3ltuf2x6kwZES8veBH4UVrvnquqlCmaMyQnPP5qgreCg=="},"signalIdentities":[{"identifier":{"name":"254748142187:50@s.whatsapp.net","deviceId":0},"identifierKey":{"type":"Buffer","data":"BUO/P3JwTzW+7+Vbg5dAqkf3k4iFtlLBlmQMEqwuKxxU"}}],"platform":"android","lastAccountSyncTimestamp":1723657746,"myAppStateKeyId":"AAAAAOxE"}
+#
+# This workflow assumes you have already created the target Azure App Service web app.
+# For instructions see https://docs.microsoft.com/en-us/azure/app-service/quickstart-nodejs?tabs=linux&pivots=development-environment-cli
+#
+# To configure this workflow:
+#
+# 1. Download the Publish Profile for your Azure Web App. You can download this file from the Overview page of your Web App in the Azure Portal.
+#    For more information: https://docs.microsoft.com/en-us/azure/app-service/deploy-github-actions?tabs=applevel#generate-deployment-credentials
+#
+# 2. Create a secret in your repository named AZURE_WEBAPP_PUBLISH_PROFILE, paste the publish profile contents as the value of the secret.
+#    For instructions on obtaining the publish profile see: https://docs.microsoft.com/azure/app-service/deploy-github-actions#configure-the-github-secret
+#
+# 3. Change the value for the AZURE_WEBAPP_NAME. Optionally, change the AZURE_WEBAPP_PACKAGE_PATH and NODE_VERSION environment variables below.
+#
+# For more information on GitHub Actions for Azure: https://github.com/Azure/Actions
+# For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: '20.x'                # set this to the node version to use
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run build --if-present
+        npm run test --if-present
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: node-app
+        path: .
+
+  deploy:
+    permissions:
+      contents: none
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Development'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v3
+      with:
+        name: node-app
+
+    - name: 'Deploy to Azure WebApp'
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
