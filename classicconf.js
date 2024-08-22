@@ -57,6 +57,7 @@ global.limitawal = {
     premium: "Infinity",
     free: 5
 }
+global.OwnerNumber = [" "] //Leave empty,to avoid bot function error.
 //=================================================//
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
