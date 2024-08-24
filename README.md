@@ -48,7 +48,7 @@
 
 ## `Generate Pair Code For Session`
 
-[`Classic Pairing Using Render`](https://classic-v3-session.onrender.com)
+[`Classic Pairing Using Render`](https://spider-classic-pairing.onrender.com)
 
 [`Classic Pairing using Replit`](https://replit.com/@pesguru02/Classic-Pairing?s=app)
 
