@@ -4654,45 +4654,35 @@ https://cloud.google.com/translate/docs/languages
     }
     break
 //=================================================//
-case 'play': case 'song' : case 'music':{
-			if (!text) return reply(`*Example :*\Headlights by Alan walker/*`)
+ case 'play': case 'music': case: 'song':{
+			if (!text) return zreply(`*Example :*\n\n*Play Mendua*`)
 			reply(mess.wait);
 			let yts = require("youtube-yts")
 			let look = await yts(text);
 			let convert = look.videos[0];
 			const pl = await youtube(convert.url)
-            // reply("Downloading.. This may take upto 5 min!");
-            await new Promise((resolve, reject) => {
-                stream.on("error", reject);
-                stream.on("finish", resolve);
-            });
-            
-            let stats = fs.statSync(`./${randomName}`);
-            let fileSizeInBytes = stats.size;
-            // Convert the file size to megabytes (optional)
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            console.log("Audio downloaded ! \n Size: " + fileSizeInMegabytes);
-            if (fileSizeInMegabytes <= 40) {
-                //sendFile(from, fs.readFileSync(`./${randomName}`), msg, { audio: true, jpegThumbnail: (await getBuffer(dl.meta.image)).buffer, unlink: true })
-                await zetsubo.sendMessage(
-                    from, {
-                        document: fs.readFileSync(`./${randomName}`),
-                        mimetype: "audio/mpeg",
-                        fileName:  covert.title +".mp3",
-			caption: "💢 𝐂𝐋𝐀𝐒𝐒𝐈𝐂_𝐁𝐎𝐓 𝐁𝐘 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 🩸 ",    
-                    }, {
-                        quoted: m 
-                    }
-                );
-            } else {
-                reply(`File size bigger.`);
-            }
-            fs.unlinkSync(`./${randomName}`);
-        } catch (e) {
-            reply(e.toString())
-        }
-    }
-break;
+			await zetsubo.sendMessage(m.chat, {
+				audio: {
+					url: pl.mp3
+				},
+				fileName: convert.title + '.mp3',
+				mimetype: 'audio/mpeg',
+				contextInfo: {
+					externalAdReply: {
+						title: convert.title,
+						body: packname,
+						thumbnailUrl: convert.image,
+						sourceUrl: pl.mp3,
+						mediaType: 1,
+						mediaUrl: convert.url,
+					}
+				},
+			}, {
+				quoted: m
+			})
+		}
+		break
+
 //=================================================//
 case 'masasubur': {
 if (isBan) return reply('*Youre are banned with the owner. You dont have to act cool *')
