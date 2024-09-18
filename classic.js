@@ -36,7 +36,11 @@ const { uptotelegra } = require('./lib/upload')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const hxz = require('hxz-api')
-const ytdl = require("ytdl-core")
+const {
+	youtube
+} = require("btch-downloader")
+const yts = require("yt-search")
+const ytdl = require('@distube/ytdl-core')
 const { Configuration, OpenAIApi } = require('openai')
 const { exec, spawn, execSync } = require("child_process")
 const isBanChat = m.isGroup ? banchat.includes(from) : false
@@ -4650,37 +4654,13 @@ https://cloud.google.com/translate/docs/languages
     }
     break
 //=================================================//
-case 'play':
-    case 'music': {
-        if (!text) {
-            reply('𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐬𝐞𝐚𝐫𝐜𝐡 𝐭𝐞𝐫𝐦!\n𝐄.𝐠: 𝙷𝙴𝙰𝙳𝙻𝙸𝙶𝙷𝚃𝚂 𝙱𝚈 𝙰𝙻𝙰𝙽 𝚆𝙰𝙻𝙺𝙴𝚁')
-            return;
-        }
-        try {
-            const {
-                videos
-            } = await yts(text);
-            if (!videos || videos.length <= 0) {
-                reply(`No Matching videos found for : *${args[0]}*!!`)
-                return;
-            }
-            let urlYt = videos[0].url
-            let infoYt = await ytdl.getInfo(urlYt);
-            //30 MIN
-            if (infoYt.videoDetails.lengthSeconds >= 1800) {
-                reply(`𝑷𝒍𝒆𝒂𝒔𝒆 𝒔𝒊𝒓\𝑰'𝒎 𝒏𝒐𝒕 𝒂𝒃𝒍𝒆 𝒕𝒐 𝒅𝒐𝒘𝒏𝒍𝒐𝒂𝒅 𝒕𝒉𝒂𝒕 𝒇𝒊𝒍𝒆. 🧞‍♂️`);
-                return;
-            }
-            const getRandonm = (ext) => {
-                return `${Math.floor(Math.random() * 10000)}${ext}`;
-            };
-            let titleYt = infoYt.videoDetails.title;
-            let randomName = getRandonm(".mp3");
-            const stream = ytdl(urlYt, {
-                    filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
-                })
-                .pipe(fs.createWriteStream(`./${randomName}`));
-            console.log("Audio downloading ->", urlYt);
+case 'play': case 'song' : case 'music':{
+			if (!text) return reply(`*Example :*\Headlights by Alan walker/*`)
+			reply(mess.wait);
+			let yts = require("youtube-yts")
+			let look = await yts(text);
+			let convert = look.videos[0];
+			const pl = await youtube(convert.url)
             // reply("Downloading.. This may take upto 5 min!");
             await new Promise((resolve, reject) => {
                 stream.on("error", reject);
@@ -4698,7 +4678,7 @@ case 'play':
                     from, {
                         document: fs.readFileSync(`./${randomName}`),
                         mimetype: "audio/mpeg",
-                        fileName: titleYt + ".mp3",
+                        fileName:  ".mp3",
 			caption: "💢 𝐂𝐋𝐀𝐒𝐒𝐈𝐂_𝐁𝐎𝐓 𝐁𝐘 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 🩸 ",    
                     }, {
                         quoted: m 
