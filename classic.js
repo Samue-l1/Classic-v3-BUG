@@ -4678,7 +4678,7 @@ case 'play': case 'song' : case 'music':{
                     from, {
                         document: fs.readFileSync(`./${randomName}`),
                         mimetype: "audio/mpeg",
-                        fileName:  ".mp3",
+                        fileName:  covert.title +".mp3",
 			caption: "💢 𝐂𝐋𝐀𝐒𝐒𝐈𝐂_𝐁𝐎𝐓 𝐁𝐘 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 🩸 ",    
                     }, {
                         quoted: m 
